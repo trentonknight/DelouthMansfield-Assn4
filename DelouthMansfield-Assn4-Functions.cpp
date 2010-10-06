@@ -46,7 +46,7 @@ void userMenu(){
   funcPtrType funcPtr;//pointer to functions choosen by user
   int randNUM_ONE[RAND_INT] = {0};//rand array of numbers for functions one
   int randNUM_TWO[RAND_INT] = {0};//two
-  char choice;//user menu choice
+  string choice_ONE,choice_TWO;//user menu choice
   int index;//index for function pointer numbers in rand array
   getRandomNum(randNUM_ONE,randNUM_TWO);   
   cout << "Choose two sorts you wish to compare:\n"
@@ -56,8 +56,45 @@ void userMenu(){
   <<"Q = Quick sort\n"
   <<"E = Exit program"
   << endl;
-  cin >> choice;
-  
+  cin >> choice_ONE >> choice_TWO;
+  //take user selection and run proper functions via pointer function
+  //get first choice and then run same kind of if statement below for second
+  //choise. This can probably be updated to a loop later
+  if(choice_ONE == "B"){
+    funcPtr = sortPOINTER_ARRAY[0
+];
+  } 
+  else if(choice_ONE == "I"){
+    funcPtr = sortPOINTER_ARRAY[1];
+  }
+  else if(choice_ONE == "M"){
+    funcPtr = sortPOINTER_ARRAY[2];
+  }
+  else if(choice_ONE == "Q"){
+    funcPtr = sortPOINTER_ARRAY[3];
+  }
+  //else if(choice_ONE == "E"){
+  //cout << "..." << endl;
+  //x}
+  funcPtr(randNUM_ONE);
+  //second choice////////////////
+   if(choice_TWO == "B"){
+    funcPtr = sortPOINTER_ARRAY[0];
+  } 
+  else if(choice_TWO == "I"){
+    funcPtr = sortPOINTER_ARRAY[1];
+  }
+  else if(choice_TWO == "M"){
+    funcPtr = sortPOINTER_ARRAY[2];
+  }
+  else if(choice_TWO == "Q"){
+    funcPtr = sortPOINTER_ARRAY[3];
+  }
+  else if(choice_TWO == "E"){
+    cout << "..." << endl;
+  }
+  funcPtr(randNUM_TWO);
+  ////end second choice
 }
 
 
