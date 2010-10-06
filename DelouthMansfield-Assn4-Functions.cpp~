@@ -1,21 +1,22 @@
 #include <iostream>
 #include <iomanip>
-#include <fstream>
 #include <string>
 #include <cstddef>
+#include <ctime>
 
 using namespace std;
 
+ 
+int getRandomNum(**randNUM_ONE,**randNUM_TWO);
 //all sort functions to call by pointer to functions
-int getRandomNum(**randNUM);
 int bubbleSort(**randNUM);
 int insertionSort(**randNUM);
 int mergeSort(**randNUM);
 int quickSort(**randNUM);
 //end functions called by pointer? I think?
-int verifySorting(**VERIFYrandNUM_ONE, **VERIFYrandNUM_TWO);
-clockTime();
-displayResults();
+int verifySorting(**randNUM_ONE, **randNUM_TWO);
+void clockTime();
+void displayResults();
 
 const int ARRAY_MAX = 5;//will change to 100,000 after it works
 typedef int (*sortPOINTER)(**randARRAY);//pointer to all sort functions
@@ -28,38 +29,38 @@ typedef int (*sortPOINTER)(**randARRAY);//pointer to all sort functions
 int main()
 {
   char pickASort_ONE, pickASort_TWO;
-
+  int randNUM[MAX_ARRAY] = {0};
+  int randNUM_ONE[MAX_ARRAY] = {0};
+  int randNUM_TWO[MAX_ARRAY] = {0};
   sortPOINTER ptrToSortFunctions;//define pointer to sort functions
   int arrayONE[ARRAY_MAX] = {1,2,3,4,5};//arrays for sorting
   int arrayTWO[ARRAY_MAX] = {1,2,3,4,5};
-
+  //allow user to select which sort functions  they want to use, will need to expand this oviously
   cout << "First sort functions?" << endl;
   cin >> pickASort_ONE;
   cout << "Second sort function?" << endl;
   cin >> pickASort_TWO;
 
-  //the below would do all the following for packASort_TWO as well this is just a rough example
+  //this is just a rough example of a if statement or a switch we will need to expand of course
   if(pickASort_ONE == "B"){
          
           ptrToSortFunctions = &bubbleSort;
 	} 
- else//and so forth to pick which function to call via ptrToSortFunctions
+ else//and so forth to pick which function to call via ptrToSortFunctions for both pickASort_ONE  one and then pickASort_TWO
 
-  
-    VERIFYrandNUM_ONE = (*ptrToSortFunctions)(**arrayONE);
-    VERIFYrandNUM_TWO = (*ptrToSortFunctions)(**arrayTWO);
-
+  getRandomNum(**randNUM_ONE,**randNUM_TWO);//create random array of numbers that match
+  VERIFYrandNUM_ONE = (*ptrToSortFunctions)(**arrayONE);//copy newly sorted array 1 to another array 1
+  VERIFYrandNUM_TWO = (*ptrToSortFunctions)(**arrayTWO);//copy newly sorted array 2 to another array 2
+  int verifySorting(**randNUM_ONE, **randNUM_TWO);//now run copied arrays through verification
       
-
+    return 0;
 }
-
-
 // getRandomNum()
 // Generate 100,000 random numbers between 1 and 30,000 and place them into two 100,000-element arrays 
 // Returns:
 //  
 // Implemented by: 
-int getRandomNum(**randNUM)
+int getRandomNum(**randNUM_ONE,**randNUM_TWO);
 {
 
 }
@@ -94,6 +95,7 @@ int insertionSort(**randNUM)
 // Implemented by: 
 int mergeSort(**randNUM)
 {
+  static int tempList[MAX_ARRAY];
 
 }
 
@@ -112,8 +114,7 @@ int quickSort(**randNUM)
 // Returns:
 //  
 // Implemented by: 
-int verifySorting(**randNUM)
-{
+int verifySorting(**randNUM_ONE, **randNUM_TWO){
 
 }
 
@@ -122,7 +123,7 @@ int verifySorting(**randNUM)
 // Returns:
 //  
 // Implemented by: 
-clockTime()
+void clockTime()
 {
 
 }
@@ -132,7 +133,7 @@ clockTime()
 // Returns:
 //  
 // Implemented by: 
-displayResults()
+void displayResults()
 {
 
 }
