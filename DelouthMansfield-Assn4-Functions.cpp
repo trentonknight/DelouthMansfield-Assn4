@@ -37,32 +37,7 @@ const string sortDescriptions[ARRAY_FUNC] = {"BUBBLE_SORT","INSERTION_SORT","MER
 // Implemented by:
 int main()
 {
-  char pickASort_ONE, pickASort_TWO;
-  int randNUM[RAND_INT];
-  int randNUM_ONE[RAND_INT];
-  int randNUM_TWO[RAND_INT] = {0};
-  funcPtrType ptrToSortFunctions;//define pointer to sort functions
-  int arrayONE[RAND_INT];//arrays for sorting
-  int arrayTWO[RAND_INT];
-  //allow user to select which sort functions  they want to use, will need to expand this oviously
-  cout << "First sort functions?" << endl;
-  cin >> pickASort_ONE;
-  cout << "Second sort function?" << endl;
-  cin >> pickASort_TWO;
 
-  //this is just a rough example of a if statement or a switch we will need to expand of course
-  if(pickASort_ONE == 'B'){
-
-          ptrToSortFunctions = sortPOINTER_ARRAY[0];
-        }
- else//and so forth to pick which function to call via ptrToSortFunctions for both pickASort_ONE  one and then pickASort_TWO
-
-   //getRandomNum(randNUM_ONE,randNUM_TWO);//create random array of numbers that match
-  ptrToSortFunctions = sortPOINTER_ARRAY[ARRAY_FUNC];
-
-  //verifySorting(randNUM_ONE,randNUM_TWO);//now run copied arrays through verification
-
-    return 0;
 }
 // getRandomNum()
 // Generate 100,000 random numbers between 1 and 30,000 and place them into two 100,000-element arrays
