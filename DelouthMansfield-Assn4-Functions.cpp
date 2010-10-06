@@ -9,9 +9,9 @@ using namespace std;
 
 int getRandomNum(int rand_one[],int rand_two[]);
 //All sort functions to call by pointer to functions
-int bubbleSort(int sort[]);
-int insertionSort(int sort[]);
-int mergeSort(int sort[]);
+int bubbleSort(int bubble[]);
+int insertionSort(int insert[]);
+int mergeSort(int merge[]);
 int quickSort(int quick[]);
 //end functions called by pointer? I think?
 int verifySorting(int verify_one[],int verify_two[]);
@@ -77,7 +77,7 @@ int getRandomNum(int rand_one[],int rand_two[]){}
 // Returns:
 //
 // Implemented by:
-int bubbleSort(int sort[])
+int bubbleSort(int bubble[])
 {
 
 }
@@ -88,7 +88,7 @@ int bubbleSort(int sort[])
 // Returns:
 //
 // Implemented by:
-int insertionSort(int sort[])
+int insertionSort(int insert[])
 {
 
 }
@@ -99,7 +99,7 @@ int insertionSort(int sort[])
 // Returns:
 //
 // Implemented by:
-int mergeSort(int sort[])
+int mergeSort(int merge[])
 {
   static int tempList[RAND_INT];
 
