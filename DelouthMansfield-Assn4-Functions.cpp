@@ -133,8 +133,10 @@ void clockSTOP(int& start){
 // Implemented by:
 int bubbleSort(int bubble[])
 {  bubble[0] = 5;
-  
-  sleep(3);
+  int a = -99;
+  while(a < 9999999){
+    a++;
+  }
    return *bubble; 
 }
 
