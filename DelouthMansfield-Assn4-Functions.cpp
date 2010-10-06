@@ -21,7 +21,7 @@ void displayResults();
 const int RAND_INT = 100000;//will change to 100,000 after it works
 const int ARRAY_FUNC = 4;
 
-typedef int (*funcPtrType)(int[]);
+typedef int (*funcPtrType)(int[RAND_INT]);
 const funcPtrType sortPOINTER_ARRAY[ARRAY_FUNC] = {&bubbleSort,
                                           &insertionSort,
                                           &mergeSort,
@@ -36,6 +36,7 @@ const string sortDescriptions[ARRAY_FUNC] = {"BUBBLE_SORT","INSERTION_SORT","MER
 // Calls:
 // Implemented by:
 int main()
+
 {
   userMenu();
 
@@ -61,8 +62,7 @@ void userMenu(){
   //get first choice and then run same kind of if statement below for second
   //choise. This can probably be updated to a loop later
   if(choice_ONE == "B"){
-    funcPtr = sortPOINTER_ARRAY[0
-];
+    funcPtr = sortPOINTER_ARRAY[0];
   } 
   else if(choice_ONE == "I"){
     funcPtr = sortPOINTER_ARRAY[1];
@@ -76,7 +76,9 @@ void userMenu(){
   //else if(choice_ONE == "E"){
   //cout << "..." << endl;
   //x}
-  funcPtr(randNUM_ONE);
+  //
+  *randNUM_ONE = funcPtr(randNUM_ONE);
+  cout << randNUM_ONE[0] << endl;
   //second choice////////////////
    if(choice_TWO == "B"){
     funcPtr = sortPOINTER_ARRAY[0];
@@ -93,18 +95,18 @@ void userMenu(){
   else if(choice_TWO == "E"){
     cout << "..." << endl;
   }
-  funcPtr(randNUM_TWO);
+  
+    // randNUM_TWO = funcPtr(randNUM_TWO);
   ////end second choice
 }
-
-
 
 // getRandomNum()
 // Generate 100,000 random numbers between 1 and 30,000 and place them into two 100,000-element arrays
 // Returns:
 //
 // Implemented by:
-int getRandomNum(int rand_one[],int rand_two[]){}
+int getRandomNum(int rand_one[],int rand_two[]){
+}
 
 
 // Bubblesort()
@@ -113,8 +115,11 @@ int getRandomNum(int rand_one[],int rand_two[]){}
 //
 // Implemented by:
 int bubbleSort(int bubble[])
-{
+{  bubble[0] = 5;
 
+  return *
+bubble;
+  
 }
 
 
@@ -125,7 +130,7 @@ int bubbleSort(int bubble[])
 // Implemented by:
 int insertionSort(int insert[])
 {
-
+  cout << "insertionSort" << endl;
 }
 
 
@@ -137,6 +142,7 @@ int insertionSort(int insert[])
 int mergeSort(int merge[])
 {
   static int tempList[RAND_INT];
+  cout << "mergeSort" << endl;
 
 }
 
@@ -147,7 +153,7 @@ int mergeSort(int merge[])
 // Implemented by:
 int quickSort(int quick[])
 {
-
+  cout << "quickSort" << endl;
 }
 
 // verifySorting()
