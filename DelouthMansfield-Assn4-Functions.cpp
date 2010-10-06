@@ -9,10 +9,10 @@ using namespace std;
 
 int getRandomNum(int randNUM_ONE[],int randNUM_TWO[]);
 //All sort functions to call by pointer to functions
-int bubbleSort(int randNUM[]);
-int insertionSort(int randNUM[]);
-int mergeSort(int randNUM[]);
-int quickSort(int randNUM[]);
+int bubbleSort(int[]);
+int insertionSort(int[]);
+int mergeSort(int[]);
+int quickSort(int[]);
 //end functions called by pointer? I think?
 int verifySorting(int randNUM_ONE[],int randNUM_TWO[]);
 void clockTime();
@@ -21,8 +21,8 @@ void displayResults();
 const int RAND_INT = 100000;//will change to 100,000 after it works
 const int ARRAY_FUNC = 4;
 
-typedef int (*sortPOINTER)(randARRAY[]);
-const sortPOINTER sortPOINTER_ARRAY[ARRAY_FUNC] = {&bubbleSort,
+typedef int (*funcPtrType)(int[]);
+const funcPtrType sortPOINTER_ARRAY[ARRAY_FUNC] = {&bubbleSort,
                                           &insertionSort,
                                           &mergeSort,
                                           &quickSort};
@@ -41,7 +41,7 @@ int main()
   int randNUM[RAND_INT];
   int randNUM_ONE[RAND_INT];
   int randNUM_TWO[RAND_INT] = {0};
-  sortPOINTER ptrToSortFunctions;//define pointer to sort functions
+  funcPtrType ptrToSortFunctions;//define pointer to sort functions
   int arrayONE[RAND_INT];//arrays for sorting
   int arrayTWO[RAND_INT];
   //allow user to select which sort functions  they want to use, will need to expand this oviously
@@ -53,7 +53,7 @@ int main()
   //this is just a rough example of a if statement or a switch we will need to expand of course
   if(pickASort_ONE == 'B'){
 
-          ptrToSortFunctions = &bubbleSort;
+          ptrToSortFunctions = sortPOINTER_ARRAY[0];
         }
  else//and so forth to pick which function to call via ptrToSortFunctions for both pickASort_ONE  one and then pickASort_TWO
 
