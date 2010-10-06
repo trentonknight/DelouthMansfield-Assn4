@@ -6,7 +6,7 @@
 
 using namespace std;
 
-
+void userMenu();
 int getRandomNum(int rand_one[],int rand_two[]);
 //All sort functions to call by pointer to functions
 int bubbleSort(int bubble[]);
@@ -37,8 +37,22 @@ const string sortDescriptions[ARRAY_FUNC] = {"BUBBLE_SORT","INSERTION_SORT","MER
 // Implemented by:
 int main()
 {
+  userMenu();
 
 }
+//user selections io
+void userMenu(){
+
+  funcPtrType funcPtr;//pointer to functions choosen by user
+  int randNUM_ONE[RAND_INT] = {0};//rand array of numbers for functions one
+  int randNUM_TWO[RAND_INT] = {0};//two
+  char choice;//user menu choice
+  int index;//index for function pointer numbers in rand array
+ 
+}
+
+
+
 // getRandomNum()
 // Generate 100,000 random numbers between 1 and 30,000 and place them into two 100,000-element arrays
 // Returns:
