@@ -73,12 +73,11 @@ void userMenu(){
   else if(choice_ONE == "Q"){
     funcPtr = sortPOINTER_ARRAY[3];
   }
-  //else if(choice_ONE == "E"){
-  //cout << "..." << endl;
-  //x}
-  //
+  else if(choice_ONE == "E"){
+    cout << "exit" << endl;
+  }
   *randNUM_ONE = funcPtr(randNUM_ONE);
-  cout << randNUM_ONE[0] << endl;
+  cout << "EXAMPLE CALL TO SORT CHOICE ONE: " <<randNUM_ONE[0] << endl;
   //second choice////////////////
    if(choice_TWO == "B"){
     funcPtr = sortPOINTER_ARRAY[0];
@@ -93,11 +92,11 @@ void userMenu(){
     funcPtr = sortPOINTER_ARRAY[3];
   }
   else if(choice_TWO == "E"){
-    cout << "..." << endl;
+    cout << "exit" << endl;
   }
-  
-    // randNUM_TWO = funcPtr(randNUM_TWO);
-  ////end second choice
+  *randNUM_TWO = funcPtr(randNUM_TWO);
+  cout << "EXAMPLE CALL TO SORT CHOICE TWO: " << randNUM_TWO[0] << endl;
+  ///end second choice
 }
 
 // getRandomNum()
@@ -117,8 +116,7 @@ int getRandomNum(int rand_one[],int rand_two[]){
 int bubbleSort(int bubble[])
 {  bubble[0] = 5;
 
-  return *
-bubble;
+   return *bubble;
   
 }
 
@@ -129,8 +127,9 @@ bubble;
 //
 // Implemented by:
 int insertionSort(int insert[])
-{
-  cout << "insertionSort" << endl;
+{  insert[0] = 6;
+
+   return *insert;
 }
 
 
@@ -140,10 +139,10 @@ int insertionSort(int insert[])
 //
 // Implemented by:
 int mergeSort(int merge[])
-{
-  static int tempList[RAND_INT];
-  cout << "mergeSort" << endl;
+{ merge[0] = 7;
 
+
+  return *merge;
 }
 
 // quickSort()
@@ -152,8 +151,9 @@ int mergeSort(int merge[])
 //
 // Implemented by:
 int quickSort(int quick[])
-{
-  cout << "quickSort" << endl;
+{ quick[0] = 8;
+   
+  return *quick;
 }
 
 // verifySorting()
@@ -177,6 +177,7 @@ void clockTime()
 
 // displayResults()
 //
+
 // Returns:
 //
 // Implemented by:
