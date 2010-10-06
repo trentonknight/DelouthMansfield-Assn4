@@ -48,7 +48,16 @@ void userMenu(){
   int randNUM_TWO[RAND_INT] = {0};//two
   char choice;//user menu choice
   int index;//index for function pointer numbers in rand array
- 
+  getRandomNum(randNUM_ONE,randNUM_TWO);   
+  cout << "Choose two sorts you wish to compare:\n"
+  <<"B = Bubble sort\n"
+  <<"I = Insertion sort\n"
+  <<"M = Merge sort\n"
+  <<"Q = Quick sort\n"
+  <<"E = Exit program"
+  << endl;
+  cin >> choice;
+  
 }
 
 
