@@ -77,7 +77,7 @@ int getRandomNum(int **randNUM_ONE,int **randNUM_TWO){}
 // Returns:
 //
 // Implemented by:
-int bubbleSort(int **randNUM)
+int bubbleSort(int [])
 {
 
 }
@@ -88,7 +88,7 @@ int bubbleSort(int **randNUM)
 // Returns:
 //
 // Implemented by:
-int insertionSort(int **randNUM)
+int insertionSort(int [])
 {
 
 }
@@ -99,7 +99,7 @@ int insertionSort(int **randNUM)
 // Returns:
 //
 // Implemented by:
-int mergeSort(int **randNUM)
+int mergeSort(int [])
 {
   static int tempList[RAND_INT];
 
