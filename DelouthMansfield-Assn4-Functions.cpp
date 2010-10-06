@@ -15,7 +15,6 @@ int mergeSort(int merge[]);
 int quickSort(int quick[]);
 //end functions called by pointer? I think?
 int verifySorting(int verify_one[],int verify_two[]);
-void clockTime();
 void displayResults();
 
 const int RAND_INT = 100000;//will change to 100,000 after it works
@@ -43,6 +42,10 @@ int main()
 }
 //user selections io
 void userMenu(){
+  long start = 0;
+  long stop = 0;
+  long time = 0;
+  
 
   funcPtrType funcPtr;//pointer to functions choosen by user
   int randNUM_ONE[RAND_INT] = {0};//rand array of numbers for functions one
@@ -62,6 +65,7 @@ void userMenu(){
   //get first choice and then run same kind of if statement below for second
   //choise. This can probably be updated to a loop later
   if(choice_ONE == "B"){
+    start = clock();
     funcPtr = sortPOINTER_ARRAY[0];
   } 
   else if(choice_ONE == "I"){
@@ -95,7 +99,10 @@ void userMenu(){
     cout << "exit" << endl;
   }
   *randNUM_TWO = funcPtr(randNUM_TWO);
+  stop = clock();
+  time = stop - start;
   cout << "EXAMPLE CALL TO SORT CHOICE TWO: " << randNUM_TWO[0] << endl;
+  cout << "TIME: " << time << endl;
   ///end second choice
 }
 
@@ -115,7 +122,9 @@ int getRandomNum(int rand_one[],int rand_two[]){
 // Implemented by:
 int bubbleSort(int bubble[])
 {  bubble[0] = 5;
-
+  
+   cin.get();
+   
    return *bubble;
   
 }
@@ -164,17 +173,6 @@ int quickSort(int quick[])
 int verifySorting(int verify_one[],int verify_two[]){
 
 }
-
-// clockTime()
-// calculate how long the sort took
-// Returns:
-//
-// Implemented by:
-void clockTime()
-{
-
-}
-
 // displayResults()
 //
 
