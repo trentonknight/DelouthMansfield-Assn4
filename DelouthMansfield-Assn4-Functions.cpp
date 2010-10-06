@@ -8,6 +8,8 @@ using namespace std;
 
 void userMenu();
 int getRandomNum(int rand_one[],int rand_two[]);
+void clockSTART(int& start);
+void clockSTOP(int& start);
 //All sort functions to call by pointer to functions
 int bubbleSort(int bubble[]);
 int insertionSort(int insert[]);
@@ -17,16 +19,14 @@ int quickSort(int quick[]);
 int verifySorting(int verify_one[],int verify_two[]);
 void displayResults();
 
-const int RAND_INT = 100000;//will change to 100,000 after it works
-const int ARRAY_FUNC = 4;
+const int RAND_INT = 100000;//for rand array
+const int ARRAY_FUNC = 4;//for selection of sort functions
 
-typedef int (*funcPtrType)(int[RAND_INT]);
+typedef int (*funcPtrType)(int[RAND_INT]);//function pointer
 const funcPtrType sortPOINTER_ARRAY[ARRAY_FUNC] = {&bubbleSort,
                                           &insertionSort,
                                           &mergeSort,
-                                          &quickSort};
-
-const string sortDescriptions[ARRAY_FUNC] = {"BUBBLE_SORT","INSERTION_SORT","MERGE_SORT","QUICK_SORT"};
+						   &quickSort};
 
 // main()
 // Main program logic. Handles getting user input
@@ -39,13 +39,11 @@ int main()
 {
   userMenu();
 
+
 }
 //user selections io
 void userMenu(){
-  long start = 0;
-  long stop = 0;
-  long time = 0;
-  
+  int clocker;
 
   funcPtrType funcPtr;//pointer to functions choosen by user
   int randNUM_ONE[RAND_INT] = {0};//rand array of numbers for functions one
@@ -63,10 +61,11 @@ void userMenu(){
   cin >> choice_ONE >> choice_TWO;
   //take user selection and run proper functions via pointer function
   //get first choice and then run same kind of if statement below for second
-  //choise. This can probably be updated to a loop later
+  //choise. This can probably be updated to a loop later  
   if(choice_ONE == "B"){
-    start = clock();
-    funcPtr = sortPOINTER_ARRAY[0];
+    clockSTART(clocker); 
+   funcPtr = sortPOINTER_ARRAY[0];
+   
   } 
   else if(choice_ONE == "I"){
     funcPtr = sortPOINTER_ARRAY[1];
@@ -82,6 +81,8 @@ void userMenu(){
   }
   *randNUM_ONE = funcPtr(randNUM_ONE);
   cout << "EXAMPLE CALL TO SORT CHOICE ONE: " <<randNUM_ONE[0] << endl;
+ 
+   
   //second choice////////////////
    if(choice_TWO == "B"){
     funcPtr = sortPOINTER_ARRAY[0];
@@ -99,10 +100,11 @@ void userMenu(){
     cout << "exit" << endl;
   }
   *randNUM_TWO = funcPtr(randNUM_TWO);
-  stop = clock();
-  time = stop - start;
+
   cout << "EXAMPLE CALL TO SORT CHOICE TWO: " << randNUM_TWO[0] << endl;
-  cout << "TIME: " << time << endl;
+    clockSTOP(clocker);
+ 
+ 
   ///end second choice
 }
 
@@ -113,7 +115,16 @@ void userMenu(){
 // Implemented by:
 int getRandomNum(int rand_one[],int rand_two[]){
 }
+void clockSTART(int& start){
+   start = clock();
+}
+void clockSTOP(int& start){
 
+  int stop = clock();
+  double time = ((double)(stop - start))/CLOCKS_PER_SEC;
+  cout << "TIME: " << time << endl;
+
+}
 
 // Bubblesort()
 //
@@ -123,10 +134,8 @@ int getRandomNum(int rand_one[],int rand_two[]){
 int bubbleSort(int bubble[])
 {  bubble[0] = 5;
   
-   cin.get();
-   
-   return *bubble;
-  
+  sleep(3);
+   return *bubble; 
 }
 
 

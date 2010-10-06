@@ -8,6 +8,8 @@ using namespace std;
 
 void userMenu();
 int getRandomNum(int rand_one[],int rand_two[]);
+void clockSTART(int& start);
+void clockSTOP(int& start);
 //All sort functions to call by pointer to functions
 int bubbleSort(int bubble[]);
 int insertionSort(int insert[]);
@@ -15,19 +17,16 @@ int mergeSort(int merge[]);
 int quickSort(int quick[]);
 //end functions called by pointer? I think?
 int verifySorting(int verify_one[],int verify_two[]);
-void clockTime();
 void displayResults();
 
-const int RAND_INT = 100000;//will change to 100,000 after it works
-const int ARRAY_FUNC = 4;
+const int RAND_INT = 100000;//for rand array
+const int ARRAY_FUNC = 4;//for selection of sort functions
 
-typedef int (*funcPtrType)(int[]);
+typedef int (*funcPtrType)(int[RAND_INT]);//function pointer
 const funcPtrType sortPOINTER_ARRAY[ARRAY_FUNC] = {&bubbleSort,
                                           &insertionSort,
                                           &mergeSort,
-                                          &quickSort};
-
-const string sortDescriptions[ARRAY_FUNC] = {"BUBBLE_SORT","INSERTION_SORT","MERGE_SORT","QUICK_SORT"};
+						   &quickSort};
 
 // main()
 // Main program logic. Handles getting user input
@@ -36,36 +35,99 @@ const string sortDescriptions[ARRAY_FUNC] = {"BUBBLE_SORT","INSERTION_SORT","MER
 // Calls:
 // Implemented by:
 int main()
+
 {
   userMenu();
+   clockSTOP(clocker);
 
 }
 //user selections io
 void userMenu(){
+  
+  int clocker = 0;
 
   funcPtrType funcPtr;//pointer to functions choosen by user
   int randNUM_ONE[RAND_INT] = {0};//rand array of numbers for functions one
   int randNUM_TWO[RAND_INT] = {0};//two
-  char choice;//user menu choice
+  string choice_ONE,choice_TWO;//user menu choice
   int index;//index for function pointer numbers in rand array
   getRandomNum(randNUM_ONE,randNUM_TWO);   
-  cout << "Choose two sorts you wish to compare:\n"<<;
-  <<"B = Bubble sort\n"<<;
-  <<"I = Insertion sort\n"<<;
-  <<"M = Merge sort\n"<<;
-  <<"Q = Quick sort\n"<<;
-  <<"E = Exit program"<< endl;
+  cout << "Choose two sorts you wish to compare:\n"
+  <<"B = Bubble sort\n"
+  <<"I = Insertion sort\n"
+  <<"M = Merge sort\n"
+  <<"Q = Quick sort\n"
+  <<"E = Exit program"
+  << endl;
+  cin >> choice_ONE >> choice_TWO;
+  //take user selection and run proper functions via pointer function
+  //get first choice and then run same kind of if statement below for second
+  //choise. This can probably be updated to a loop later
+  clockSTART(clocker);  
+  if(choice_ONE == "B"){
+   funcPtr = sortPOINTER_ARRAY[0];
+   
+  } 
+  else if(choice_ONE == "I"){
+    funcPtr = sortPOINTER_ARRAY[1];
+  }
+  else if(choice_ONE == "M"){
+    funcPtr = sortPOINTER_ARRAY[2];
+  }
+  else if(choice_ONE == "Q"){
+    funcPtr = sortPOINTER_ARRAY[3];
+  }
+  else if(choice_ONE == "E"){
+    cout << "exit" << endl;
+  }
+  *randNUM_ONE = funcPtr(randNUM_ONE);
+  cout << "EXAMPLE CALL TO SORT CHOICE ONE: " <<randNUM_ONE[0] << endl;
+ 
+   
+  //second choice////////////////
+   if(choice_TWO == "B"){
+    funcPtr = sortPOINTER_ARRAY[0];
+  } 
+  else if(choice_TWO == "I"){
+    funcPtr = sortPOINTER_ARRAY[1];
+  }
+  else if(choice_TWO == "M"){
+    funcPtr = sortPOINTER_ARRAY[2];
+  }
+  else if(choice_TWO == "Q"){
+    funcPtr = sortPOINTER_ARRAY[3];
+  }
+  else if(choice_TWO == "E"){
+    cout << "exit" << endl;
+  }
+  *randNUM_TWO = funcPtr(randNUM_TWO);
+
+  cout << "EXAMPLE CALL TO SORT CHOICE TWO: " << randNUM_TWO[0] << endl;
+
+ 
+ 
+  ///end second choice
 }
-
-
 
 // getRandomNum()
 // Generate 100,000 random numbers between 1 and 30,000 and place them into two 100,000-element arrays
 // Returns:
 //
 // Implemented by:
-int getRandomNum(int rand_one[],int rand_two[]){}
+int getRandomNum(int rand_one[],int rand_two[]){
+}
+void clockSTART(int& start){
 
+start = (clock()/CLOCKS_PER_SEC);
+}
+void clockSTOP(int& start){
+
+  int stop = (clock()/CLOCKS_PER_SEC);
+  int 
+  time = stop - start;
+  cout << "TIME: " << time << endl;
+
+}
 
 // Bubblesort()
 //
@@ -73,8 +135,16 @@ int getRandomNum(int rand_one[],int rand_two[]){}
 //
 // Implemented by:
 int bubbleSort(int bubble[])
-{
+{  bubble[0] = 5;
+   
+  for(int 
+a = 0; a < 25; a++){
+    cout << "test"<< endl;
 
+  }
+
+   return *bubble;
+    
 }
 
 
@@ -84,8 +154,9 @@ int bubbleSort(int bubble[])
 //
 // Implemented by:
 int insertionSort(int insert[])
-{
+{  insert[0] = 6;
 
+   return *insert;
 }
 
 
@@ -95,9 +166,10 @@ int insertionSort(int insert[])
 //
 // Implemented by:
 int mergeSort(int merge[])
-{
-  static int tempList[RAND_INT];
+{ merge[0] = 7;
 
+
+  return *merge;
 }
 
 // quickSort()
@@ -106,8 +178,9 @@ int mergeSort(int merge[])
 //
 // Implemented by:
 int quickSort(int quick[])
-{
-
+{ quick[0] = 8;
+   
+  return *quick;
 }
 
 // verifySorting()
@@ -118,19 +191,9 @@ int quickSort(int quick[])
 int verifySorting(int verify_one[],int verify_two[]){
 
 }
-
-// clockTime()
-// calculate how long the sort took
-// Returns:
-//
-// Implemented by:
-void clockTime()
-{
-
-}
-
 // displayResults()
 //
+
 // Returns:
 //
 // Implemented by:
