@@ -43,7 +43,9 @@ int main()
 }
 //user selections io
 void userMenu(){
-  int clocker;
+  int clocker = 0;
+  int clockONE = 0;
+  int clockTWO = 0;
 
   funcPtrType funcPtr;//pointer to functions choosen by user
   int randNUM_ONE[RAND_INT] = {0};//rand array of numbers for functions one
@@ -63,37 +65,44 @@ void userMenu(){
   //get first choice and then run same kind of if statement below for second
   //choise. This can probably be updated to a loop later  
   if(choice_ONE == "B"){
-    clockSTART(clocker); 
-   funcPtr = sortPOINTER_ARRAY[0];
+    clockSTART(clocker);//start clock on function 
+    funcPtr = sortPOINTER_ARRAY[0];//point to Bubblesort
    
   } 
   else if(choice_ONE == "I"){
-    funcPtr = sortPOINTER_ARRAY[1];
+    clockSTART(clocker);//start clock
+    funcPtr = sortPOINTER_ARRAY[1];//point to Insertion sort
   }
   else if(choice_ONE == "M"){
-    funcPtr = sortPOINTER_ARRAY[2];
+    clockSTART(clocker);//start clock
+    funcPtr = sortPOINTER_ARRAY[2];//point to Merge Sort
   }
   else if(choice_ONE == "Q"){
-    funcPtr = sortPOINTER_ARRAY[3];
+    clockSTART(clocker);//start clock
+    funcPtr = sortPOINTER_ARRAY[3];//point to Quick Sort
   }
   else if(choice_ONE == "E"){
-    cout << "exit" << endl;
+    cout << "exit" << endl;//exit
   }
   *randNUM_ONE = funcPtr(randNUM_ONE);
-  cout << "EXAMPLE CALL TO SORT CHOICE ONE: " <<randNUM_ONE[0] << endl;
- 
+   cout << "EXAMPLE CALL TO SORT CHOICE ONE: " <<randNUM_ONE[0] << endl;
+   clockSTOP(clocker);
    
-  //second choice////////////////
+  //second choice all the same as first////////////////
    if(choice_TWO == "B"){
+    clockSTART(clocker);
     funcPtr = sortPOINTER_ARRAY[0];
   } 
   else if(choice_TWO == "I"){
+    clockSTART(clocker);
     funcPtr = sortPOINTER_ARRAY[1];
   }
-  else if(choice_TWO == "M"){
+  else if(choice_TWO == "M"){ 
+    clockSTART(clocker);
     funcPtr = sortPOINTER_ARRAY[2];
   }
   else if(choice_TWO == "Q"){
+    clockSTART(clocker);
     funcPtr = sortPOINTER_ARRAY[3];
   }
   else if(choice_TWO == "E"){
@@ -102,7 +111,7 @@ void userMenu(){
   *randNUM_TWO = funcPtr(randNUM_TWO);
 
   cout << "EXAMPLE CALL TO SORT CHOICE TWO: " << randNUM_TWO[0] << endl;
-    clockSTOP(clocker);
+  clockSTOP(clocker);
  
  
   ///end second choice
@@ -133,8 +142,8 @@ void clockSTOP(int& start){
 // Implemented by:
 int bubbleSort(int bubble[])
 {  bubble[0] = 5;
-  int a = -99;
-  while(a < 9999999){
+  int a = -99;//just for testing time
+  While(a < 9999999){
     a++;
   }
    return *bubble; 
