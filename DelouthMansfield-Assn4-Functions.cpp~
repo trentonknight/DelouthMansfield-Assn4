@@ -7,14 +7,14 @@
 using namespace std;
 
 
-int getRandomNum(int randNUM_ONE[],int randNUM_TWO[]);
+//int getRandomNum(int [],int []);
 //All sort functions to call by pointer to functions
 int bubbleSort(int[]);
 int insertionSort(int[]);
 int mergeSort(int[]);
 int quickSort(int[]);
 //end functions called by pointer? I think?
-int verifySorting(int randNUM_ONE[],int randNUM_TWO[]);
+//`int verifySorting(int [],int []);
 void clockTime();
 void displayResults();
 
@@ -57,10 +57,10 @@ int main()
         }
  else//and so forth to pick which function to call via ptrToSortFunctions for both pickASort_ONE  one and then pickASort_TWO
 
-  getRandomNum(randNUM_ONE,randNUM_TWO);//create random array of numbers that match
+   //getRandomNum(randNUM_ONE,randNUM_TWO);//create random array of numbers that match
   ptrToSortFunctions = sortPOINTER_ARRAY[ARRAY_FUNC];
 
-  verifySorting(randNUM_ONE,randNUM_TWO);//now run copied arrays through verification
+  //verifySorting(randNUM_ONE,randNUM_TWO);//now run copied arrays through verification
 
     return 0;
 }
@@ -69,7 +69,7 @@ int main()
 // Returns:
 //
 // Implemented by:
-int getRandomNum(int **randNUM_ONE,int **randNUM_TWO){}
+//int getRandomNum(int [],int []){}
 
 
 // bubbleSort()
@@ -77,7 +77,7 @@ int getRandomNum(int **randNUM_ONE,int **randNUM_TWO){}
 // Returns:
 //
 // Implemented by:
-int bubbleSort(int **randNUM)
+int bubbleSort(int [])
 {
 
 }
@@ -88,7 +88,7 @@ int bubbleSort(int **randNUM)
 // Returns:
 //
 // Implemented by:
-int insertionSort(int **randNUM)
+int insertionSort(int [])
 {
 
 }
@@ -99,7 +99,7 @@ int insertionSort(int **randNUM)
 // Returns:
 //
 // Implemented by:
-int mergeSort(int **randNUM)
+int mergeSort(int [])
 {
   static int tempList[RAND_INT];
 
@@ -120,9 +120,9 @@ int quickSort(int **randNUM)
 // Returns:
 //
 // Implemented by:
-int verifySorting(int **randNUM_ONE,int **randNUM_TWO){
+//int verifySorting(int [],int []){
 
-}
+//}
 
 // clockTime()
 // calculate how long the sort took
