@@ -2,12 +2,12 @@
 #include <iomanip>
 #include <string>
 #include <cstddef>
-#include <ctime>
-
+#include <stdlib.h>
+#include <time.h>
 using namespace std;
 
 void userMenu();
-int getRandomNum(int rand_one[],int rand_two[]);
+int createARRAYS(int *arrayONE,int *arrayTWO);
 void clockSTART(int& start);
 void clockSTOP(int& start);
 //All sort functions to call by pointer to functions
@@ -21,6 +21,7 @@ void displayResults();
 
 const int RAND_INT = 100000;//for rand array
 const int ARRAY_FUNC = 4;//for selection of sort functions
+const int LIMIT = 2000;
 
 typedef int (*funcPtrType)(int[RAND_INT]);//function pointer
 const funcPtrType sortPOINTER_ARRAY[ARRAY_FUNC] = {&bubbleSort,
@@ -52,7 +53,7 @@ void userMenu(){
   int randNUM_TWO[RAND_INT] = {0};//two
   string choice_ONE,choice_TWO;//user menu choice
   int index;//index for function pointer numbers in rand array
-  getRandomNum(randNUM_ONE,randNUM_TWO);   
+  createARRAYS(randNUM_ONE,randNUM_TWO);
   cout << "Choose two sorts you wish to compare:\n"
   <<"B = Bubble sort\n"
   <<"I = Insertion sort\n"
@@ -66,8 +67,7 @@ void userMenu(){
   //choise. This can probably be updated to a loop later  
   if(choice_ONE == "B"){
     clockSTART(clocker);//start clock on function 
-    funcPtr = sortPOINTER_ARRAY[0];//point to Bubblesort
-   
+    funcPtr = sortPOINTER_ARRAY[0];//point to Bubblesort   
   } 
   else if(choice_ONE == "I"){
     clockSTART(clocker);//start clock
@@ -82,7 +82,7 @@ void userMenu(){
     funcPtr = sortPOINTER_ARRAY[3];//point to Quick Sort
   }
   else if(choice_ONE == "E"){
-    cout << "exit" << endl;//exit
+    cout << "exit" << endl;//exit will need to change
   }
   *randNUM_ONE = funcPtr(randNUM_ONE);
    cout << "EXAMPLE CALL TO SORT CHOICE ONE: " <<randNUM_ONE[0] << endl;
@@ -106,7 +106,7 @@ void userMenu(){
     funcPtr = sortPOINTER_ARRAY[3];
   }
   else if(choice_TWO == "E"){
-    cout << "exit" << endl;
+    cout << "exit" << endl;//need to change
   }
   *randNUM_TWO = funcPtr(randNUM_TWO);
 
@@ -116,14 +116,21 @@ void userMenu(){
  
   ///end second choice
 }
-
-// getRandomNum()
-// Generate 100,000 random numbers between 1 and 30,000 and place them into two 100,000-element arrays
-// Returns:
-//
-// Implemented by:
-int getRandomNum(int rand_one[],int rand_two[]){
+int randMAKE(){
+  int make = 0;
+  make = rand() % RAND_INT + 6;
+  return make;
 }
+int createARRAYS(int *arrayONE,int *arrayTWO){
+  int seed;
+  srand(time(NULL));
+  for(int a = 0; a < RAND_INT; a++){
+    arrayONE[a] = randMAKE();
+    arrayTWO[a] = arrayONE[a];
+
+  }
+}
+
 void clockSTART(int& start){
    start = clock();
 }
@@ -143,7 +150,7 @@ void clockSTOP(int& start){
 int bubbleSort(int bubble[])
 {  bubble[0] = 5;
   int a = -99;//just for testing time
-  While(a < 9999999){
+  while(a < 9999999){
     a++;
   }
    return *bubble; 

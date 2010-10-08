@@ -2,12 +2,12 @@
 #include <iomanip>
 #include <string>
 #include <cstddef>
-#include <ctime>
-
+#include <stdlib.h>
+#include <time.h>
 using namespace std;
 
 void userMenu();
-int getRandomNum(int rand_one[],int rand_two[]);
+int createARRAYS(int *arrayONE,int *arrayTWO);
 void clockSTART(int& start);
 void clockSTOP(int& start);
 //All sort functions to call by pointer to functions
@@ -21,6 +21,7 @@ void displayResults();
 
 const int RAND_INT = 100000;//for rand array
 const int ARRAY_FUNC = 4;//for selection of sort functions
+const int LIMIT = 2000;
 
 typedef int (*funcPtrType)(int[RAND_INT]);//function pointer
 const funcPtrType sortPOINTER_ARRAY[ARRAY_FUNC] = {&bubbleSort,
@@ -38,20 +39,21 @@ int main()
 
 {
   userMenu();
-   clockSTOP(clocker);
+
 
 }
 //user selections io
 void userMenu(){
-  
   int clocker = 0;
+  int clockONE = 0;
+  int clockTWO = 0;
 
   funcPtrType funcPtr;//pointer to functions choosen by user
   int randNUM_ONE[RAND_INT] = {0};//rand array of numbers for functions one
   int randNUM_TWO[RAND_INT] = {0};//two
   string choice_ONE,choice_TWO;//user menu choice
   int index;//index for function pointer numbers in rand array
-  getRandomNum(randNUM_ONE,randNUM_TWO);   
+  createARRAYS(randNUM_ONE,randNUM_TWO);
   cout << "Choose two sorts you wish to compare:\n"
   <<"B = Bubble sort\n"
   <<"I = Insertion sort\n"
@@ -62,69 +64,74 @@ void userMenu(){
   cin >> choice_ONE >> choice_TWO;
   //take user selection and run proper functions via pointer function
   //get first choice and then run same kind of if statement below for second
-  //choise. This can probably be updated to a loop later
-  clockSTART(clocker);  
+  //choise. This can probably be updated to a loop later  
   if(choice_ONE == "B"){
-   funcPtr = sortPOINTER_ARRAY[0];
-   
+    clockSTART(clocker);//start clock on function 
+    funcPtr = sortPOINTER_ARRAY[0];//point to Bubblesort   
   } 
   else if(choice_ONE == "I"){
-    funcPtr = sortPOINTER_ARRAY[1];
+    clockSTART(clocker);//start clock
+    funcPtr = sortPOINTER_ARRAY[1];//point to Insertion sort
   }
   else if(choice_ONE == "M"){
-    funcPtr = sortPOINTER_ARRAY[2];
+    clockSTART(clocker);//start clock
+    funcPtr = sortPOINTER_ARRAY[2];//point to Merge Sort
   }
   else if(choice_ONE == "Q"){
-    funcPtr = sortPOINTER_ARRAY[3];
+    clockSTART(clocker);//start clock
+    funcPtr = sortPOINTER_ARRAY[3];//point to Quick Sort
   }
   else if(choice_ONE == "E"){
-    cout << "exit" << endl;
+    cout << "exit" << endl;//exit will need to change
   }
   *randNUM_ONE = funcPtr(randNUM_ONE);
-  cout << "EXAMPLE CALL TO SORT CHOICE ONE: " <<randNUM_ONE[0] << endl;
- 
+   cout << "EXAMPLE CALL TO SORT CHOICE ONE: " <<randNUM_ONE[0] << endl;
+   clockSTOP(clocker);
    
-  //second choice////////////////
+  //second choice all the same as first////////////////
    if(choice_TWO == "B"){
+    clockSTART(clocker);
     funcPtr = sortPOINTER_ARRAY[0];
   } 
   else if(choice_TWO == "I"){
+    clockSTART(clocker);
     funcPtr = sortPOINTER_ARRAY[1];
   }
-  else if(choice_TWO == "M"){
+  else if(choice_TWO == "M"){ 
+    clockSTART(clocker);
     funcPtr = sortPOINTER_ARRAY[2];
   }
   else if(choice_TWO == "Q"){
+    clockSTART(clocker);
     funcPtr = sortPOINTER_ARRAY[3];
   }
   else if(choice_TWO == "E"){
-    cout << "exit" << endl;
+    cout << "exit" << endl;//need to change
   }
   *randNUM_TWO = funcPtr(randNUM_TWO);
 
   cout << "EXAMPLE CALL TO SORT CHOICE TWO: " << randNUM_TWO[0] << endl;
-
+  clockSTOP(clocker);
  
  
   ///end second choice
 }
+int createARRAYS(int *arrayONE,int *arrayTWO){
+  int seed;
+  for(int a = 0; a < RAND_INT; a++){
+    arrayONE[a] = 3;
+    arrayTWO[a] = arrayONE[a];
 
-// getRandomNum()
-// Generate 100,000 random numbers between 1 and 30,000 and place them into two 100,000-element arrays
-// Returns:
-//
-// Implemented by:
-int getRandomNum(int rand_one[],int rand_two[]){
+  }
 }
-void clockSTART(int& start){
 
-start = (clock()/CLOCKS_PER_SEC);
+void clockSTART(int& start){
+   start = clock();
 }
 void clockSTOP(int& start){
 
-  int stop = (clock()/CLOCKS_PER_SEC);
-  int 
-  time = stop - start;
+  int stop = clock();
+  double time = ((double)(stop - start))/CLOCKS_PER_SEC;
   cout << "TIME: " << time << endl;
 
 }
@@ -136,15 +143,11 @@ void clockSTOP(int& start){
 // Implemented by:
 int bubbleSort(int bubble[])
 {  bubble[0] = 5;
-   
-  for(int 
-a = 0; a < 25; a++){
-    cout << "test"<< endl;
-
+  int a = -99;//just for testing time
+  while(a < 9999999){
+    a++;
   }
-
-   return *bubble;
-    
+   return *bubble; 
 }
 
 
