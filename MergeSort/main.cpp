@@ -6,16 +6,17 @@
 
 using namespace std;
 
-void mergesort(int list[],int lo,int hi);
-void merge(int list[],int lo,int mid,int hi);
+void mergesort(int list[],int tempArray[],int lo,int hi);
+void merge(int list[],int tempArray[],int lo,int mid,int hi);
 
 int main()
 {
     int list[10] = {1,19,2,10,6,5,4,7,9,8};
+    int tempArray[10] = {0};
     for(int a = 0; a < 10; a++){
         cout << "before: " << list[a] << endl;
 }
-    mergesort(list,0,10);
+    mergesort(list,tempArray,0,10);
 
     for(int a = 0; a < 10; a++){
         cout << "after: " << list[a] << endl;}
@@ -24,26 +25,26 @@ int main()
     return 0;
 }
 
-void mergesort(int list[],int lo,int hi)
+void mergesort(int list[],int tempArray[],int lo,int hi)
 {
   int mid = 0;
 
     if (lo<hi)
     {
         mid=(lo+hi)/2;
-        mergesort(list,lo,mid);
-        mergesort(list,mid+1,hi);
-        merge(list,lo,mid,hi);
+        mergesort(list,tempArray,lo,mid);
+        mergesort(list,tempArray,mid+1,hi);
+        merge(list,tempArray,lo,mid+1,hi);
     }
 }
 
 // Straightforward variant
-void merge(int list[],int lo,int mid,int hi)
+void merge(int list[],int tempArray[],int lo,int mid,int hi)
 {
   int left = lo;
   int right = mid + 1;
   int temp = lo;
-  int tempArray[10];
+  tempArray[mid] = list[mid];
 
   while((left <= mid) && (right <=hi)){
     if(tempArray[left] <= tempArray[right]){
@@ -68,11 +69,6 @@ void merge(int list[],int lo,int mid,int hi)
       list[temp] = tempArray[right];
       temp++;
       right++;
-    }
-  
-  for(int i=0;i<=10;i++){
-   
-    list[right] = tempArray[right];
-  }
-
+    }  
+ 
 }
