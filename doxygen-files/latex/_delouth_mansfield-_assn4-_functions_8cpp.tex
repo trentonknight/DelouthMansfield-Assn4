@@ -1,0 +1,258 @@
+\hypertarget{_delouth_mansfield-_assn4-_functions_8cpp}{
+\section{DelouthMansfield-\/Assn4-\/Functions.cpp File Reference}
+\label{_delouth_mansfield-_assn4-_functions_8cpp}\index{DelouthMansfield-\/Assn4-\/Functions.cpp@{DelouthMansfield-\/Assn4-\/Functions.cpp}}
+}
+{\ttfamily \#include $<$iostream$>$}\par
+{\ttfamily \#include $<$iomanip$>$}\par
+{\ttfamily \#include $<$string$>$}\par
+{\ttfamily \#include $<$cstddef$>$}\par
+{\ttfamily \#include $<$stdlib.h$>$}\par
+{\ttfamily \#include $<$time.h$>$}\par
+Include dependency graph for DelouthMansfield-\/Assn4-\/Functions.cpp:\subsection*{Typedefs}
+\begin{DoxyCompactItemize}
+\item 
+typedef int($\ast$ \hyperlink{_delouth_mansfield-_assn4-_functions_8cpp_ae2987d0004dea58df8c833858c0fb370}{funcPtrType} )(int\mbox{[}\hyperlink{_delouth_mansfield-_assn4-_functions_8cpp_a134c2ba56ae9ba89c77a5c0dba9f2124}{RAND\_\-INT}\mbox{]})
+\end{DoxyCompactItemize}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{_delouth_mansfield-_assn4-_functions_8cpp_adcd155b8f245b1bf80a9863a6301f4ff}{userMenu} ()
+\item 
+int \hyperlink{_delouth_mansfield-_assn4-_functions_8cpp_af6def39a6d22c624eb8874f368ea429e}{createARRAYS} (int $\ast$arrayONE, int $\ast$arrayTWO)
+\item 
+void \hyperlink{_delouth_mansfield-_assn4-_functions_8cpp_a6b17282d3fa11bfcbc1d8098878dbb24}{clockSTART} (int \&start)
+\item 
+void \hyperlink{_delouth_mansfield-_assn4-_functions_8cpp_afeefecdec1b2e0e10953da91eba90ef3}{clockSTOP} (int \&start)
+\item 
+int \hyperlink{_delouth_mansfield-_assn4-_functions_8cpp_a8bb793ac49cd588089713622d18a8c5b}{bubbleSort} (int bubble\mbox{[}$\,$\mbox{]})
+\item 
+int \hyperlink{_delouth_mansfield-_assn4-_functions_8cpp_abdd451b9bf57eb321b817db4405d65fd}{insertionSort} (int insert\mbox{[}$\,$\mbox{]})
+\item 
+int \hyperlink{_delouth_mansfield-_assn4-_functions_8cpp_a4c0a2c1198c153a63a9632ce3dc44921}{mergeSort} (int merge\mbox{[}$\,$\mbox{]})
+\item 
+int \hyperlink{_delouth_mansfield-_assn4-_functions_8cpp_a9e940b0f849a62e9ff4319606269ae38}{quickSort} (int quick\mbox{[}$\,$\mbox{]})
+\item 
+int \hyperlink{_delouth_mansfield-_assn4-_functions_8cpp_ac769e49e955e35b43bc75d4201200e25}{verifySorting} (int verify\_\-one\mbox{[}$\,$\mbox{]}, int verify\_\-two\mbox{[}$\,$\mbox{]})
+\item 
+void \hyperlink{_delouth_mansfield-_assn4-_functions_8cpp_ad6cced161336750300edfabbe2f387a9}{displayResults} ()
+\item 
+int \hyperlink{_delouth_mansfield-_assn4-_functions_8cpp_ae66f6b31b5ad750f1fe042a706a4e3d4}{main} ()
+\item 
+int \hyperlink{_delouth_mansfield-_assn4-_functions_8cpp_a191743d28b671610e8d78df14b41ed9e}{randMAKE} ()
+\end{DoxyCompactItemize}
+\subsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+const int \hyperlink{_delouth_mansfield-_assn4-_functions_8cpp_a134c2ba56ae9ba89c77a5c0dba9f2124}{RAND\_\-INT} = 100000
+\item 
+const int \hyperlink{_delouth_mansfield-_assn4-_functions_8cpp_a3b95dd60d5c45f7cc3733769f3d54868}{ARRAY\_\-FUNC} = 4
+\item 
+const int \hyperlink{_delouth_mansfield-_assn4-_functions_8cpp_ab73857997d2049218b288a815758cb46}{LIMIT} = 2000
+\item 
+const \hyperlink{_delouth_mansfield-_assn4-_functions_8cpp_ae2987d0004dea58df8c833858c0fb370}{funcPtrType} \hyperlink{_delouth_mansfield-_assn4-_functions_8cpp_ae039780346621e190c7726c08c9a1a13}{sortPOINTER\_\-ARRAY} \mbox{[}\hyperlink{_delouth_mansfield-_assn4-_functions_8cpp_a3b95dd60d5c45f7cc3733769f3d54868}{ARRAY\_\-FUNC}\mbox{]}
+\end{DoxyCompactItemize}
+
+
+\subsection{Typedef Documentation}
+\hypertarget{_delouth_mansfield-_assn4-_functions_8cpp_ae2987d0004dea58df8c833858c0fb370}{
+\index{DelouthMansfield-\/Assn4-\/Functions.cpp@{DelouthMansfield-\/Assn4-\/Functions.cpp}!funcPtrType@{funcPtrType}}
+\index{funcPtrType@{funcPtrType}!DelouthMansfield-Assn4-Functions.cpp@{DelouthMansfield-\/Assn4-\/Functions.cpp}}
+\subsubsection[{funcPtrType}]{\setlength{\rightskip}{0pt plus 5cm}typedef int($\ast$ {\bf funcPtrType})(int\mbox{[}{\bf RAND\_\-INT}\mbox{]})}}
+\label{_delouth_mansfield-_assn4-_functions_8cpp_ae2987d0004dea58df8c833858c0fb370}
+
+
+Definition at line 26 of file DelouthMansfield-\/Assn4-\/Functions.cpp.
+
+
+
+\subsection{Function Documentation}
+\hypertarget{_delouth_mansfield-_assn4-_functions_8cpp_a8bb793ac49cd588089713622d18a8c5b}{
+\index{DelouthMansfield-\/Assn4-\/Functions.cpp@{DelouthMansfield-\/Assn4-\/Functions.cpp}!bubbleSort@{bubbleSort}}
+\index{bubbleSort@{bubbleSort}!DelouthMansfield-Assn4-Functions.cpp@{DelouthMansfield-\/Assn4-\/Functions.cpp}}
+\subsubsection[{bubbleSort}]{\setlength{\rightskip}{0pt plus 5cm}int bubbleSort (int {\em bubble}\mbox{[}$\,$\mbox{]})}}
+\label{_delouth_mansfield-_assn4-_functions_8cpp_a8bb793ac49cd588089713622d18a8c5b}
+
+
+Definition at line 150 of file DelouthMansfield-\/Assn4-\/Functions.cpp.
+
+\hypertarget{_delouth_mansfield-_assn4-_functions_8cpp_a6b17282d3fa11bfcbc1d8098878dbb24}{
+\index{DelouthMansfield-\/Assn4-\/Functions.cpp@{DelouthMansfield-\/Assn4-\/Functions.cpp}!clockSTART@{clockSTART}}
+\index{clockSTART@{clockSTART}!DelouthMansfield-Assn4-Functions.cpp@{DelouthMansfield-\/Assn4-\/Functions.cpp}}
+\subsubsection[{clockSTART}]{\setlength{\rightskip}{0pt plus 5cm}void clockSTART (int \& {\em start})}}
+\label{_delouth_mansfield-_assn4-_functions_8cpp_a6b17282d3fa11bfcbc1d8098878dbb24}
+
+
+Definition at line 134 of file DelouthMansfield-\/Assn4-\/Functions.cpp.
+
+
+
+Here is the caller graph for this function:
+
+\hypertarget{_delouth_mansfield-_assn4-_functions_8cpp_afeefecdec1b2e0e10953da91eba90ef3}{
+\index{DelouthMansfield-\/Assn4-\/Functions.cpp@{DelouthMansfield-\/Assn4-\/Functions.cpp}!clockSTOP@{clockSTOP}}
+\index{clockSTOP@{clockSTOP}!DelouthMansfield-Assn4-Functions.cpp@{DelouthMansfield-\/Assn4-\/Functions.cpp}}
+\subsubsection[{clockSTOP}]{\setlength{\rightskip}{0pt plus 5cm}void clockSTOP (int \& {\em start})}}
+\label{_delouth_mansfield-_assn4-_functions_8cpp_afeefecdec1b2e0e10953da91eba90ef3}
+
+
+Definition at line 137 of file DelouthMansfield-\/Assn4-\/Functions.cpp.
+
+
+
+Here is the caller graph for this function:
+
+\hypertarget{_delouth_mansfield-_assn4-_functions_8cpp_af6def39a6d22c624eb8874f368ea429e}{
+\index{DelouthMansfield-\/Assn4-\/Functions.cpp@{DelouthMansfield-\/Assn4-\/Functions.cpp}!createARRAYS@{createARRAYS}}
+\index{createARRAYS@{createARRAYS}!DelouthMansfield-Assn4-Functions.cpp@{DelouthMansfield-\/Assn4-\/Functions.cpp}}
+\subsubsection[{createARRAYS}]{\setlength{\rightskip}{0pt plus 5cm}int createARRAYS (int $\ast$ {\em arrayONE}, \/  int $\ast$ {\em arrayTWO})}}
+\label{_delouth_mansfield-_assn4-_functions_8cpp_af6def39a6d22c624eb8874f368ea429e}
+
+
+Definition at line 124 of file DelouthMansfield-\/Assn4-\/Functions.cpp.
+
+
+
+Here is the call graph for this function:
+
+
+
+Here is the caller graph for this function:
+
+\hypertarget{_delouth_mansfield-_assn4-_functions_8cpp_ad6cced161336750300edfabbe2f387a9}{
+\index{DelouthMansfield-\/Assn4-\/Functions.cpp@{DelouthMansfield-\/Assn4-\/Functions.cpp}!displayResults@{displayResults}}
+\index{displayResults@{displayResults}!DelouthMansfield-Assn4-Functions.cpp@{DelouthMansfield-\/Assn4-\/Functions.cpp}}
+\subsubsection[{displayResults}]{\setlength{\rightskip}{0pt plus 5cm}void displayResults ()}}
+\label{_delouth_mansfield-_assn4-_functions_8cpp_ad6cced161336750300edfabbe2f387a9}
+
+
+Definition at line 209 of file DelouthMansfield-\/Assn4-\/Functions.cpp.
+
+\hypertarget{_delouth_mansfield-_assn4-_functions_8cpp_abdd451b9bf57eb321b817db4405d65fd}{
+\index{DelouthMansfield-\/Assn4-\/Functions.cpp@{DelouthMansfield-\/Assn4-\/Functions.cpp}!insertionSort@{insertionSort}}
+\index{insertionSort@{insertionSort}!DelouthMansfield-Assn4-Functions.cpp@{DelouthMansfield-\/Assn4-\/Functions.cpp}}
+\subsubsection[{insertionSort}]{\setlength{\rightskip}{0pt plus 5cm}int insertionSort (int {\em insert}\mbox{[}$\,$\mbox{]})}}
+\label{_delouth_mansfield-_assn4-_functions_8cpp_abdd451b9bf57eb321b817db4405d65fd}
+
+
+Definition at line 165 of file DelouthMansfield-\/Assn4-\/Functions.cpp.
+
+\hypertarget{_delouth_mansfield-_assn4-_functions_8cpp_ae66f6b31b5ad750f1fe042a706a4e3d4}{
+\index{DelouthMansfield-\/Assn4-\/Functions.cpp@{DelouthMansfield-\/Assn4-\/Functions.cpp}!main@{main}}
+\index{main@{main}!DelouthMansfield-Assn4-Functions.cpp@{DelouthMansfield-\/Assn4-\/Functions.cpp}}
+\subsubsection[{main}]{\setlength{\rightskip}{0pt plus 5cm}int main ()}}
+\label{_delouth_mansfield-_assn4-_functions_8cpp_ae66f6b31b5ad750f1fe042a706a4e3d4}
+
+
+Definition at line 38 of file DelouthMansfield-\/Assn4-\/Functions.cpp.
+
+
+
+Here is the call graph for this function:
+
+\hypertarget{_delouth_mansfield-_assn4-_functions_8cpp_a4c0a2c1198c153a63a9632ce3dc44921}{
+\index{DelouthMansfield-\/Assn4-\/Functions.cpp@{DelouthMansfield-\/Assn4-\/Functions.cpp}!mergeSort@{mergeSort}}
+\index{mergeSort@{mergeSort}!DelouthMansfield-Assn4-Functions.cpp@{DelouthMansfield-\/Assn4-\/Functions.cpp}}
+\subsubsection[{mergeSort}]{\setlength{\rightskip}{0pt plus 5cm}int mergeSort (int {\em merge}\mbox{[}$\,$\mbox{]})}}
+\label{_delouth_mansfield-_assn4-_functions_8cpp_a4c0a2c1198c153a63a9632ce3dc44921}
+
+
+Definition at line 177 of file DelouthMansfield-\/Assn4-\/Functions.cpp.
+
+\hypertarget{_delouth_mansfield-_assn4-_functions_8cpp_a9e940b0f849a62e9ff4319606269ae38}{
+\index{DelouthMansfield-\/Assn4-\/Functions.cpp@{DelouthMansfield-\/Assn4-\/Functions.cpp}!quickSort@{quickSort}}
+\index{quickSort@{quickSort}!DelouthMansfield-Assn4-Functions.cpp@{DelouthMansfield-\/Assn4-\/Functions.cpp}}
+\subsubsection[{quickSort}]{\setlength{\rightskip}{0pt plus 5cm}int quickSort (int {\em quick}\mbox{[}$\,$\mbox{]})}}
+\label{_delouth_mansfield-_assn4-_functions_8cpp_a9e940b0f849a62e9ff4319606269ae38}
+
+
+Definition at line 189 of file DelouthMansfield-\/Assn4-\/Functions.cpp.
+
+\hypertarget{_delouth_mansfield-_assn4-_functions_8cpp_a191743d28b671610e8d78df14b41ed9e}{
+\index{DelouthMansfield-\/Assn4-\/Functions.cpp@{DelouthMansfield-\/Assn4-\/Functions.cpp}!randMAKE@{randMAKE}}
+\index{randMAKE@{randMAKE}!DelouthMansfield-Assn4-Functions.cpp@{DelouthMansfield-\/Assn4-\/Functions.cpp}}
+\subsubsection[{randMAKE}]{\setlength{\rightskip}{0pt plus 5cm}int randMAKE ()}}
+\label{_delouth_mansfield-_assn4-_functions_8cpp_a191743d28b671610e8d78df14b41ed9e}
+
+
+Definition at line 119 of file DelouthMansfield-\/Assn4-\/Functions.cpp.
+
+
+
+Here is the caller graph for this function:
+
+\hypertarget{_delouth_mansfield-_assn4-_functions_8cpp_adcd155b8f245b1bf80a9863a6301f4ff}{
+\index{DelouthMansfield-\/Assn4-\/Functions.cpp@{DelouthMansfield-\/Assn4-\/Functions.cpp}!userMenu@{userMenu}}
+\index{userMenu@{userMenu}!DelouthMansfield-Assn4-Functions.cpp@{DelouthMansfield-\/Assn4-\/Functions.cpp}}
+\subsubsection[{userMenu}]{\setlength{\rightskip}{0pt plus 5cm}void userMenu ()}}
+\label{_delouth_mansfield-_assn4-_functions_8cpp_adcd155b8f245b1bf80a9863a6301f4ff}
+
+
+end second choice 
+
+
+
+Definition at line 46 of file DelouthMansfield-\/Assn4-\/Functions.cpp.
+
+
+
+Here is the call graph for this function:
+
+
+
+Here is the caller graph for this function:
+
+\hypertarget{_delouth_mansfield-_assn4-_functions_8cpp_ac769e49e955e35b43bc75d4201200e25}{
+\index{DelouthMansfield-\/Assn4-\/Functions.cpp@{DelouthMansfield-\/Assn4-\/Functions.cpp}!verifySorting@{verifySorting}}
+\index{verifySorting@{verifySorting}!DelouthMansfield-Assn4-Functions.cpp@{DelouthMansfield-\/Assn4-\/Functions.cpp}}
+\subsubsection[{verifySorting}]{\setlength{\rightskip}{0pt plus 5cm}int verifySorting (int {\em verify\_\-one}\mbox{[}$\,$\mbox{]}, \/  int {\em verify\_\-two}\mbox{[}$\,$\mbox{]})}}
+\label{_delouth_mansfield-_assn4-_functions_8cpp_ac769e49e955e35b43bc75d4201200e25}
+
+
+Definition at line 200 of file DelouthMansfield-\/Assn4-\/Functions.cpp.
+
+
+
+\subsection{Variable Documentation}
+\hypertarget{_delouth_mansfield-_assn4-_functions_8cpp_a3b95dd60d5c45f7cc3733769f3d54868}{
+\index{DelouthMansfield-\/Assn4-\/Functions.cpp@{DelouthMansfield-\/Assn4-\/Functions.cpp}!ARRAY\_\-FUNC@{ARRAY\_\-FUNC}}
+\index{ARRAY\_\-FUNC@{ARRAY\_\-FUNC}!DelouthMansfield-Assn4-Functions.cpp@{DelouthMansfield-\/Assn4-\/Functions.cpp}}
+\subsubsection[{ARRAY\_\-FUNC}]{\setlength{\rightskip}{0pt plus 5cm}const int {\bf ARRAY\_\-FUNC} = 4}}
+\label{_delouth_mansfield-_assn4-_functions_8cpp_a3b95dd60d5c45f7cc3733769f3d54868}
+
+
+Definition at line 23 of file DelouthMansfield-\/Assn4-\/Functions.cpp.
+
+\hypertarget{_delouth_mansfield-_assn4-_functions_8cpp_ab73857997d2049218b288a815758cb46}{
+\index{DelouthMansfield-\/Assn4-\/Functions.cpp@{DelouthMansfield-\/Assn4-\/Functions.cpp}!LIMIT@{LIMIT}}
+\index{LIMIT@{LIMIT}!DelouthMansfield-Assn4-Functions.cpp@{DelouthMansfield-\/Assn4-\/Functions.cpp}}
+\subsubsection[{LIMIT}]{\setlength{\rightskip}{0pt plus 5cm}const int {\bf LIMIT} = 2000}}
+\label{_delouth_mansfield-_assn4-_functions_8cpp_ab73857997d2049218b288a815758cb46}
+
+
+Definition at line 24 of file DelouthMansfield-\/Assn4-\/Functions.cpp.
+
+\hypertarget{_delouth_mansfield-_assn4-_functions_8cpp_a134c2ba56ae9ba89c77a5c0dba9f2124}{
+\index{DelouthMansfield-\/Assn4-\/Functions.cpp@{DelouthMansfield-\/Assn4-\/Functions.cpp}!RAND\_\-INT@{RAND\_\-INT}}
+\index{RAND\_\-INT@{RAND\_\-INT}!DelouthMansfield-Assn4-Functions.cpp@{DelouthMansfield-\/Assn4-\/Functions.cpp}}
+\subsubsection[{RAND\_\-INT}]{\setlength{\rightskip}{0pt plus 5cm}const int {\bf RAND\_\-INT} = 100000}}
+\label{_delouth_mansfield-_assn4-_functions_8cpp_a134c2ba56ae9ba89c77a5c0dba9f2124}
+
+
+Definition at line 22 of file DelouthMansfield-\/Assn4-\/Functions.cpp.
+
+\hypertarget{_delouth_mansfield-_assn4-_functions_8cpp_ae039780346621e190c7726c08c9a1a13}{
+\index{DelouthMansfield-\/Assn4-\/Functions.cpp@{DelouthMansfield-\/Assn4-\/Functions.cpp}!sortPOINTER\_\-ARRAY@{sortPOINTER\_\-ARRAY}}
+\index{sortPOINTER\_\-ARRAY@{sortPOINTER\_\-ARRAY}!DelouthMansfield-Assn4-Functions.cpp@{DelouthMansfield-\/Assn4-\/Functions.cpp}}
+\subsubsection[{sortPOINTER\_\-ARRAY}]{\setlength{\rightskip}{0pt plus 5cm}const {\bf funcPtrType} {\bf sortPOINTER\_\-ARRAY}\mbox{[}{\bf ARRAY\_\-FUNC}\mbox{]}}}
+\label{_delouth_mansfield-_assn4-_functions_8cpp_ae039780346621e190c7726c08c9a1a13}
+{\bfseries Initial value:}
+\begin{DoxyCode}
+ {&bubbleSort,
+                                          &insertionSort,
+                                          &mergeSort,
+                                                   &quickSort}
+\end{DoxyCode}
+
+
+Definition at line 27 of file DelouthMansfield-\/Assn4-\/Functions.cpp.
+
