@@ -47,7 +47,7 @@ int main()
 }
 //user selections io
 void userMenu(int *randNUM_ONE,int *randNUM_TWO){
-  int sorts;
+  int sorts = 0, count = 1;
   double timeONE = 0,timeTWO = 0;
   bool doArraysMatch = true;
   double clocker = 0;
@@ -74,7 +74,7 @@ void userMenu(int *randNUM_ONE,int *randNUM_TWO){
   //get first choice and then run same kind of if statement below for second
   //choise. This can probably be updated to a loop later  
   while(sorts != 0){
-	  
+	 cout << "Starting sort #" <<count++<<"..."<<endl; 
   if(choice_ONE == "B"){
     clockSTART(clocker);//start clock on function 
     funcPtr = sortPOINTER_ARRAY[0];//point to Bubblesort   
@@ -141,7 +141,7 @@ void userMenu(int *randNUM_ONE,int *randNUM_TWO){
   sorts--;
   }
   if(sorts == 0){
-      cout << "SORTING RESULTS" << endl;
+      cout << "\nSORTING RESULTS" << endl;
       cout << sortNameOne <<" TIME: " << timeONE << endl;
       cout << sortNameTwo <<" TIME: " << timeTWO << endl;
  }
