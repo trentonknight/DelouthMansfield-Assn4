@@ -53,6 +53,7 @@ void userMenu(int *randNUM_ONE,int *randNUM_TWO){
   double clocker = 0;
   funcPtrType funcPtr;//pointer to functions choosen by user
   string choice_ONE,choice_TWO;//user menu choice
+  string sortNameOne,sortNameTwo;
   
   
   
@@ -78,21 +79,25 @@ void userMenu(int *randNUM_ONE,int *randNUM_TWO){
     clockSTART(clocker);//start clock on function 
     funcPtr = sortPOINTER_ARRAY[0];//point to Bubblesort   
     cout << "BUBBLE SORT ";
+    sortNameOne = "BUBBLE SORT";
   } 
   else if(choice_ONE == "I"){
     clockSTART(clocker);//start clock
     funcPtr = sortPOINTER_ARRAY[1];//point to Insertion sort
     cout << "INSERTION SORT ";
+    sortNameOne = "INSERTION SORT";
   }
   else if(choice_ONE == "M"){
     clockSTART(clocker);//start clock
     funcPtr = sortPOINTER_ARRAY[2];//point to Merge Sort
     cout << "MERGE SORT ";
+    sortNameOne = "MERGE SORT";
   }
   else if(choice_ONE == "Q"){
     clockSTART(clocker);//start clock
     funcPtr = sortPOINTER_ARRAY[3];//point to Quick Sort
     cout << "QUICK SORT ";
+    sortNameOne = "QUICK SORT";
   }
   else if(choice_ONE == "E"){
     cout << "EXIT..." << endl;//exit will need to change
@@ -105,21 +110,25 @@ void userMenu(int *randNUM_ONE,int *randNUM_TWO){
     clockSTART(clocker);
     funcPtr = sortPOINTER_ARRAY[0];
     cout << "BUBBLE SORT ";
+    sortNameTwo = "BUBBLE SORT";
   } 
   else if(choice_TWO == "I"){
     clockSTART(clocker);
     funcPtr = sortPOINTER_ARRAY[1];
     cout << "INSERTION SORT ";
+    sortNameTwo = "INSERTION SORT";
   }
   else if(choice_TWO == "M"){ 
     clockSTART(clocker);
     funcPtr = sortPOINTER_ARRAY[2];
     cout << "MERGE SORT ";
+    sortNameTwo = "MERGE SORT";
   }
   else if(choice_TWO == "Q"){
     clockSTART(clocker);
     funcPtr = sortPOINTER_ARRAY[3];
     cout << "QUICK SORT ";
+    sortNameTwo = "QUICK SORT";
   }
   else if(choice_TWO == "E"){
     cout << "EXIT..." << endl;//need to change
@@ -133,8 +142,8 @@ void userMenu(int *randNUM_ONE,int *randNUM_TWO){
   }
   if(sorts == 0){
       cout << "SORTING RESULTS" << endl;
-      cout << "TIME" << timeONE << endl;
-      cout << "TIME" << timeTWO << endl;
+      cout << sortNameOne <<" TIME: " << timeONE << endl;
+      cout << sortNameTwo <<" TIME: " << timeTWO << endl;
  }
   }
   }
