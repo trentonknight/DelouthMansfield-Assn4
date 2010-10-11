@@ -18,68 +18,37 @@ void mergesort(int numbers[], int temp[], int left, int right)
 
   {
    
-
-
-
     mid = (right + left) / 2;
+    cout << "INDICES: " << "["<<left <<"] => ["<< mid <<"] => [" << right << "]"<< endl;
+    cout << "Call 1: " << "["<<numbers[left] <<"] => ["<< numbers[mid] <<"] <= [" << numbers[right] << "]"<< endl;
+
+   int b = mid+1;
+   cout << "RIGHT: ";
+   while(b <= right){
+  
+   cout << "[" << numbers[b] << "]";
+   b++;
+}
+  cout << endl;
+  
+   int c = mid;
+   cout << "LEFT: ";
+   while(c >= left){
+  
+   cout << "[" << numbers[c] << "]";
+   c--;
+}
+  cout << endl;
+  
+  
+  
+ 
 
     mergesort(numbers, temp, left, mid);
-     
-    cout << "Sort Left >> left: "<< left<< " mid " << mid << endl;
-
-    mergesort(numbers, temp, mid+1, right);
-    
-    cout << "Sort Right >>  right: " << right <<" mid "<< mid+1 << endl;
-
-    cout << "MERGE >> " << "[" << left << "][" << mid+1 << "][" << right << "]" << endl;
-
-    
-     cout << "Before Merge Sublist: " << endl;
-    
-   for(int a = 0; a < right; a++){
-
-     if(a > left){
-     cout << "[" << numbers[a] << "]";
-     }
-  }
-    cout << endl;
-
-    cout << "BEFORE LIST: " << endl;
-    
-   for(int a = 0; a < 10; a++){
-
-     
-     cout << "[" << numbers[a] << "]";
-     
-  }
-    cout << endl;
-
-
-
+    mergesort(numbers, temp, mid +1, right);
     merge(numbers, temp, left, mid+1, right);
 
-  
-    cout << "After Merge Sublist: " << endl;
-    
-   for(int a = 0; a < right; a++){
-
-     if(a > left){
-     cout << "[" << numbers[a] << "]";
-     }
-  }
-    cout << endl;
-
-  }
- cout << "AFTER LIST: " << endl;
-    
-   for(int a = 0; a < 10; a++){
-
-     
-     cout << "[" << numbers[a] << "]";
-     
-  }
-    cout << endl;
-
+}
 
 }
 
@@ -97,6 +66,7 @@ void merge(int numbers[], int temp[], int left, int mid, int right)
   tmp_pos = left;
 
   num_elements = right - left + 1;
+
 
 
 
@@ -171,7 +141,7 @@ void merge(int numbers[], int temp[], int left, int mid, int right)
 }
 
 int main(){
-  int numbers[10] = {1,10,9,8,5,6,2,3,4,7};
+  int numbers[10] = {50,16,64,37,24,75,92,41};
   int temp [10] = {0};
   int a, b;
 
@@ -183,7 +153,7 @@ int main(){
   }
   cout << endl;
 
-  mergesort(numbers,temp,0,9);
+  mergesort(numbers,temp,0,7);
   
 cout << "Completed Merge Sort: " << endl;
 for(b = 0; b < 10; b++){
