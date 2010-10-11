@@ -13,8 +13,10 @@ double clockSTOP(double& start);
 //All sort functions to call by pointer to functions
 int bubbleSort(int bubble[]);
 int insertionSort(int insert[]);
-int mergeSort(int merge[]);
 int quickSort(int quick[]);
+int mergeGET(int numbers[]);
+void merge(int numbers[], int temp[], int left, int mid, int right);
+int mergesort(int numbers[], int temp[], int left, int right);
 //end functions called by pointer? I think?
 bool verifySorting(int verify_one[],int verify_two[]);
 void displayResults(bool doArraysMatch,double& timeONE,double& timeTWO);
@@ -26,7 +28,7 @@ const int LIMIT = 2000;
 typedef int (*funcPtrType)(int[RAND_INT]);//function pointer
 const funcPtrType sortPOINTER_ARRAY[ARRAY_FUNC] = {&bubbleSort,
                                           &insertionSort,
-                                          &mergeSort,
+                                          &mergeGET,
 						   &quickSort};
 
 // main()
@@ -202,18 +204,6 @@ int insertionSort(int insert[])
 }
 
 
-// mergeSort()
-//
-// Returns:
-//
-// Implemented by:
-int mergeSort(int merge[])
-{ merge[0] = 7;
-
-
-  return *merge;
-}
-
 // quickSort()
 //
 // Returns:
@@ -228,6 +218,114 @@ int quickSort(int quick[])
   }
    return *quick; 
 }
+int mergeGET(int numbers[]){
+ int temp[RAND_INT] = {0};
+ int left = 0;
+ int right = RAND_INT;
+ mergesort(numbers,temp,left,right);
+ return *numbers;
+}
+int mergesort(int numbers[], int temp[], int left, int right)
+
+{
+  int mid;
+
+  if (right > left)
+
+  {
+
+    mid = (right + left) / 2;
+    mergesort(numbers, temp, left, mid);
+    mergesort(numbers, temp, mid+1, right);
+    merge(numbers, temp, left, mid+1, right);
+
+  }
+  return *temp;
+}
+void merge(int numbers[], int temp[], int left, int mid, int right)
+
+{
+
+  int i, left_end, num_elements, tmp_pos;
+
+
+  left_end = mid - 1;
+
+  tmp_pos = left;
+
+  num_elements = right - left + 1;
+
+
+
+  while ((left <= left_end) && (mid <= right))
+
+  {
+
+    if (numbers[left] <= numbers[mid])
+
+    {
+
+      temp[tmp_pos] = numbers[left];
+
+      tmp_pos = tmp_pos + 1;
+
+      left = left +1;
+
+    }
+
+    else
+
+    {
+
+      temp[tmp_pos] = numbers[mid];
+
+      tmp_pos = tmp_pos + 1;
+
+      mid = mid + 1;
+
+    }
+
+  }
+
+
+
+  while (left <= left_end)
+
+  {
+
+    temp[tmp_pos] = numbers[left];
+
+    left = left + 1;
+
+    tmp_pos = tmp_pos + 1;
+
+  }
+
+  while (mid <= right)
+
+  {
+
+    temp[tmp_pos] = numbers[mid];
+
+    mid = mid + 1;
+
+    tmp_pos = tmp_pos + 1;
+
+  }
+
+
+
+  for (i=0; i <= num_elements; i++)
+
+  {
+
+    numbers[right] = temp[right];
+
+    right = right - 1;
+
+  }
+
+}
 
 // verifySorting()
 //  verifies the sorts ran correctly
@@ -241,6 +339,7 @@ bool verifySorting(int verify_one[],int verify_two[]){
 		if(verify_one[a] != verify_two[a]){
 			theSame = false;
 		}
+	cout << "Test: " << verify_one[a] << endl;//make sure array is making it this far
 	}
 	return theSame;
 
@@ -261,3 +360,4 @@ void displayResults(bool doArraysMatch,double& timeONE,double& timeTWO)
 	}
 
 }
+
