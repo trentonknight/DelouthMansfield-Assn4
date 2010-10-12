@@ -13,7 +13,8 @@ double clockSTOP(double& start);
 //All sort functions to call by pointer to functions
 int bubbleSort(int bubble[]);
 int insertionSort(int insert[]);
-int quickSort(int quick[]);
+int quickGET(int quick[]);
+void quickSort(int quick[],int& left,int& right);
 int mergeGET(int numbers[]);
 void merge(int numbers[], int temp[], int left, int mid, int right);
 int mergesort(int numbers[], int temp[], int left, int right);
@@ -29,7 +30,7 @@ typedef int (*funcPtrType)(int[RAND_INT]);//function pointer
 const funcPtrType sortPOINTER_ARRAY[ARRAY_FUNC] = {&bubbleSort,
                                           &insertionSort,
                                           &mergeGET,
-						   &quickSort};
+						   &quickGET};
 
 // main()
 // Main program logic. Handles getting user input
@@ -76,7 +77,7 @@ void userMenu(int *randNUM_ONE,int *randNUM_TWO){
   //get first choice and then run same kind of if statement below for second
   //choise. This can probably be updated to a loop later  
   while(sorts != 0){
-	cout << "Starting sort #" <<count++<<"..."<<endl; 
+	cout << "Starting sort # " <<count++<<"..."<<endl; 
   if(choice_ONE == "B"){
     clockSTART(clocker);//start clock on function 
     funcPtr = sortPOINTER_ARRAY[0];//point to Bubblesort   
@@ -183,12 +184,27 @@ double clockSTOP(double& start){
 //
 // Implemented by:
 int bubbleSort(int bubble[])
-{  bubble[0] = 5;
-  int a = -99;//just for testing time
-  while(a < 9999999){
-    a++;
-  }
-   return *bubble; 
+{   bool swap = true;
+    int j = 0;
+    int temp;
+
+      while(swap) 
+      {
+            swap = false;
+            j++;
+
+            for (int i = 0; i < RAND_INT - j; i++) 
+            {
+                  if (bubble[i] > bubble[i + 1]) 
+                  {
+                        temp = bubble[i];
+                        bubble[i] = bubble[i + 1];
+                        bubble[i + 1] = temp;
+                        swap = true;
+                  }
+            }
+      }
+      return *bubble;
 }
 
 
@@ -209,14 +225,41 @@ int insertionSort(int insert[])
 // Returns:
 //
 // Implemented by:
-int quickSort(int quick[])
+int quickGET(int quick[]){
+	int left = 0, right = 0;
+	quickSort(quick,left,right);
+	return *quick;	
+}
+void quickSort(int quick[],int& left,int& right)
 { 
-  quick[0] = 5;
-  int a = -99;//just for testing time
-  while(a < 9999999){
-    a++;
-  }
-   return *quick; 
+      
+      int tmp;
+      int pivot = quick[(left + right) / 2];
+
+      while (left <= right) 
+      {
+            while (quick[left] < pivot)
+                  left++;
+            while (quick[right] > pivot)
+                  right--;
+            if (left <= right) 
+            {
+                  tmp = quick[left];
+                  quick[left] = quick[right];
+                  quick[right] = tmp;
+                  left++;
+                  right--;
+            }
+      }
+
+      if (left < right)
+      {
+            quickSort(quick,left,right);
+      }
+      if (left < right)
+      {
+            quickSort(quick,left,right);
+      }
 }
 int mergeGET(int numbers[]){
  int temp[RAND_INT] = {0};
@@ -339,7 +382,8 @@ bool verifySorting(int verify_one[],int verify_two[]){
 		if(verify_one[a] != verify_two[a]){
 			theSame = false;
 		}
-	cout << "Test: " << verify_one[a] << endl;//make sure array is making it this far
+	cout << "ARRAY ONE: " << verify_one[a] << endl;//make sure array is making it this far
+	cout << "ARRAY TWO: " << verify_two[a] << endl;//make sure array is making it this far
 	}
 	return theSame;
 

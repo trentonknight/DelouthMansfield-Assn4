@@ -22,8 +22,9 @@ void mergesort(int numbers[], int temp[], int left, int right,int& count,int& m)
   {
    
     mid = (right + left) / 2;
+    cout << "SORT RECURSE:" << count << endl;
     cout << "INDICES: " << "["<<left <<"] => ["<< mid <<"] / [" <<mid+1<<"] <= ["<< right << "]"<< endl;
-    cout << "MergeSort: " << count << " ["<<numbers[left] <<"] => ["<< numbers[mid] <<"] / ["<<numbers[mid+1]<<"] <= [" << numbers[right] << "]"<< endl;
+    cout << "INT      ["<<numbers[left] <<"] => ["<< numbers[mid] <<"] / ["<<numbers[mid+1]<<"] <= [" << numbers[right] << "]"<< endl;
 
 
 int c = mid;
@@ -49,7 +50,7 @@ int c = mid;
     mergesort(numbers, temp, mid +1, right,count,m);
     merge(numbers, temp, left, mid+1, right);
     
-    cout << "After Merge "<< m++ << " " << endl;
+    cout << "After Merge "<< m++ <<" Called "<< endl;
     
  for(int a = 0; a < 10; a++){
 
@@ -89,7 +90,6 @@ void merge(int numbers[], int temp[], int left, int mid, int right)
 
       temp[tmp_pos] = numbers[left];
       
-      cout << "LEFT MERGE: " << numbers[left] << " TO: " << left << endl;
 
       tmp_pos = tmp_pos + 1;
 
@@ -135,7 +135,6 @@ void merge(int numbers[], int temp[], int left, int mid, int right)
 
     tmp_pos = tmp_pos + 1;
     
-    cout << "RIGHT MERGE: " << numbers[mid -1] << " TO: " << mid +1<< endl;
 
   }
 
