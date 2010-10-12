@@ -214,9 +214,20 @@ int bubbleSort(int bubble[])
 //
 // Implemented by:
 int insertionSort(int insert[])
-{  insert[0] = 6;
-
-   return *insert;
+{ int i = 0;
+  int j = 0;
+  int tmp = 0;
+  
+  for(i = 1; i < RAND_INT; i++){
+  j = i;
+  while(j > 0 && insert[j - 1] > insert[j]){
+  tmp = insert[j];
+  insert[j] = insert[j - 1];
+  insert[j - 1] = tmp;
+  j--; 
+  }
+  } 
+  return *insert;
 }
 
 
@@ -383,7 +394,7 @@ bool verifySorting(int verify_one[],int verify_two[]){
 			theSame = false;
 		}
 	cout << "ARRAY ONE: " << verify_one[a] << endl;//make sure array is making it this far
-	cout << "ARRAY TWO: " << verify_two[a] << endl;//make sure array is making it this far
+	//cout << "ARRAY TWO: " << verify_two[a] << endl;//make sure array is making it this far
 	}
 	return theSame;
 
