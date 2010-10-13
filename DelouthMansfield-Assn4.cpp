@@ -138,7 +138,6 @@ void userMenu(int *randNUM_ONE,int *randNUM_TWO){
   }
   *randNUM_TWO = funcPtr(randNUM_TWO);
    timeTWO = timeTWO + clockSTOP(clocker);
-  
   doArraysMatch = verifySorting(randNUM_ONE,randNUM_TWO);
   displayResults(doArraysMatch,timeONE,timeTWO);
   sorts--;
