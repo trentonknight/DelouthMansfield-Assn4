@@ -387,14 +387,15 @@ void merge(int numbers[], int temp[], int left, int mid, int right)
 //
 // Implemented by:
 bool verifySorting(int verify_one[],int verify_two[]){
-	bool theSame = true;
+	bool theSame = false;
 	for(int a = 0; a < RAND_INT; a++){
 		
-		if(verify_one[a] != verify_two[a]){
-			theSame = false;
+		if(verify_two[a] == verify_one[a]){
+			theSame = true;
+			
 		}
-	cout << "ARRAY ONE: " << verify_one[a] << endl;//make sure array is making it this far
-	//cout << "ARRAY TWO: " << verify_two[a] << endl;//make sure array is making it this far
+	        //cout << "ARRAY ONE: " << verify_one[a] << endl;//make sure array is making it this far
+	        //cout << "ARRAY TWO: " << verify_two[a] << endl;//make sure array is making it this far
 	}
 	return theSame;
 
