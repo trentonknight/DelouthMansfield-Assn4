@@ -14,7 +14,8 @@ double clockSTOP(double& start);
 int bubbleSort(int bubble[]);
 int insertionSort(int insert[]);
 int quickGET(int quick[]);
-void quickSort(int quick[],int& left,int& right);
+void quickSort(int quick[],int left,int right);
+int partition(int qslist[], int left, int right);
 int mergeGET(int numbers[]);
 void merge(int numbers[], int temp[], int left, int mid, int right);
 int mergesort(int numbers[], int temp[], int left, int right);
@@ -237,40 +238,54 @@ int insertionSort(int insert[])
 //
 // Implemented by:
 int quickGET(int quick[]){
-	int left = 0, right = 0;
+	int left = 0;
+	int right = RAND_INT -1;
+	
 	quickSort(quick,left,right);
 	return *quick;	
 }
-void quickSort(int quick[],int& left,int& right)
+void quickSort(int quick[],int left,int right)
 { 
+       int middle;
       
-      int tmp;
-      int pivot = quick[(left + right) / 2];
-
-      while (left <= right) 
+      if(left<right)
       {
-            while (quick[left] < pivot)
-                  left++;
-            while (quick[right] > pivot)
-                  right--;
-            if (left <= right) 
-            {
-                  tmp = quick[left];
-                  quick[left] = quick[right];
-                  quick[right] = tmp;
-                  left++;
-                  right--;
-            }
+         middle=partition(quick,left,right);
+         quickSort(quick,left,middle);
+         quickSort(quick, (middle + 1) ,right);
       }
-
-      if (left < right)
-      {
-            quickSort(quick,left,right);
-      }
-      if (left < right)
-      {
-            quickSort(quick,left,right);
-      }
+     
+}
+int partition(int qslist[], int left, int right)
+{
+    int x=qslist[left];
+    int i= left-1;
+    int j= right +1;
+    int temp=0;
+    
+    do
+    {
+        do
+        {
+              j--;
+               
+        }while(x>qslist[j]);
+        
+        do
+        {
+         i++;
+         
+        }while(x<qslist[i]);
+        
+        if(i<j)
+        {
+               temp=qslist[i];
+               qslist[i]=qslist[j];
+               qslist[j]=temp;
+        }
+    }while(i<j);
+    return j;
+    
 }
 int mergeGET(int numbers[]){
  int temp[RAND_INT] = {0};
