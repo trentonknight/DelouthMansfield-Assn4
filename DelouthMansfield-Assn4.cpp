@@ -49,7 +49,7 @@ int main()
   bool doArraysMatch = true;
   int sorts = 0;
   string choice,sortNameOne,sortNameTwo;
-  int count = 0;
+  int count = 1;
   
   createARRAYS(randNUM_ONE,randNUM_TWO);
   while(choice[0] != 'E'){
@@ -98,9 +98,8 @@ void runSorts(string choice, int *randNUM_ONE,int *randNUM_TWO,double timeONE,do
 ,string& sortNameOne,string& sortNameTwo){ 
   double clocker = 0;
   funcPtrType funcPtr;//pointer to functions choosen by user
- 
+   
   
-  cout << "Starting sort # " <<count++<<"..."<<endl; 
   if(choice[0] == 'B'){
     clockSTART(clocker);//start clock on function 
     funcPtr = sortPOINTER_ARRAY[0];//point to Bubblesort   
@@ -163,6 +162,7 @@ void runSorts(string choice, int *randNUM_ONE,int *randNUM_TWO,double timeONE,do
   *randNUM_TWO = funcPtr(randNUM_TWO);
    timeTWO = timeTWO + clockSTOP(clocker);
    totalTime_TWO = (totalTime_TWO + timeTWO);
+   cout << "Starting sort # " <<count<<"..."<<endl; 
 }
 int randMAKE(){
   int make = 0;
