@@ -3,7 +3,7 @@
 #include <string>
 #include <cstddef>
 #include <stdlib.h>
-#include <time.h>
+#include <ctime>
 using namespace std;
 
 void pickSorts(string& choice,int *randNUM_ONE,int *randNUM_TWO,double timeONE,double timeTWO,bool doArraysMatch);
