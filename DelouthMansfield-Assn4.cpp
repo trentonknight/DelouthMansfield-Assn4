@@ -7,7 +7,8 @@
 using namespace std;
 
 void pickSorts(string& choice,int *randNUM_ONE,int *randNUM_TWO,double timeONE,double timeTWO,bool doArraysMatch);
-void runSorts(string choice,int *randNUM_ONE,int *randNUM_TWO,double timeONE,double timeTWO,int& count,double& totalTime_ONE,double& totalTime_TWO);
+void runSorts(string choice,int *randNUM_ONE,int *randNUM_TWO,double timeONE,double timeTWO,int& count,double& totalTime_ONE,double& totalTime_TWO
+,string& sortNameOne,string& sortNameTwo);
 void createARRAYS(int *arrayONE,int *arrayTWO);
 double clockSTART(double& start);
 double clockSTOP(double& start);
@@ -47,7 +48,7 @@ int main()
   double totalTime_ONE, totalTime_TWO;
   bool doArraysMatch = true;
   int sorts = 0;
-  string choice;
+  string choice,sortNameOne,sortNameTwo;
   int count = 0;
   
   createARRAYS(randNUM_ONE,randNUM_TWO);
@@ -57,7 +58,7 @@ int main()
   cout << "Enter the number of times to repeat each sort (1 or more): " << endl;
   cin >> sorts;
   while(sorts != 0 && choice[0] != 'E'){
-  runSorts(choice,randNUM_ONE,randNUM_TWO,timeONE,timeTWO,count,totalTime_ONE,totalTime_TWO);
+  runSorts(choice,randNUM_ONE,randNUM_TWO,timeONE,timeTWO,count,totalTime_ONE,totalTime_TWO,sortNameOne,sortNameTwo);
   doArraysMatch = verifySorting(randNUM_ONE,randNUM_TWO);
   displayResults(doArraysMatch,timeONE,timeTWO);
   sorts--;
@@ -65,8 +66,8 @@ int main()
   }
   cout << "SORTING RESULTS" << endl;
   cout << "---------------" << endl;
-  cout << "Sort One: " << totalTime_ONE/count << endl;
-  cout << "Sort Twp: " << totalTime_TWO/count << endl; 
+  cout << sortNameOne <<" : " << totalTime_ONE/count << endl;
+  cout << sortNameTwo <<" : " << totalTime_TWO/count << endl; 
   
 }
 }
@@ -93,12 +94,11 @@ void pickSorts(string& choice,int *randNUM_ONE,int *randNUM_TWO,double timeONE,d
 }
 
 //user selections io
-void runSorts(string choice, int *randNUM_ONE,int *randNUM_TWO,double timeONE,double timeTWO,int& count,double& totalTime_ONE,double& totalTime_TWO){ 
+void runSorts(string choice, int *randNUM_ONE,int *randNUM_TWO,double timeONE,double timeTWO,int& count,double& totalTime_ONE,double& totalTime_TWO
+,string& sortNameOne,string& sortNameTwo){ 
   double clocker = 0;
   funcPtrType funcPtr;//pointer to functions choosen by user
-  string sortNameOne,sortNameTwo;
-  
-  
+ 
   
   cout << "Starting sort # " <<count++<<"..."<<endl; 
   if(choice[0] == 'B'){
@@ -398,11 +398,11 @@ void merge(int numbers[], int temp[], int left, int mid, int right)
 //
 // Implemented by:
 bool verifySorting(int verify_one[],int verify_two[]){
-	bool theSame = true;
+	bool theSame = false;
 	for(int a = 0; a < RAND_INT; a++){
 		
-		if(verify_two[a] != verify_one[a]){
-			theSame = false;
+		if(verify_two[a] == verify_one[a] || verify_two[a] < verify_one[a + 1]){
+			theSame = true;
 			
 		}
 	        //cout << "ARRAY ONE: " << verify_one[a] << endl;//make sure array is making it this far
