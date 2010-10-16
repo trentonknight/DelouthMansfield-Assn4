@@ -7,7 +7,7 @@
 using namespace std;
 
 void pickSorts(string& choice,int *randNUM_ONE,int *randNUM_TWO,double timeONE,double timeTWO,bool doArraysMatch);
-void runSorts(string choice,int *randNUM_ONE,int *randNUM_TWO,double timeONE,double timeTWO);
+void runSorts(string choice,int *randNUM_ONE,int *randNUM_TWO,double timeONE,double timeTWO,int& count,double& totalTime_ONE,double& totalTime_TWO);
 void createARRAYS(int *arrayONE,int *arrayTWO);
 double clockSTART(double& start);
 double clockSTOP(double& start);
@@ -44,9 +44,11 @@ int main()
   int randNUM_ONE[RAND_INT] = {0};//rand array of numbers for functions one
   int randNUM_TWO[RAND_INT] = {0};//two
   double timeONE = 0,timeTWO = 0;
+  double totalTime_ONE, totalTime_TWO;
   bool doArraysMatch = true;
-  int sorts = 0,count = 0;
+  int sorts = 0;
   string choice;
+  int count = 0;
   
   createARRAYS(randNUM_ONE,randNUM_TWO);
   while(choice[0] != 'E'){
@@ -55,12 +57,16 @@ int main()
   cout << "Enter the number of times to repeat each sort (1 or more): " << endl;
   cin >> sorts;
   while(sorts != 0 && choice[0] != 'E'){
-  runSorts(choice,randNUM_ONE,randNUM_TWO,timeONE,timeTWO);
+  runSorts(choice,randNUM_ONE,randNUM_TWO,timeONE,timeTWO,count,totalTime_ONE,totalTime_TWO);
   doArraysMatch = verifySorting(randNUM_ONE,randNUM_TWO);
   displayResults(doArraysMatch,timeONE,timeTWO);
   sorts--;
   count++;
   }
+  cout << "SORTING RESULTS" << endl;
+  cout << "---------------" << endl;
+  cout << "Sort One: " << totalTime_ONE/count << endl;
+  cout << "Sort Twp: " << totalTime_TWO/count << endl; 
   
 }
 }
@@ -87,11 +93,11 @@ void pickSorts(string& choice,int *randNUM_ONE,int *randNUM_TWO,double timeONE,d
 }
 
 //user selections io
-void runSorts(string choice, int *randNUM_ONE,int *randNUM_TWO,double timeONE,double timeTWO){
-  int count = 1; 
+void runSorts(string choice, int *randNUM_ONE,int *randNUM_TWO,double timeONE,double timeTWO,int& count,double& totalTime_ONE,double& totalTime_TWO){ 
   double clocker = 0;
   funcPtrType funcPtr;//pointer to functions choosen by user
-   string sortNameOne,sortNameTwo;
+  string sortNameOne,sortNameTwo;
+  
   
   
   cout << "Starting sort # " <<count++<<"..."<<endl; 
@@ -120,10 +126,11 @@ void runSorts(string choice, int *randNUM_ONE,int *randNUM_TWO,double timeONE,do
     sortNameOne = "QUICK SORT";
   }
   else if(choice[0] == 'E'){
-    cout << "EXIT..." << endl;//exit will need to change
+  
   }
   *randNUM_ONE = funcPtr(randNUM_ONE);
    timeONE = timeONE + clockSTOP(clocker);
+   totalTime_ONE = (totalTime_ONE + timeONE);
  
   //second choice all the same as first////////////////
    if(choice[1] == 'B'){
@@ -151,12 +158,12 @@ void runSorts(string choice, int *randNUM_ONE,int *randNUM_TWO,double timeONE,do
     sortNameTwo = "QUICK SORT";
   }
   else if(choice[1] == 'E'){
-    cout << "EXIT..." << endl;//need to change
+  
   }
   *randNUM_TWO = funcPtr(randNUM_TWO);
    timeTWO = timeTWO + clockSTOP(clocker);
+   totalTime_TWO = (totalTime_TWO + timeTWO);
 }
-
 int randMAKE(){
   int make = 0;
   make = rand() % RAND_INT + 6;
