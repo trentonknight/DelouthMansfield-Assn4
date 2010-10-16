@@ -64,7 +64,7 @@ int main()
   sorts--;
   count++;
   }
-  cout << "SORTING RESULTS" << endl;
+  cout << "\nSORTING RESULTS" << endl;
   cout << "---------------" << endl;
   cout << sortNameOne <<" : " << totalTime_ONE/count << endl;
   cout << sortNameTwo <<" : " << totalTime_TWO/count << endl;  
@@ -280,7 +280,7 @@ void quickSort(int quick[],int& left,int& right)
       }
 }
 int mergeGET(int numbers[]){
- int temp[RAND_INT] = {0};
+ static int temp[RAND_INT] = {0};
  int left = 0;
  int right = RAND_INT;
  mergesort(numbers,temp,left,right);
