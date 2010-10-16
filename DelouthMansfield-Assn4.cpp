@@ -401,7 +401,7 @@ bool verifySorting(int verify_one[],int verify_two[]){
 	bool theSame = false;
 	for(int a = 0; a < RAND_INT; a++){
 		
-		if(verify_two[a] == verify_one[a] || verify_two[a] < verify_one[a + 1]){
+		if(verify_two[a] == verify_one[a] || verify_two[a] < verify_one[a + 1]||verify_two[a + 1] > verify_one[a] ){
 			theSame = true;
 			
 		}

@@ -4,127 +4,115 @@ Searching for images...
 Searching for dot files...
 Searching for files to exclude
 Searching for files to process...
-Searching for files in directory /home/trentonknight/Development/REGIS/CS372/DelouthMansfield-Assn4
-Searching for files in directory /home/trentonknight/Development/REGIS/CS372/DelouthMansfield-Assn4/.git
-Searching for files in directory /home/trentonknight/Development/REGIS/CS372/DelouthMansfield-Assn4/.git/branches
-Searching for files in directory /home/trentonknight/Development/REGIS/CS372/DelouthMansfield-Assn4/.git/hooks
-Searching for files in directory /home/trentonknight/Development/REGIS/CS372/DelouthMansfield-Assn4/.git/info
-Searching for files in directory /home/trentonknight/Development/REGIS/CS372/DelouthMansfield-Assn4/.git/logs
-Searching for files in directory /home/trentonknight/Development/REGIS/CS372/DelouthMansfield-Assn4/.git/logs/refs
-Searching for files in directory /home/trentonknight/Development/REGIS/CS372/DelouthMansfield-Assn4/.git/logs/refs/heads
-Searching for files in directory /home/trentonknight/Development/REGIS/CS372/DelouthMansfield-Assn4/.git/logs/refs/remotes
-Searching for files in directory /home/trentonknight/Development/REGIS/CS372/DelouthMansfield-Assn4/.git/logs/refs/remotes/origin
-Searching for files in directory /home/trentonknight/Development/REGIS/CS372/DelouthMansfield-Assn4/.git/objects
-Searching for files in directory /home/trentonknight/Development/REGIS/CS372/DelouthMansfield-Assn4/.git/objects/01
-Searching for files in directory /home/trentonknight/Development/REGIS/CS372/DelouthMansfield-Assn4/.git/objects/03
-Searching for files in directory /home/trentonknight/Development/REGIS/CS372/DelouthMansfield-Assn4/.git/objects/04
-Searching for files in directory /home/trentonknight/Development/REGIS/CS372/DelouthMansfield-Assn4/.git/objects/09
-Searching for files in directory /home/trentonknight/Development/REGIS/CS372/DelouthMansfield-Assn4/.git/objects/0c
-Searching for files in directory /home/trentonknight/Development/REGIS/CS372/DelouthMansfield-Assn4/.git/objects/10
-Searching for files in directory /home/trentonknight/Development/REGIS/CS372/DelouthMansfield-Assn4/.git/objects/16
-Searching for files in directory /home/trentonknight/Development/REGIS/CS372/DelouthMansfield-Assn4/.git/objects/17
-Searching for files in directory /home/trentonknight/Development/REGIS/CS372/DelouthMansfield-Assn4/.git/objects/1c
-Searching for files in directory /home/trentonknight/Development/REGIS/CS372/DelouthMansfield-Assn4/.git/objects/1d
-Searching for files in directory /home/trentonknight/Development/REGIS/CS372/DelouthMansfield-Assn4/.git/objects/1e
-Searching for files in directory /home/trentonknight/Development/REGIS/CS372/DelouthMansfield-Assn4/.git/objects/1f
-Searching for files in directory /home/trentonknight/Development/REGIS/CS372/DelouthMansfield-Assn4/.git/objects/21
-Searching for files in directory /home/trentonknight/Development/REGIS/CS372/DelouthMansfield-Assn4/.git/objects/23
-Searching for files in directory /home/trentonknight/Development/REGIS/CS372/DelouthMansfield-Assn4/.git/objects/24
-Searching for files in directory /home/trentonknight/Development/REGIS/CS372/DelouthMansfield-Assn4/.git/objects/2d
-Searching for files in directory /home/trentonknight/Development/REGIS/CS372/DelouthMansfield-Assn4/.git/objects/2e
-Searching for files in directory /home/trentonknight/Development/REGIS/CS372/DelouthMansfield-Assn4/.git/objects/2f
-Searching for files in directory /home/trentonknight/Development/REGIS/CS372/DelouthMansfield-Assn4/.git/objects/30
-Searching for files in directory /home/trentonknight/Development/REGIS/CS372/DelouthMansfield-Assn4/.git/objects/3b
-Searching for files in directory /home/trentonknight/Development/REGIS/CS372/DelouthMansfield-Assn4/.git/objects/3c
-Searching for files in directory /home/trentonknight/Development/REGIS/CS372/DelouthMansfield-Assn4/.git/objects/3d
-Searching for files in directory /home/trentonknight/Development/REGIS/CS372/DelouthMansfield-Assn4/.git/objects/3f
-Searching for files in directory /home/trentonknight/Development/REGIS/CS372/DelouthMansfield-Assn4/.git/objects/40
-Searching for files in directory /home/trentonknight/Development/REGIS/CS372/DelouthMansfield-Assn4/.git/objects/42
-Searching for files in directory /home/trentonknight/Development/REGIS/CS372/DelouthMansfield-Assn4/.git/objects/45
-Searching for files in directory /home/trentonknight/Development/REGIS/CS372/DelouthMansfield-Assn4/.git/objects/49
-Searching for files in directory /home/trentonknight/Development/REGIS/CS372/DelouthMansfield-Assn4/.git/objects/4a
-Searching for files in directory /home/trentonknight/Development/REGIS/CS372/DelouthMansfield-Assn4/.git/objects/4e
-Searching for files in directory /home/trentonknight/Development/REGIS/CS372/DelouthMansfield-Assn4/.git/objects/54
-Searching for files in directory /home/trentonknight/Development/REGIS/CS372/DelouthMansfield-Assn4/.git/objects/5f
-Searching for files in directory /home/trentonknight/Development/REGIS/CS372/DelouthMansfield-Assn4/.git/objects/63
-Searching for files in directory /home/trentonknight/Development/REGIS/CS372/DelouthMansfield-Assn4/.git/objects/67
-Searching for files in directory /home/trentonknight/Development/REGIS/CS372/DelouthMansfield-Assn4/.git/objects/68
-Searching for files in directory /home/trentonknight/Development/REGIS/CS372/DelouthMansfield-Assn4/.git/objects/69
-Searching for files in directory /home/trentonknight/Development/REGIS/CS372/DelouthMansfield-Assn4/.git/objects/6e
-Searching for files in directory /home/trentonknight/Development/REGIS/CS372/DelouthMansfield-Assn4/.git/objects/71
-Searching for files in directory /home/trentonknight/Development/REGIS/CS372/DelouthMansfield-Assn4/.git/objects/72
-Searching for files in directory /home/trentonknight/Development/REGIS/CS372/DelouthMansfield-Assn4/.git/objects/73
-Searching for files in directory /home/trentonknight/Development/REGIS/CS372/DelouthMansfield-Assn4/.git/objects/77
-Searching for files in directory /home/trentonknight/Development/REGIS/CS372/DelouthMansfield-Assn4/.git/objects/78
-Searching for files in directory /home/trentonknight/Development/REGIS/CS372/DelouthMansfield-Assn4/.git/objects/7a
-Searching for files in directory /home/trentonknight/Development/REGIS/CS372/DelouthMansfield-Assn4/.git/objects/7e
-Searching for files in directory /home/trentonknight/Development/REGIS/CS372/DelouthMansfield-Assn4/.git/objects/82
-Searching for files in directory /home/trentonknight/Development/REGIS/CS372/DelouthMansfield-Assn4/.git/objects/84
-Searching for files in directory /home/trentonknight/Development/REGIS/CS372/DelouthMansfield-Assn4/.git/objects/89
-Searching for files in directory /home/trentonknight/Development/REGIS/CS372/DelouthMansfield-Assn4/.git/objects/8b
-Searching for files in directory /home/trentonknight/Development/REGIS/CS372/DelouthMansfield-Assn4/.git/objects/94
-Searching for files in directory /home/trentonknight/Development/REGIS/CS372/DelouthMansfield-Assn4/.git/objects/95
-Searching for files in directory /home/trentonknight/Development/REGIS/CS372/DelouthMansfield-Assn4/.git/objects/9f
-Searching for files in directory /home/trentonknight/Development/REGIS/CS372/DelouthMansfield-Assn4/.git/objects/a0
-Searching for files in directory /home/trentonknight/Development/REGIS/CS372/DelouthMansfield-Assn4/.git/objects/a2
-Searching for files in directory /home/trentonknight/Development/REGIS/CS372/DelouthMansfield-Assn4/.git/objects/a6
-Searching for files in directory /home/trentonknight/Development/REGIS/CS372/DelouthMansfield-Assn4/.git/objects/a7
-Searching for files in directory /home/trentonknight/Development/REGIS/CS372/DelouthMansfield-Assn4/.git/objects/aa
-Searching for files in directory /home/trentonknight/Development/REGIS/CS372/DelouthMansfield-Assn4/.git/objects/ab
-Searching for files in directory /home/trentonknight/Development/REGIS/CS372/DelouthMansfield-Assn4/.git/objects/ac
-Searching for files in directory /home/trentonknight/Development/REGIS/CS372/DelouthMansfield-Assn4/.git/objects/ad
-Searching for files in directory /home/trentonknight/Development/REGIS/CS372/DelouthMansfield-Assn4/.git/objects/ae
-Searching for files in directory /home/trentonknight/Development/REGIS/CS372/DelouthMansfield-Assn4/.git/objects/b2
-Searching for files in directory /home/trentonknight/Development/REGIS/CS372/DelouthMansfield-Assn4/.git/objects/b3
-Searching for files in directory /home/trentonknight/Development/REGIS/CS372/DelouthMansfield-Assn4/.git/objects/b6
-Searching for files in directory /home/trentonknight/Development/REGIS/CS372/DelouthMansfield-Assn4/.git/objects/b9
-Searching for files in directory /home/trentonknight/Development/REGIS/CS372/DelouthMansfield-Assn4/.git/objects/ba
-Searching for files in directory /home/trentonknight/Development/REGIS/CS372/DelouthMansfield-Assn4/.git/objects/bb
-Searching for files in directory /home/trentonknight/Development/REGIS/CS372/DelouthMansfield-Assn4/.git/objects/bd
-Searching for files in directory /home/trentonknight/Development/REGIS/CS372/DelouthMansfield-Assn4/.git/objects/c0
-Searching for files in directory /home/trentonknight/Development/REGIS/CS372/DelouthMansfield-Assn4/.git/objects/c2
-Searching for files in directory /home/trentonknight/Development/REGIS/CS372/DelouthMansfield-Assn4/.git/objects/c3
-Searching for files in directory /home/trentonknight/Development/REGIS/CS372/DelouthMansfield-Assn4/.git/objects/c4
-Searching for files in directory /home/trentonknight/Development/REGIS/CS372/DelouthMansfield-Assn4/.git/objects/c5
-Searching for files in directory /home/trentonknight/Development/REGIS/CS372/DelouthMansfield-Assn4/.git/objects/c7
-Searching for files in directory /home/trentonknight/Development/REGIS/CS372/DelouthMansfield-Assn4/.git/objects/ca
-Searching for files in directory /home/trentonknight/Development/REGIS/CS372/DelouthMansfield-Assn4/.git/objects/cc
-Searching for files in directory /home/trentonknight/Development/REGIS/CS372/DelouthMansfield-Assn4/.git/objects/ce
-Searching for files in directory /home/trentonknight/Development/REGIS/CS372/DelouthMansfield-Assn4/.git/objects/cf
-Searching for files in directory /home/trentonknight/Development/REGIS/CS372/DelouthMansfield-Assn4/.git/objects/d1
-Searching for files in directory /home/trentonknight/Development/REGIS/CS372/DelouthMansfield-Assn4/.git/objects/d3
-Searching for files in directory /home/trentonknight/Development/REGIS/CS372/DelouthMansfield-Assn4/.git/objects/d5
-Searching for files in directory /home/trentonknight/Development/REGIS/CS372/DelouthMansfield-Assn4/.git/objects/d8
-Searching for files in directory /home/trentonknight/Development/REGIS/CS372/DelouthMansfield-Assn4/.git/objects/dc
-Searching for files in directory /home/trentonknight/Development/REGIS/CS372/DelouthMansfield-Assn4/.git/objects/dd
-Searching for files in directory /home/trentonknight/Development/REGIS/CS372/DelouthMansfield-Assn4/.git/objects/e0
-Searching for files in directory /home/trentonknight/Development/REGIS/CS372/DelouthMansfield-Assn4/.git/objects/e1
-Searching for files in directory /home/trentonknight/Development/REGIS/CS372/DelouthMansfield-Assn4/.git/objects/e4
-Searching for files in directory /home/trentonknight/Development/REGIS/CS372/DelouthMansfield-Assn4/.git/objects/e7
-Searching for files in directory /home/trentonknight/Development/REGIS/CS372/DelouthMansfield-Assn4/.git/objects/f0
-Searching for files in directory /home/trentonknight/Development/REGIS/CS372/DelouthMansfield-Assn4/.git/objects/f3
-Searching for files in directory /home/trentonknight/Development/REGIS/CS372/DelouthMansfield-Assn4/.git/objects/f4
-Searching for files in directory /home/trentonknight/Development/REGIS/CS372/DelouthMansfield-Assn4/.git/objects/f5
-Searching for files in directory /home/trentonknight/Development/REGIS/CS372/DelouthMansfield-Assn4/.git/objects/info
-Searching for files in directory /home/trentonknight/Development/REGIS/CS372/DelouthMansfield-Assn4/.git/objects/pack
-Searching for files in directory /home/trentonknight/Development/REGIS/CS372/DelouthMansfield-Assn4/.git/refs
-Searching for files in directory /home/trentonknight/Development/REGIS/CS372/DelouthMansfield-Assn4/.git/refs/heads
-Searching for files in directory /home/trentonknight/Development/REGIS/CS372/DelouthMansfield-Assn4/.git/refs/remotes
-Searching for files in directory /home/trentonknight/Development/REGIS/CS372/DelouthMansfield-Assn4/.git/refs/remotes/origin
-Searching for files in directory /home/trentonknight/Development/REGIS/CS372/DelouthMansfield-Assn4/.git/refs/tags
-Searching for files in directory /home/trentonknight/Development/REGIS/CS372/DelouthMansfield-Assn4/BubbleSort
-Searching for files in directory /home/trentonknight/Development/REGIS/CS372/DelouthMansfield-Assn4/doxygen-files
-Searching for files in directory /home/trentonknight/Development/REGIS/CS372/DelouthMansfield-Assn4/MergeSort
-Searching for files in directory /home/trentonknight/Development/REGIS/CS372/DelouthMansfield-Assn4/MergeSort/FORUM
+Searching for files in directory /home/trentonknight/Develop/DelouthMansfield-Assn4
+Searching for files in directory /home/trentonknight/Develop/DelouthMansfield-Assn4/.git
+Searching for files in directory /home/trentonknight/Develop/DelouthMansfield-Assn4/.git/branches
+Searching for files in directory /home/trentonknight/Develop/DelouthMansfield-Assn4/.git/hooks
+Searching for files in directory /home/trentonknight/Develop/DelouthMansfield-Assn4/.git/info
+Searching for files in directory /home/trentonknight/Develop/DelouthMansfield-Assn4/.git/logs
+Searching for files in directory /home/trentonknight/Develop/DelouthMansfield-Assn4/.git/logs/refs
+Searching for files in directory /home/trentonknight/Develop/DelouthMansfield-Assn4/.git/logs/refs/heads
+Searching for files in directory /home/trentonknight/Develop/DelouthMansfield-Assn4/.git/logs/refs/remotes
+Searching for files in directory /home/trentonknight/Develop/DelouthMansfield-Assn4/.git/logs/refs/remotes/origin
+Searching for files in directory /home/trentonknight/Develop/DelouthMansfield-Assn4/.git/objects
+Searching for files in directory /home/trentonknight/Develop/DelouthMansfield-Assn4/.git/objects/00
+Searching for files in directory /home/trentonknight/Develop/DelouthMansfield-Assn4/.git/objects/02
+Searching for files in directory /home/trentonknight/Develop/DelouthMansfield-Assn4/.git/objects/03
+Searching for files in directory /home/trentonknight/Develop/DelouthMansfield-Assn4/.git/objects/05
+Searching for files in directory /home/trentonknight/Develop/DelouthMansfield-Assn4/.git/objects/07
+Searching for files in directory /home/trentonknight/Develop/DelouthMansfield-Assn4/.git/objects/0a
+Searching for files in directory /home/trentonknight/Develop/DelouthMansfield-Assn4/.git/objects/0b
+Searching for files in directory /home/trentonknight/Develop/DelouthMansfield-Assn4/.git/objects/0e
+Searching for files in directory /home/trentonknight/Develop/DelouthMansfield-Assn4/.git/objects/0f
+Searching for files in directory /home/trentonknight/Develop/DelouthMansfield-Assn4/.git/objects/15
+Searching for files in directory /home/trentonknight/Develop/DelouthMansfield-Assn4/.git/objects/16
+Searching for files in directory /home/trentonknight/Develop/DelouthMansfield-Assn4/.git/objects/19
+Searching for files in directory /home/trentonknight/Develop/DelouthMansfield-Assn4/.git/objects/1d
+Searching for files in directory /home/trentonknight/Develop/DelouthMansfield-Assn4/.git/objects/1f
+Searching for files in directory /home/trentonknight/Develop/DelouthMansfield-Assn4/.git/objects/20
+Searching for files in directory /home/trentonknight/Develop/DelouthMansfield-Assn4/.git/objects/24
+Searching for files in directory /home/trentonknight/Develop/DelouthMansfield-Assn4/.git/objects/26
+Searching for files in directory /home/trentonknight/Develop/DelouthMansfield-Assn4/.git/objects/2a
+Searching for files in directory /home/trentonknight/Develop/DelouthMansfield-Assn4/.git/objects/2d
+Searching for files in directory /home/trentonknight/Develop/DelouthMansfield-Assn4/.git/objects/2e
+Searching for files in directory /home/trentonknight/Develop/DelouthMansfield-Assn4/.git/objects/2f
+Searching for files in directory /home/trentonknight/Develop/DelouthMansfield-Assn4/.git/objects/31
+Searching for files in directory /home/trentonknight/Develop/DelouthMansfield-Assn4/.git/objects/33
+Searching for files in directory /home/trentonknight/Develop/DelouthMansfield-Assn4/.git/objects/36
+Searching for files in directory /home/trentonknight/Develop/DelouthMansfield-Assn4/.git/objects/38
+Searching for files in directory /home/trentonknight/Develop/DelouthMansfield-Assn4/.git/objects/3f
+Searching for files in directory /home/trentonknight/Develop/DelouthMansfield-Assn4/.git/objects/41
+Searching for files in directory /home/trentonknight/Develop/DelouthMansfield-Assn4/.git/objects/44
+Searching for files in directory /home/trentonknight/Develop/DelouthMansfield-Assn4/.git/objects/50
+Searching for files in directory /home/trentonknight/Develop/DelouthMansfield-Assn4/.git/objects/51
+Searching for files in directory /home/trentonknight/Develop/DelouthMansfield-Assn4/.git/objects/53
+Searching for files in directory /home/trentonknight/Develop/DelouthMansfield-Assn4/.git/objects/55
+Searching for files in directory /home/trentonknight/Develop/DelouthMansfield-Assn4/.git/objects/56
+Searching for files in directory /home/trentonknight/Develop/DelouthMansfield-Assn4/.git/objects/5a
+Searching for files in directory /home/trentonknight/Develop/DelouthMansfield-Assn4/.git/objects/5f
+Searching for files in directory /home/trentonknight/Develop/DelouthMansfield-Assn4/.git/objects/60
+Searching for files in directory /home/trentonknight/Develop/DelouthMansfield-Assn4/.git/objects/66
+Searching for files in directory /home/trentonknight/Develop/DelouthMansfield-Assn4/.git/objects/6e
+Searching for files in directory /home/trentonknight/Develop/DelouthMansfield-Assn4/.git/objects/6f
+Searching for files in directory /home/trentonknight/Develop/DelouthMansfield-Assn4/.git/objects/75
+Searching for files in directory /home/trentonknight/Develop/DelouthMansfield-Assn4/.git/objects/78
+Searching for files in directory /home/trentonknight/Develop/DelouthMansfield-Assn4/.git/objects/7d
+Searching for files in directory /home/trentonknight/Develop/DelouthMansfield-Assn4/.git/objects/81
+Searching for files in directory /home/trentonknight/Develop/DelouthMansfield-Assn4/.git/objects/8c
+Searching for files in directory /home/trentonknight/Develop/DelouthMansfield-Assn4/.git/objects/8f
+Searching for files in directory /home/trentonknight/Develop/DelouthMansfield-Assn4/.git/objects/92
+Searching for files in directory /home/trentonknight/Develop/DelouthMansfield-Assn4/.git/objects/94
+Searching for files in directory /home/trentonknight/Develop/DelouthMansfield-Assn4/.git/objects/97
+Searching for files in directory /home/trentonknight/Develop/DelouthMansfield-Assn4/.git/objects/98
+Searching for files in directory /home/trentonknight/Develop/DelouthMansfield-Assn4/.git/objects/9a
+Searching for files in directory /home/trentonknight/Develop/DelouthMansfield-Assn4/.git/objects/9c
+Searching for files in directory /home/trentonknight/Develop/DelouthMansfield-Assn4/.git/objects/9d
+Searching for files in directory /home/trentonknight/Develop/DelouthMansfield-Assn4/.git/objects/a5
+Searching for files in directory /home/trentonknight/Develop/DelouthMansfield-Assn4/.git/objects/a6
+Searching for files in directory /home/trentonknight/Develop/DelouthMansfield-Assn4/.git/objects/a8
+Searching for files in directory /home/trentonknight/Develop/DelouthMansfield-Assn4/.git/objects/ab
+Searching for files in directory /home/trentonknight/Develop/DelouthMansfield-Assn4/.git/objects/ad
+Searching for files in directory /home/trentonknight/Develop/DelouthMansfield-Assn4/.git/objects/ae
+Searching for files in directory /home/trentonknight/Develop/DelouthMansfield-Assn4/.git/objects/af
+Searching for files in directory /home/trentonknight/Develop/DelouthMansfield-Assn4/.git/objects/b7
+Searching for files in directory /home/trentonknight/Develop/DelouthMansfield-Assn4/.git/objects/bc
+Searching for files in directory /home/trentonknight/Develop/DelouthMansfield-Assn4/.git/objects/bd
+Searching for files in directory /home/trentonknight/Develop/DelouthMansfield-Assn4/.git/objects/be
+Searching for files in directory /home/trentonknight/Develop/DelouthMansfield-Assn4/.git/objects/c6
+Searching for files in directory /home/trentonknight/Develop/DelouthMansfield-Assn4/.git/objects/c7
+Searching for files in directory /home/trentonknight/Develop/DelouthMansfield-Assn4/.git/objects/c9
+Searching for files in directory /home/trentonknight/Develop/DelouthMansfield-Assn4/.git/objects/cb
+Searching for files in directory /home/trentonknight/Develop/DelouthMansfield-Assn4/.git/objects/cc
+Searching for files in directory /home/trentonknight/Develop/DelouthMansfield-Assn4/.git/objects/d6
+Searching for files in directory /home/trentonknight/Develop/DelouthMansfield-Assn4/.git/objects/d7
+Searching for files in directory /home/trentonknight/Develop/DelouthMansfield-Assn4/.git/objects/da
+Searching for files in directory /home/trentonknight/Develop/DelouthMansfield-Assn4/.git/objects/df
+Searching for files in directory /home/trentonknight/Develop/DelouthMansfield-Assn4/.git/objects/e0
+Searching for files in directory /home/trentonknight/Develop/DelouthMansfield-Assn4/.git/objects/ea
+Searching for files in directory /home/trentonknight/Develop/DelouthMansfield-Assn4/.git/objects/ee
+Searching for files in directory /home/trentonknight/Develop/DelouthMansfield-Assn4/.git/objects/fb
+Searching for files in directory /home/trentonknight/Develop/DelouthMansfield-Assn4/.git/objects/fe
+Searching for files in directory /home/trentonknight/Develop/DelouthMansfield-Assn4/.git/objects/info
+Searching for files in directory /home/trentonknight/Develop/DelouthMansfield-Assn4/.git/objects/pack
+Searching for files in directory /home/trentonknight/Develop/DelouthMansfield-Assn4/.git/refs
+Searching for files in directory /home/trentonknight/Develop/DelouthMansfield-Assn4/.git/refs/heads
+Searching for files in directory /home/trentonknight/Develop/DelouthMansfield-Assn4/.git/refs/remotes
+Searching for files in directory /home/trentonknight/Develop/DelouthMansfield-Assn4/.git/refs/remotes/origin
+Searching for files in directory /home/trentonknight/Develop/DelouthMansfield-Assn4/.git/refs/tags
+Searching for files in directory /home/trentonknight/Develop/DelouthMansfield-Assn4/BubbleSort
+Searching for files in directory /home/trentonknight/Develop/DelouthMansfield-Assn4/CHART
+Searching for files in directory /home/trentonknight/Develop/DelouthMansfield-Assn4/doxygen-files
+Searching for files in directory /home/trentonknight/Develop/DelouthMansfield-Assn4/MergeSort
+Searching for files in directory /home/trentonknight/Develop/DelouthMansfield-Assn4/MergeSort/FORUM
 Reading and parsing tag files
-Preprocessing /home/trentonknight/Development/REGIS/CS372/DelouthMansfield-Assn4/BubbleSort/bubbleSORT.cpp...
-Parsing file /home/trentonknight/Development/REGIS/CS372/DelouthMansfield-Assn4/BubbleSort/bubbleSORT.cpp...
-Preprocessing /home/trentonknight/Development/REGIS/CS372/DelouthMansfield-Assn4/DelouthMansfield-Assn4-Functions.cpp...
-Parsing file /home/trentonknight/Development/REGIS/CS372/DelouthMansfield-Assn4/DelouthMansfield-Assn4-Functions.cpp...
-Preprocessing /home/trentonknight/Development/REGIS/CS372/DelouthMansfield-Assn4/MergeSort/FORUM/main.cpp...
-Parsing file /home/trentonknight/Development/REGIS/CS372/DelouthMansfield-Assn4/MergeSort/FORUM/main.cpp...
-Preprocessing /home/trentonknight/Development/REGIS/CS372/DelouthMansfield-Assn4/MergeSort/main.cpp...
-Parsing file /home/trentonknight/Development/REGIS/CS372/DelouthMansfield-Assn4/MergeSort/main.cpp...
+Preprocessing /home/trentonknight/Develop/DelouthMansfield-Assn4/BubbleSort/bubbleSORT.cpp...
+Parsing file /home/trentonknight/Develop/DelouthMansfield-Assn4/BubbleSort/bubbleSORT.cpp...
+Preprocessing /home/trentonknight/Develop/DelouthMansfield-Assn4/DelouthMansfield-Assn4.cpp...
+Parsing file /home/trentonknight/Develop/DelouthMansfield-Assn4/DelouthMansfield-Assn4.cpp...
+Preprocessing /home/trentonknight/Develop/DelouthMansfield-Assn4/MergeSort/FORUM/main.cpp...
+Parsing file /home/trentonknight/Develop/DelouthMansfield-Assn4/MergeSort/FORUM/main.cpp...
+Preprocessing /home/trentonknight/Develop/DelouthMansfield-Assn4/MergeSort/main.cpp...
+Parsing file /home/trentonknight/Develop/DelouthMansfield-Assn4/MergeSort/main.cpp...
 Building group list...
 Building directory list...
 Building namespace list...
@@ -174,61 +162,41 @@ Generating page index...
 Generating example documentation...
 Generating file sources...
 Generating code for file BubbleSort/bubbleSORT.cpp...
-Generating code for file DelouthMansfield-Assn4-Functions.cpp...
+Generating code for file DelouthMansfield-Assn4.cpp...
 Generating code for file MergeSort/FORUM/main.cpp...
 Generating code for file MergeSort/main.cpp...
 Generating file documentation...
 Generating docs for file BubbleSort/bubbleSORT.cpp...
-sh: epstopdf: not found
-Error: Problems running 'epstopdf' as a post-processing step for dot output
 Generating caller graph for function arrayCheck
-sh:
-epstopdf: not found
-Error: Problems running 'epstopdf' as a post-processing step for dot output
 Generating call graph for function main
-sh:
-epstopdf: not found
-Error: Problems running 'epstopdf' as a post-processing step for dot output
-Generating docs for file DelouthMansfield-Assn4-Functions.cpp...
+Generating docs for file DelouthMansfield-Assn4.cpp...
 sh: epstopdf: not found
 Error: Problems running 'epstopdf' as a post-processing step for dot output
 Generating caller graph for function clockSTART
-sh:
-epstopdf: not found
+sh: epstopdf: not found
 Error: Problems running 'epstopdf' as a post-processing step for dot output
 Generating caller graph for function clockSTOP
-sh:
-epstopdf: not found
+sh: epstopdf: not found
 Error: Problems running 'epstopdf' as a post-processing step for dot output
 Generating call graph for function createARRAYS
 sh: epstopdf: not found
 Error: Problems running 'epstopdf' as a post-processing step for dot output
 Generating caller graph for function createARRAYS
-sh:
-epstopdf: not found
-Error: Problems running 'epstopdf' as a post-processing step for dot output
-Generating call graph for function main
 sh: epstopdf: not found
 Error: Problems running 'epstopdf' as a post-processing step for dot output
-Generating caller graph for function randMAKE
-sh:
-epstopdf: not found
-Error: Problems running 'epstopdf' as a post-processing step for dot output
-Generating call graph for function userMenu
-sh:
-epstopdf: not found
-Error: Problems running 'epstopdf' as a post-processing step for dot output
-Generating caller graph for function userMenu
-sh: epstopdf: not found
-Error: Problems running 'epstopdf' as a post-processing step for dot output
-Generating docs for file MergeSort/FORUM/main.cpp...
+Generating caller graph for function displayResults
 sh: epstopdf: not found
 Error: Problems running 'epstopdf' as a post-processing step for dot output
 Generating call graph for function main
-sh:
-epstopdf: not found
+sh: epstopdf: not found
+Error: Problems running 'epstopdf' as a post-processing step for dot output
+Generating caller graph for function menuErrorCheck
+sh: epstopdf: not found
 Error: Problems running 'epstopdf' as a post-processing step for dot output
 Generating caller graph for function merge
+sh: epstopdf: not found
+Error: Problems running 'epstopdf' as a post-processing step for dot output
+Generating call graph for function mergeGET
 sh: epstopdf: not found
 Error: Problems running 'epstopdf' as a post-processing step for dot output
 Generating call graph for function mergesort
@@ -237,16 +205,45 @@ Error: Problems running 'epstopdf' as a post-processing step for dot output
 Generating caller graph for function mergesort
 sh: epstopdf: not found
 Error: Problems running 'epstopdf' as a post-processing step for dot output
-Generating docs for file MergeSort/main.cpp...
+Generating call graph for function pickSorts
 sh: epstopdf: not found
 Error: Problems running 'epstopdf' as a post-processing step for dot output
-Generating call graph for function main
+Generating caller graph for function pickSorts
+sh: epstopdf: not found
+Error: Problems running 'epstopdf' as a post-processing step for dot output
+Generating call graph for function quickGET
+sh: epstopdf: not found
+Error: Problems running 'epstopdf' as a post-processing step for dot output
+Generating caller graph for function quickSort
+sh: epstopdf: not found
+Error: Problems running 'epstopdf' as a post-processing step for dot output
+Generating caller graph for function randMAKE
+sh: epstopdf: not found
+Error: Problems running 'epstopdf' as a post-processing step for dot output
+Generating call graph for function runSorts
+sh: epstopdf: not found
+Error: Problems running 'epstopdf' as a post-processing step for dot output
+Generating caller graph for function runSorts
 sh:
 epstopdf: not found
+
+Error: Problems running 'epstopdf' as a post-processing step for dot output
+Generating caller graph for function verifySorting
+sh: epstopdf: not found
+Error: Problems running 'epstopdf' as a post-processing step for dot output
+Generating docs for file MergeSort/FORUM/main.cpp...
+Generating call graph for function main
+sh: epstopdf: not found
 Error: Problems running 'epstopdf' as a post-processing step for dot output
 Generating call graph for function mergesort
-sh:
-epstopdf: not found
+sh: epstopdf: not found
+Error: Problems running 'epstopdf' as a post-processing step for dot output
+Generating docs for file MergeSort/main.cpp...
+Generating call graph for function main
+sh: epstopdf: not found
+Error: Problems running 'epstopdf' as a post-processing step for dot output
+Generating call graph for function mergesort
+sh: epstopdf: not found
 Error: Problems running 'epstopdf' as a post-processing step for dot output
 Generating page documentation...
 Generating group documentation...
