@@ -52,7 +52,7 @@ int main()
   int count = 1;
   
   createARRAYS(randNUM_ONE,randNUM_TWO);
-  while(choice[0] != 'E'){
+  do{
   pickSorts(choice,randNUM_ONE,randNUM_TWO,timeONE,timeTWO,doArraysMatch); 
   if(choice[0] != 'E'){ 
   cout << "Enter the number of times to repeat each sort (1 or more): " << endl;
@@ -67,10 +67,9 @@ int main()
   cout << "SORTING RESULTS" << endl;
   cout << "---------------" << endl;
   cout << sortNameOne <<" : " << totalTime_ONE/count << endl;
-  cout << sortNameTwo <<" : " << totalTime_TWO/count << endl; 
-  
+  cout << sortNameTwo <<" : " << totalTime_TWO/count << endl;  
 }
-}
+  }while(choice[0] != 'E');
   return 0;
   
 }
@@ -81,16 +80,13 @@ void pickSorts(string& choice,int *randNUM_ONE,int *randNUM_TWO,double timeONE,d
   <<"I = Insertion sort\n"
   <<"M = Merge sort\n"
   <<"Q = Quick sort\n"
-  <<"E = Exit program"
+  <<"EE = Exit program\n\n"
+  <<"Enter two letter choices (or EE to exit):"
   << endl;
   cin >> choice;
   if(!menuErrorCheck(choice)){
 	  pickSorts(choice,randNUM_ONE,randNUM_TWO,timeONE,timeTWO,doArraysMatch);
   }
-  else if(choice[0] != 'E'){
-	  	
-  }
-
 }
 
 //user selections io
@@ -429,25 +425,47 @@ void displayResults(bool doArraysMatch,double& timeONE,double& timeTWO)
 }
 
 bool menuErrorCheck(string inChoice)
-{
-	bool check = true;
-	if(inChoice[0] == 'E'){
-		
-	}
-	else{
-     if(inChoice.length()<2)
-     {
-       cout << "Whoops! Please enter two choices before hitting ENTER" << endl;
+{    bool check = false;
+     switch(inChoice[0]){
+     case 'M':
+       check = true;
+       break;
+     case 'Q':
+       check = true;
+       break;
+     case 'I':
+       check = true;
+       break;
+     case 'B':
+       check = true;
+       break;
+     case 'E':
+       check = true;
+       break;
+     default:
+       cout << "Whoops! Please enter TWO characters in UPPERCASE shown below:" << endl;
        check = false;
      }
-     
-     if(isdigit(inChoice[0])||isdigit(inChoice[1]))
-     {
-      cout << "Error. Enter two letters from the list" << endl;
-      check = false;
-      }
-  }
-  
+switch(inChoice[1]){
+     case 'M':
+       check = true;
+       break;
+     case 'Q':
+       check = true;
+       break;
+     case 'I':
+       check = true;
+       break;
+     case 'B':
+       check = true;
+       break;
+     case 'E':
+       check = true;
+       break;
+     default:
+       cout << "Whoops! Please enter TWO characters in UPPERCASE shown below:" << endl;
+       check = false;
+     }
       return check;
 
 }
