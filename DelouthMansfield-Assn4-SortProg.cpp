@@ -28,7 +28,7 @@ bool menuErrorCheck(string inChoice);
 
 const int RAND_INT = 100000;//for rand array
 const int ARRAY_FUNC = 4;//for selection of sort functions
-const int RAND_LIMITER = 99999;
+const int RAND_LIMITER = 99;
 typedef int (*funcPtrType)(int[RAND_INT]);//function pointer
 const funcPtrType sortPOINTER_ARRAY[ARRAY_FUNC] = {&bubbleSort,
                                           &insertionSort,
