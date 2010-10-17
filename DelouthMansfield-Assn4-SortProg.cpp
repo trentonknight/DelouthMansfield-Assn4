@@ -15,8 +15,9 @@ double clockSTOP(double& start);
 //All sort functions to call by pointer to functions
 int bubbleSort(int bubble[]);
 int insertionSort(int insert[]);
-int quickGET(int quick[]);
-void quickSort(int quick[],int& left,int& right);
+int quickSort(int quick[]);
+void QUICKsort(int quick[], int left, int right);
+int partition(int qslist[], int left, int right);
 int mergeGET(int numbers[]);
 void merge(int numbers[], int temp[], int left, int mid, int right);
 int mergesort(int numbers[], int temp[], int left, int right);
@@ -32,7 +33,7 @@ typedef int (*funcPtrType)(int[RAND_INT]);//function pointer
 const funcPtrType sortPOINTER_ARRAY[ARRAY_FUNC] = {&bubbleSort,
                                           &insertionSort,
                                           &mergeGET,
-						   &quickGET};
+						   &quickSort};
 
 // main()
 // Main program logic. Handles getting user input
@@ -246,41 +247,62 @@ int insertionSort(int insert[])
 // Returns:
 //
 // Implemented by:
-int quickGET(int quick[]){
-	int left = 0, right = 0;
-	quickSort(quick,left,right);
-	return *quick;	
+int quickSort(int quick[])
+{
+     QUICKsort(quick,0,RAND_INT-1);
+	 return 0;
 }
-void quickSort(int quick[],int& left,int& right)
-{ 
+
+// quickSort()
+//
+// Returns:
+//
+// Implemented by:
+void QUICKsort(int quick[], int left, int right)
+{
       
-      int tmp;
-      int pivot = quick[(left + right) / 2];
+      int middle;
+      
+      if(left<right)
+      {
+         middle=partition(quick,left,right);
+         QUICKsort(quick,left,middle);
+         QUICKsort(quick,middle+1,right);
+      }
+      return;   
+      cout << "THE END" << endl;
+}
 
-      while (left <= right) 
-      {
-            while (quick[left] < pivot)
-                  left++;
-            while (quick[right] > pivot)
-                  right--;
-            if (left <= right) 
-            {
-                  tmp = quick[left];
-                  quick[left] = quick[right];
-                  quick[right] = tmp;
-                  left++;
-                  right--;
-            }
-      }
-
-      if (left < right)
-      {
-            quickSort(quick,left,right);
-      }
-      if (left < right)
-      {
-            quickSort(quick,left,right);
-      }
+int partition(int qslist[], int left, int right)
+{
+    int x=qslist[left];
+    int i= left-1;
+    int j= right +1;
+    int temp=0;
+    
+    do
+    {
+        do
+        {
+              j--;
+               
+        }while(x>qslist[j]);
+        
+        do
+        {
+         i++;
+         
+        }while(x<qslist[i]);
+        
+        if(i<j)
+        {
+               temp=qslist[i];
+               qslist[i]=qslist[j];
+               qslist[j]=temp;
+        }
+    }while(i<j);
+    return j;
+    
 }
 int mergeGET(int numbers[]){
  static int temp[RAND_INT] = {0};
