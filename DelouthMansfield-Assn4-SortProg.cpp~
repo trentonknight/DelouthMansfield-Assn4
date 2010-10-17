@@ -1,0 +1,469 @@
+//******************************************************************************************
+//  CODE FILENAME:	DelouthMansfield-Assn4-SortProg.cpp
+//  DESCRIPTION: Program to compare how long it takes to sort a list, using the 
+//               bubble sort, merge sort, insertion sort and quick sort
+//  DATE:		October 2010
+//  DESIGNER:	Natasha Delouth, Jason Mansfield
+//  FUNCTIONS:	main- main program logic
+//              
+//              
+//                  
+//              
+//              
+//              
+//              
+//             
+//*********************************************************************************************
+
+#include <iostream>
+#include <cstddef>
+#include <iomanip>
+#include <string>
+#include <ctime>
+#include <stdlib.h>
+using namespace std;
+
+void pickSorts(string& choice,int *randNumOne,int *randNumTwo,double timeOne,double timeTwo,bool doArraysMatch);
+void runSorts(string choice,int *randNumOne,int *randNumTwo,double timeOne,double timeTwo,int& count,double& totalTimeOne,double& totalTimeTwo
+,string& sortNameOne,string& sortNameTwo);
+void createArrays(int *arrayOne,int *arrayTwo);
+double clockStart(double& start);
+double clockStop(double& start);
+//All sort functions to call by pointer to functions
+int bubbleSort(int bubble[]);
+int insertionSort(int insert[]);
+int quickGet(int quick[]);
+void quickSort(int quick[],int& left,int& right);
+int mergeGet(int numbers[]);
+void merge(int numbers[], int temp[], int left, int mid, int right);
+int mergesort(int numbers[], int temp[], int left, int right);
+//end functions called by pointer
+bool verifySorting(int verify_one[],int verify_two[]);
+void displayResults(bool doArraysMatch,double& timeOne,double& timeTwo);
+bool menuErrorCheck(string inChoice);
+
+const int RAND_INT = 100000;//for rand array
+const int ARRAY_FUNC = 4;//for selection of sort functions
+typedef int (*funcPtrType)(int[RAND_INT]);//function pointer
+const funcPtrType sortPointerArray[ARRAY_FUNC] = {&bubbleSort,
+                                          &insertionSort,
+                                          &mergeGet,
+						   &quickGet};
+
+// main()
+// Main program logic. Handles getting user input
+// returns:
+//   0 - No error, program exited normally
+// Calls:
+// Implemented by:
+int main()
+
+{
+  int randNumOne[RAND_INT] = {0};//rand array of numbers for functions one
+  int randNumTwo[RAND_INT] = {0};//two
+  double timeOne = 0,timeTwo = 0;
+  double totalTimeOne, totalTimeTwo;
+  bool doArraysMatch = true;
+  int sorts = 0;
+  string choice,sortNameOne,sortNameTwo;
+  int count = 1;
+  
+  createArrays(randNumOne,randNumTwo);
+  while(choice[0] != 'E'){
+  pickSorts(choice,randNumOne,randNumTwo,timeOne,timeTwo,doArraysMatch); 
+  if(choice[0] != 'E'){ 
+  cout << "\nEnter the number of times to repeat each sort (1 or more): ";
+  cin >> sorts;
+  while(sorts != 0 && choice[0] != 'E'){
+  runSorts(choice,randNumOne,randNumTwo,timeOne,timeTwo,count,totalTimeOne,totalTimeTwo,sortNameOne,sortNameTwo);
+  doArraysMatch = verifySorting(randNumOne,randNumTwo);
+  displayResults(doArraysMatch,timeOne,timeTwo);
+  sorts--;
+  count++;
+  }
+  cout << "\nSORTING RESULTS" << endl;
+  cout << "---------------" << endl;
+  cout << "\t" << sortNameOne <<" : " << totalTimeOne/count << " clock ticks on average" << endl;
+  cout << "\t" << sortNameTwo <<" : " << totalTimeTwo/count << " clock ticks on average" << endl; 
+  
+}
+}
+  return 0;
+  
+}
+void pickSorts(string& choice,int *randNumOne,int *randNumTwo,double timeOne,double timeTwo,bool doArraysMatch){
+  		
+  cout << "\nChoose two sorts you wish to compare:\n"
+  <<"\tB = Bubble sort\n"
+  <<"\tI = Insertion sort\n"
+  <<"\tM = Merge sort\n"
+  <<"\tQ = Quick sort\n"
+  <<"\tE = Exit program"
+  << endl;
+  cout << "\nEnter two letter choices (or E to exit): ";
+  cin >> choice;
+ 
+  if(!menuErrorCheck(choice)){
+	  pickSorts(choice,randNumOne,randNumTwo,timeOne,timeTwo,doArraysMatch);
+  }
+  else if(choice[0] != 'E'){
+	  	
+  }
+
+}
+
+//user selections io
+void runSorts(string choice, int *randNumOne,int *randNumTwo,double timeOne,double timeTwo,int& count,double& totalTimeOne,double& totalTimeTwo
+,string& sortNameOne,string& sortNameTwo){ 
+  double clocker = 0;
+  funcPtrType funcPtr;//pointer to functions choosen by user
+   
+  cout << "\nStarting sort # " <<count++<<"..."<<endl;
+  if(choice[0] == 'B'){
+    clockStart(clocker);//start clock on function 
+    funcPtr = sortPointerArray[0];//point to Bubblesort   
+    cout << "\tBUBBLE SORT ";
+    sortNameOne = "BUBBLE SORT";
+  } 
+  else if(choice[0] == 'I'){
+    clockStart(clocker);//start clock
+    funcPtr = sortPointerArray[1];//point to Insertion sort
+    cout << "\tINSERTION SORT ";
+    sortNameOne = "INSERTION SORT";
+  }
+  else if(choice[0] == 'M'){
+    clockStart(clocker);//start clock
+    funcPtr = sortPointerArray[2];//point to Merge Sort
+    cout << "\tMERGE SORT ";
+    sortNameOne = "MERGE SORT";
+  }
+  else if(choice[0] == 'Q'){
+    clockStart(clocker);//start clock
+    funcPtr = sortPointerArray[3];//point to Quick Sort
+    cout << "\tQUICK SORT ";
+    sortNameOne = "QUICK SORT";
+  }
+  else if(choice[0] == 'E'){
+  
+  }
+  *randNumOne = funcPtr(randNumOne);
+   timeOne = timeOne + clockStop(clocker);
+   totalTimeOne = (totalTimeOne + timeOne);
+ 
+  //second choice all the same as first////////////////
+   if(choice[1] == 'B'){
+    clockStart(clocker);
+    funcPtr = sortPointerArray[0];
+    cout << "\tBUBBLE SORT ";
+    sortNameTwo = "BUBBLE SORT";
+  } 
+  else if(choice[1] == 'I'){
+    clockStart(clocker);
+    funcPtr = sortPointerArray[1];
+    cout << "\tINSERTION SORT ";
+    sortNameTwo = "INSERTION SORT";
+  }
+  else if(choice[1] == 'M'){ 
+    clockStart(clocker);
+    funcPtr = sortPointerArray[2];
+    cout << "\tMERGE SORT ";
+    sortNameTwo = "MERGE SORT";
+  }
+  else if(choice[1] == 'Q'){
+    clockStart(clocker);
+    funcPtr = sortPointerArray[3];
+    cout << "\tQUICK SORT ";
+    sortNameTwo = "QUICK SORT";
+  }
+  else if(choice[1] == 'E'){
+  
+  }
+  *randNumTwo = funcPtr(randNumTwo);
+   timeTwo = timeTwo + clockStop(clocker);
+   totalTimeTwo = (totalTimeTwo + timeTwo);
+   cout << "Starting sort # " <<count<<"..."<<endl; 
+}
+int randMAKE(){
+  int make = 0;
+  make = rand() % RAND_INT + 6;
+  return make;
+}
+void createArrays(int *arrayOne,int *arrayTwo){
+  srand(time(NULL));
+  for(int a = 0; a < RAND_INT; a++){
+    arrayOne[a] = randMAKE();
+    arrayTwo[a] = arrayOne[a];
+
+  }
+}
+
+double clockStart(double& start){
+   start = clock();
+   return start;
+}
+double clockStop(double& start){
+  double stop = clock();
+  double time = ((double)(stop - start))/CLOCKS_PER_SEC;
+  cout << setprecision(7) << "TIME: " << time << endl;
+  return time;
+}
+
+// Bubblesort()
+//
+// Returns:
+//
+// Implemented by:
+int bubbleSort(int bubble[])
+{   bool swap = true;
+    int j = 0;
+    int temp;
+
+      while(swap) 
+      {
+            swap = false;
+            j++;
+
+            for (int i = 0; i < RAND_INT - j; i++) 
+            {
+                  if (bubble[i] > bubble[i + 1]) 
+                  {
+                        temp = bubble[i];
+                        bubble[i] = bubble[i + 1];
+                        bubble[i + 1] = temp;
+                        swap = true;
+                  }
+            }
+      }
+      return *bubble;
+}
+
+
+// insertionSort()
+//
+// Returns:
+//
+// Implemented by:
+int insertionSort(int insert[])
+{ int i = 0;
+  int j = 0;
+  int tmp = 0;
+  
+  for(i = 1; i < RAND_INT; i++){
+  j = i;
+  while(j > 0 && insert[j - 1] > insert[j]){
+  tmp = insert[j];
+  insert[j] = insert[j - 1];
+  insert[j - 1] = tmp;
+  j--; 
+  }
+  } 
+  return *insert;
+}
+
+
+int quickGet(int quick[]){
+	int left = 0, right = 0;
+	quickSort(quick,left,right);
+	return *quick;	
+}
+void quickSort(int quick[],int& left,int& right)
+{ 
+      
+      int tmp;
+      int pivot = quick[(left + right) / 2];
+
+      while (left <= right) 
+      {
+            while (quick[left] < pivot)
+                  left++;
+            while (quick[right] > pivot)
+                  right--;
+            if (left <= right) 
+            {
+                  tmp = quick[left];
+                  quick[left] = quick[right];
+                  quick[right] = tmp;
+                  left++;
+                  right--;
+            }
+      }
+
+      if (left < right)
+      {
+            quickSort(quick,left,right);
+      }
+      if (left < right)
+      {
+            quickSort(quick,left,right);
+      }
+}
+
+int mergeGet(int numbers[]){
+ int temp[RAND_INT] = {0};
+ int left = 0;
+ int right = RAND_INT;
+ mergesort(numbers,temp,left,right);
+ return *numbers;
+}
+int mergesort(int numbers[], int temp[], int left, int right)
+
+{
+  int mid;
+
+  if (right > left)
+
+  {
+
+    mid = (right + left) / 2;
+    mergesort(numbers, temp, left, mid);
+    mergesort(numbers, temp, mid+1, right);
+    merge(numbers, temp, left, mid+1, right);
+
+  }
+  return *temp;
+}
+void merge(int numbers[], int temp[], int left, int mid, int right)
+
+{
+
+  int i, left_end, num_elements, tmp_pos;
+
+
+  left_end = mid - 1;
+
+  tmp_pos = left;
+
+  num_elements = right - left + 1;
+
+
+
+  while ((left <= left_end) && (mid <= right))
+
+  {
+
+    if (numbers[left] <= numbers[mid])
+
+    {
+
+      temp[tmp_pos] = numbers[left];
+
+      tmp_pos = tmp_pos + 1;
+
+      left = left +1;
+
+    }
+
+    else
+
+    {
+
+      temp[tmp_pos] = numbers[mid];
+
+      tmp_pos = tmp_pos + 1;
+
+      mid = mid + 1;
+
+    }
+
+  }
+
+
+
+  while (left <= left_end)
+
+  {
+
+    temp[tmp_pos] = numbers[left];
+
+    left = left + 1;
+
+    tmp_pos = tmp_pos + 1;
+
+  }
+
+  while (mid <= right)
+
+  {
+
+    temp[tmp_pos] = numbers[mid];
+
+    mid = mid + 1;
+
+    tmp_pos = tmp_pos + 1;
+
+  }
+
+
+
+  for (i=0; i <= num_elements; i++)
+
+  {
+
+    numbers[right] = temp[right];
+
+    right = right - 1;
+
+  }
+
+}
+
+// verifySorting()
+//  verifies the sorts ran correctly
+// Returns:
+//
+// Implemented by:
+bool verifySorting(int verify_one[],int verify_two[]){
+	bool theSame = false;
+	for(int a = 0; a < RAND_INT; a++){
+		
+		if(verify_two[a] == verify_one[a] || verify_two[a] < verify_one[a + 1]||verify_two[a + 1] > verify_one[a] ){
+			theSame = true;
+			
+		}
+	        //cout << "ARRAY ONE: " << verify_one[a] << endl;//make sure array is making it this far
+	        //cout << "ARRAY TWO: " << verify_two[a] << endl;//make sure array is making it this far
+	}
+	return theSame;
+
+}
+// displayResults()
+//
+
+// Returns:
+//
+// Implemented by:
+void displayResults(bool doArraysMatch,double& timeOne,double& timeTwo)
+{
+    if(doArraysMatch){
+		cout << "\tsorts validated." << endl;
+	}
+	else{
+		cout << "ERROR: sorts invalid" << endl;
+	}
+
+}
+
+bool menuErrorCheck(string inChoice)
+{
+	bool check = true;
+	if(inChoice[0] == 'E'){
+		
+	}
+	else{
+     if(inChoice.length()<2)
+     {
+       cout << "Whoops! Please enter two choices before hitting ENTER" << endl;
+       check = false;
+     }
+     
+     if(isdigit(inChoice[0])||isdigit(inChoice[1]))
+     {
+      cout << "Error. Enter two letters from the list" << endl;
+      check = false;
+      }
+  }
+  
+      return check;
+
+}
+
