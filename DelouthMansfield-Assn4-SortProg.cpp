@@ -170,10 +170,9 @@ int randMAKE(){
 }
 void createARRAYS(int *arrayONE,int *arrayTWO){
   srand(time(NULL));
-  for(int a = 0; a < RAND_INT; a++){
+  for(int a = 0; a <= RAND_INT; a++){
     arrayONE[a] = randMAKE();
     arrayTWO[a] = arrayONE[a];
-
   }
 }
 
