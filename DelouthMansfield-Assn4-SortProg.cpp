@@ -38,11 +38,7 @@ const int RAND_INT = 100000;//for rand array
 const int ARRAY_FUNC = 4;//for selection of sort functions
 const int RAND_LIMITER = 99;
 typedef int (*funcPtrType)(int[RAND_INT]);//function pointer
-const funcPtrType sortPOINTER_ARRAY[ARRAY_FUNC] = {&bubbleSort,
-                                          &insertionSort,
-                                          &mergeGET,
-						   &quickSort};
-
+const funcPtrType sortPOINTER_ARRAY[ARRAY_FUNC] = {&bubbleSort,&insertionSort,&mergeGET,&quickSort};
 //////////////////////////////////////////////////////////////////////////////////
 ///FUNCTION:    main
 ///INPUT:
@@ -119,20 +115,22 @@ void pickSorts(string& choice){
 ///FUNCTION:    runSorts
 ///DESCRIPTION:    Description of purpose of function
 ///INPUT:
-///
-///Parameters: Name and description of each input parameter
-///
-///File: Brief description of data read from file
-///
+///Parameters: *randNumOne,*randNumTwo (two identitcal arrays of random numbers)
+///            double totalTimeOne,totalTimeTwo(double which maintain a total of each sorts clock time until
+///            user selected choices completes)
+///            string choice[0] and choice[1] contain users selected char for selecting sortPOINTER_ARRAY
+///            which points to proper function for each selected sort method.
 ///OUTPUT:   
-///
-///Return Val: Description of data returned by a function
-///
-///Parameters: Name and description of the output parameters
-///
-///File:    Brief description of data written to file
-///
-///CALLS TO:  List of programmer-written functions called (names only)
+///Return Value: *randNumOne, *randNumTwo sorted; timeOne,TimeTwo new clock numbers, totalTimeOne,totalTimeTwo
+///             are increased and returned with current total of clock times, sortNameOne,sortNameTwo contain
+///             selectedd names of sorts run.
+///Parameters: *randNumOne,*randNumTwo (returned after being run through choosen sorts with sorted indexes in arrays)
+///            double timeOne, timeTwo (doubles used to return new clock times everytime
+///            runSorts is called)
+///            string sortNameOne,sortNameTwo(returns user selection in string for display at the end of sorting loop in the main)
+///            
+///CALLS TO:   clockStart, clockStop, function pointer funcPtr calls from all:
+///            sortPOINTER_ARRAY[ARRAY_FUNC] = {&bubbleSort,&insertionSort,&mergeGET,&quickSort};
 ///////////////////////////////////////////////////////////////////////////////////
 void runSorts(string choice, int *randNumOne,int *randNumTwo,double timeOne,double timeTwo,int& count,double& totalTimeOne,double& totalTimeTwo
 ,string& sortNameOne,string& sortNameTwo){ 
