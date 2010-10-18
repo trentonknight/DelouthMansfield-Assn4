@@ -1,29 +1,37 @@
+/////////////////////////////////////////////////////////////////////////////////////////////
+//  CODE FILENAME: DelouthMansfield-Assn4-SortProg.cpp
+//  DESCRIPTION: Program to compare how long it takes to sort a list, using the 
+//               bubble sort, merge sort, insertion sort and quick sort
+//  DATE:	 October 2010
+//  DESIGNER:    Natasha Delouth, Jason Mansfield
+//  FUNCTIONS:	 main- main program logic
+/////////////////////////////////////////////////////////////////////////////////////////////
 #include <iostream>
+#include <cstddef>
 #include <iomanip>
 #include <string>
-#include <cstddef>
-#include <stdlib.h>
 #include <ctime>
+#include <stdlib.h>
 using namespace std;
 
-void pickSorts(string& choice,int *randNUM_ONE,int *randNUM_TWO,double timeONE,double timeTWO,bool doArraysMatch);
-void runSorts(string choice,int *randNUM_ONE,int *randNUM_TWO,double timeONE,double timeTWO,int& count,double& totalTime_ONE,double& totalTime_TWO
+void pickSorts(string& choice);
+void runSorts(string choice,int *randNumOne,int *randNumTwo,double timeOne,double timeTwo,int& count,double& totalTimeOne,double& totalTimeTwo
 ,string& sortNameOne,string& sortNameTwo);
-void createARRAYS(int *arrayONE,int *arrayTWO);
-double clockSTART(double& start);
-double clockSTOP(double& start);
+void createArrays(int *arrayOne,int *arrayTwo);
+double clockStart(double& start);
+double clockStop(double& start);
 //All sort functions to call by pointer to functions
 int bubbleSort(int bubble[]);
 int insertionSort(int insert[]);
 int quickSort(int quick[]);
-void QUICKsort(int quick[], int left, int right);
+void qkSort(int quick[], int left, int right);
 int partition(int qslist[], int left, int right);
 int mergeGET(int numbers[]);
 void merge(int numbers[], int temp[], int left, int mid, int right);
 int mergesort(int numbers[], int temp[], int left, int right);
 //end functions called by pointer
 bool verifySorting(int verify_one[],int verify_two[]);
-void displayResults(bool doArraysMatch,double& timeONE,double& timeTWO);
+void displayResults(bool doArraysMatch,double& timeOne,double& timeTwo);
 bool menuErrorCheck(string inChoice);
 
 const int RAND_INT = 100000;//for rand array
@@ -35,164 +43,286 @@ const funcPtrType sortPOINTER_ARRAY[ARRAY_FUNC] = {&bubbleSort,
                                           &mergeGET,
 						   &quickSort};
 
-// main()
-// Main program logic. Handles getting user input
-// returns:
-//   0 - No error, program exited normally
-// Calls:
-// Implemented by:
+//////////////////////////////////////////////////////////////////////////////////
+///FUNCTION:    main
+///INPUT:
+///
+///Parameters: *randNumOne,randNumTwo hold random arrays of numbers.
+///             timeOne and timeTwo are returned to main with clock ticks.
+///             totalTimeOne and totalTimeTwo are returned to main with total of.
+///             clock ticks continually.
+///
+///OUTPUT: return 0 if program runs without issue. 
+///Parameters: Name and description of the output parameters
+///CALLS TO:  createArrays,displayResults,pickSorts,runSorts,verifySorting
+///////////////////////////////////////////////////////////////////////////////////
 int main()
 
 {
-  int randNUM_ONE[RAND_INT] = {0};//rand array of numbers for functions one
-  int randNUM_TWO[RAND_INT] = {0};//two
-  double timeONE = 0,timeTWO = 0;
-  double totalTime_ONE, totalTime_TWO;
+  int randNumOne[RAND_INT] = {0};//rand array of numbers for functions one
+  int randNumTwo[RAND_INT] = {0};//two
+  double timeOne = 0,timeTwo = 0;
+  double totalTimeOne, totalTimeTwo;
   bool doArraysMatch = true;
   int sorts = 0;
   string choice,sortNameOne,sortNameTwo;
-  int count = 1;
+  int count = 0;
   
-  createARRAYS(randNUM_ONE,randNUM_TWO);
+  createArrays(randNumOne,randNumTwo);
   do{
-  pickSorts(choice,randNUM_ONE,randNUM_TWO,timeONE,timeTWO,doArraysMatch); 
+  pickSorts(choice); 
   if(choice[0] != 'E'){ 
-  cout << "Enter the number of times to repeat each sort (1 or more): " << endl;
+  cout << "Enter the number of times to repeat each sort (1 or more): " ;
   cin >> sorts;
   while(sorts != 0 && choice[0] != 'E'){
-  runSorts(choice,randNUM_ONE,randNUM_TWO,timeONE,timeTWO,count,totalTime_ONE,totalTime_TWO,sortNameOne,sortNameTwo);
-  doArraysMatch = verifySorting(randNUM_ONE,randNUM_TWO);
-  displayResults(doArraysMatch,timeONE,timeTWO);
-  sorts--;
   count++;
+  runSorts(choice,randNumOne,randNumTwo,timeOne,timeTwo,count,totalTimeOne,totalTimeTwo,sortNameOne,sortNameTwo);
+  doArraysMatch = verifySorting(randNumOne,randNumTwo);
+  displayResults(doArraysMatch,timeOne,timeTwo);
+  sorts--;
   }
   cout << "\nSORTING RESULTS" << endl;
   cout << "---------------" << endl;
   cout.precision(7);
-  cout << fixed << sortNameOne <<" : " << totalTime_ONE/count << endl;
-  cout << sortNameTwo <<" : " << totalTime_TWO/count << endl;  
+  cout << fixed << sortNameOne <<" : " << totalTimeOne/count << " clock ticks on average" << endl;
+  cout << sortNameTwo <<" : " << totalTimeTwo/count << " clock ticks on average" << endl;  
 }
   }while(choice[0] != 'E');
   return 0;
   
 }
-void pickSorts(string& choice,int *randNUM_ONE,int *randNUM_TWO,double timeONE,double timeTWO,bool doArraysMatch){
+//////////////////////////////////////////////////////////////////////////////////
+///FUNCTION:    pickSorts
+///DESCRIPTION:  retrieve user input to chooce two sort functions
+///INPUT:
+///Parameters: string choice[0] and choice[1] (NULL)
+///OUTPUT:   
+///Return Val: string choice[0] and choice[1] (with sorts selections)
+///CALLS TO:  menuErrorCheck, pickSorts (if error function recurses)
+///////////////////////////////////////////////////////////////////////////////////
+void pickSorts(string& choice){
   		
-  cout << "Choose two sorts you wish to compare:\n"
-  <<"B = Bubble sort\n"
-  <<"I = Insertion sort\n"
-  <<"M = Merge sort\n"
-  <<"Q = Quick sort\n"
-  <<"EE = Exit program\n\n"
-  <<"Enter two letter choices (or EE to exit):"
+  cout << "\nChoose two sorts you wish to compare:\n"
+  <<"\tB = Bubble sort\n"
+  <<"\tI = Insertion sort\n"
+  <<"\tM = Merge sort\n"
+  <<"\tQ = Quick sort\n"
+  <<"\tEE = Exit program"
   << endl;
+  cout << "\nEnter two letter choices (or EE to exit): ";
   cin >> choice;
   if(!menuErrorCheck(choice)){
-	  pickSorts(choice,randNUM_ONE,randNUM_TWO,timeONE,timeTWO,doArraysMatch);
+	  pickSorts(choice);
   }
 }
-
-//user selections io
-void runSorts(string choice, int *randNUM_ONE,int *randNUM_TWO,double timeONE,double timeTWO,int& count,double& totalTime_ONE,double& totalTime_TWO
+//////////////////////////////////////////////////////////////////////////////////
+///FUNCTION:    runSorts
+///DESCRIPTION:    Description of purpose of function
+///INPUT:
+///
+///Parameters: Name and description of each input parameter
+///
+///File: Brief description of data read from file
+///
+///OUTPUT:   
+///
+///Return Val: Description of data returned by a function
+///
+///Parameters: Name and description of the output parameters
+///
+///File:    Brief description of data written to file
+///
+///CALLS TO:  List of programmer-written functions called (names only)
+///////////////////////////////////////////////////////////////////////////////////
+void runSorts(string choice, int *randNumOne,int *randNumTwo,double timeOne,double timeTwo,int& count,double& totalTimeOne,double& totalTimeTwo
 ,string& sortNameOne,string& sortNameTwo){ 
   double clocker = 0;
   funcPtrType funcPtr;//pointer to functions choosen by user
    
+  cout << "\nStarting sort # " <<count<<"..."<<endl;
   
   if(choice[0] == 'B'){
-    clockSTART(clocker);//start clock on function 
+    clockStart(clocker);//start clock on function 
     funcPtr = sortPOINTER_ARRAY[0];//point to Bubblesort   
-    cout << "BUBBLE SORT ";
+    cout << "\tBUBBLE SORT ";
     sortNameOne = "BUBBLE SORT";
   } 
   else if(choice[0] == 'I'){
-    clockSTART(clocker);//start clock
+    clockStart(clocker);//start clock
     funcPtr = sortPOINTER_ARRAY[1];//point to Insertion sort
-    cout << "INSERTION SORT ";
+    cout << "\tINSERTION SORT ";
     sortNameOne = "INSERTION SORT";
   }
   else if(choice[0] == 'M'){
-    clockSTART(clocker);//start clock
+    clockStart(clocker);//start clock
     funcPtr = sortPOINTER_ARRAY[2];//point to Merge Sort
-    cout << "MERGE SORT ";
+    cout << "\tMERGE SORT ";
     sortNameOne = "MERGE SORT";
   }
   else if(choice[0] == 'Q'){
-    clockSTART(clocker);//start clock
+    clockStart(clocker);//start clock
     funcPtr = sortPOINTER_ARRAY[3];//point to Quick Sort
-    cout << "QUICK SORT ";
+    cout << "\tQUICK SORT ";
     sortNameOne = "QUICK SORT";
   }
   else if(choice[0] == 'E'){
   
   }
-  *randNUM_ONE = funcPtr(randNUM_ONE);
-   timeONE = timeONE + clockSTOP(clocker);
-   totalTime_ONE = (totalTime_ONE + timeONE);
+  *randNumOne = funcPtr(randNumOne);
+   timeOne = timeOne + clockStop(clocker);
+   totalTimeOne = (totalTimeOne + timeOne);
  
   //second choice all the same as first////////////////
    if(choice[1] == 'B'){
-    clockSTART(clocker);
+    clockStart(clocker);
     funcPtr = sortPOINTER_ARRAY[0];
-    cout << "BUBBLE SORT ";
+    cout << "\tBUBBLE SORT ";
     sortNameTwo = "BUBBLE SORT";
   } 
   else if(choice[1] == 'I'){
-    clockSTART(clocker);
+    clockStart(clocker);
     funcPtr = sortPOINTER_ARRAY[1];
-    cout << "INSERTION SORT ";
+    cout << "\tINSERTION SORT ";
     sortNameTwo = "INSERTION SORT";
   }
   else if(choice[1] == 'M'){ 
-    clockSTART(clocker);
+    clockStart(clocker);
     funcPtr = sortPOINTER_ARRAY[2];
-    cout << "MERGE SORT ";
+    cout << "\tMERGE SORT ";
     sortNameTwo = "MERGE SORT";
   }
   else if(choice[1] == 'Q'){
-    clockSTART(clocker);
+    clockStart(clocker);
     funcPtr = sortPOINTER_ARRAY[3];
-    cout << "QUICK SORT ";
+    cout << "\tQUICK SORT ";
     sortNameTwo = "QUICK SORT";
   }
   else if(choice[1] == 'E'){
   
   }
-  *randNUM_TWO = funcPtr(randNUM_TWO);
-   timeTWO = timeTWO + clockSTOP(clocker);
-   totalTime_TWO = (totalTime_TWO + timeTWO);
-   cout << "Starting sort # " <<count<<"..."<<endl; 
+  *randNumTwo = funcPtr(randNumTwo);
+   timeTwo = timeTwo + clockStop(clocker);
+   totalTimeTwo = (totalTimeTwo + timeTwo);
+    
 }
+//////////////////////////////////////////////////////////////////////////////////
+///FUNCTION:    randMAKE
+///DESCRIPTION:    Description of purpose of function
+///INPUT:
+///
+///Parameters: Name and description of each input parameter
+///
+///File: Brief description of data read from file
+///
+///OUTPUT:   
+///
+///Return Val: Description of data returned by a function
+///
+///Parameters: Name and description of the output parameters
+///
+///File:    Brief description of data written to file
+///
+///CALLS TO:  List of programmer-written functions called (names only)
+///////////////////////////////////////////////////////////////////////////////////
 int randMAKE(){
   int make = 0;
   make = rand() % RAND_LIMITER + 6;
   return make;
 }
-void createARRAYS(int *arrayONE,int *arrayTWO){
+//////////////////////////////////////////////////////////////////////////////////
+///FUNCTION:    createArrays
+///DESCRIPTION:    Description of purpose of function
+///INPUT:
+///
+///Parameters: Name and description of each input parameter
+///
+///File: Brief description of data read from file
+///
+///OUTPUT:   
+///
+///Return Val: Description of data returned by a function
+///
+///Parameters: Name and description of the output parameters
+///
+///File:    Brief description of data written to file
+///
+///CALLS TO:  List of programmer-written functions called (names only)
+///////////////////////////////////////////////////////////////////////////////////
+void createArrays(int *arrayOne,int *arrayTwo){
   srand(time(NULL));
   for(int a = 0; a <= RAND_INT; a++){
-    arrayONE[a] = randMAKE();
-    arrayTWO[a] = arrayONE[a];
+    arrayOne[a] = randMAKE();
+    arrayTwo[a] = arrayOne[a];
   }
 }
-
-double clockSTART(double& start){
+//////////////////////////////////////////////////////////////////////////////////
+///FUNCTION:   clockStart
+///DESCRIPTION:    Description of purpose of function
+///INPUT:
+///
+///Parameters: Name and description of each input parameter
+///
+///File: Brief description of data read from file
+///
+///OUTPUT:   
+///
+///Return Val: Description of data returned by a function
+///
+///Parameters: Name and description of the output parameters
+///
+///File:    Brief description of data written to file
+///
+///CALLS TO:  List of programmer-written functions called (names only)
+///////////////////////////////////////////////////////////////////////////////////
+double clockStart(double& start){
    start = clock();
    return start;
 }
-double clockSTOP(double& start){
+//////////////////////////////////////////////////////////////////////////////////
+///FUNCTION:   clockStop
+///DESCRIPTION:    Description of purpose of function
+///INPUT:
+///
+///Parameters: Name and description of each input parameter
+///
+///File: Brief description of data read from file
+///
+///OUTPUT:   
+///
+///Return Val: Description of data returned by a function
+///
+///Parameters: Name and description of the output parameters
+///
+///File:    Brief description of data written to file
+///
+///CALLS TO:  List of programmer-written functions called (names only)
+///////////////////////////////////////////////////////////////////////////////////
+double clockStop(double& start){
   double stop = clock();
   double time = ((double)(stop - start));
   cout.precision(7);
   cout << fixed << "TIME: " << time << endl;
   return time;
 }
-
-// Bubblesort()
-//
-// Returns:
-//
-// Implemented by:
+//////////////////////////////////////////////////////////////////////////////////
+///FUNCTION:    bubbleSort
+///DESCRIPTION:    Description of purpose of function
+///INPUT:
+///
+///Parameters: Name and description of each input parameter
+///
+///File: Brief description of data read from file
+///
+///OUTPUT:   
+///
+///Return Val: Description of data returned by a function
+///
+///Parameters: Name and description of the output parameters
+///
+///File:    Brief description of data written to file
+///
+///CALLS TO:  List of programmer-written functions called (names only)
+///////////////////////////////////////////////////////////////////////////////////
 int bubbleSort(int bubble[])
 {   bool swap = true;
     int j = 0;
@@ -216,13 +346,25 @@ int bubbleSort(int bubble[])
       }
       return *bubble;
 }
-
-
-// insertionSort()
-//
-// Returns:
-//
-// Implemented by:
+//////////////////////////////////////////////////////////////////////////////////
+///FUNCTION:    insertionSort
+///DESCRIPTION:    Description of purpose of function
+///INPUT:
+///
+///Parameters: Name and description of each input parameter
+///
+///File: Brief description of data read from file
+///
+///OUTPUT:   
+///
+///Return Val: Description of data returned by a function
+///
+///Parameters: Name and description of the output parameters
+///
+///File:    Brief description of data written to file
+///
+///CALLS TO:  List of programmer-written functions called (names only)
+///////////////////////////////////////////////////////////////////////////////////
 int insertionSort(int insert[])
 { int i = 0;
   int j = 0;
@@ -239,25 +381,50 @@ int insertionSort(int insert[])
   } 
   return *insert;
 }
-
-
-// quickSort()
-//
-// Returns:
-//
-// Implemented by:
+//////////////////////////////////////////////////////////////////////////////////
+///FUNCTION:    quickSort
+///DESCRIPTION:    Description of purpose of function
+///INPUT:
+///
+///Parameters: Name and description of each input parameter
+///
+///File: Brief description of data read from file
+///
+///OUTPUT:   
+///
+///Return Val: Description of data returned by a function
+///
+///Parameters: Name and description of the output parameters
+///
+///File:    Brief description of data written to file
+///
+///CALLS TO:  List of programmer-written functions called (names only)
+///////////////////////////////////////////////////////////////////////////////////
 int quickSort(int quick[])
 {
-     QUICKsort(quick,0,RAND_INT-1);
+     qkSort(quick,0,RAND_INT-1);
 	 return 0;
 }
-
-// quickSort()
-//
-// Returns:
-//
-// Implemented by:
-void QUICKsort(int quick[], int left, int right)
+//////////////////////////////////////////////////////////////////////////////////
+///FUNCTION:    qkSort
+///DESCRIPTION:    Description of purpose of function
+///INPUT:
+///
+///Parameters: Name and description of each input parameter
+///
+///File: Brief description of data read from file
+///
+///OUTPUT:   
+///
+///Return Val: Description of data returned by a function
+///
+///Parameters: Name and description of the output parameters
+///
+///File:    Brief description of data written to file
+///
+///CALLS TO:  List of programmer-written functions called (names only)
+///////////////////////////////////////////////////////////////////////////////////
+void qkSort(int quick[], int left, int right)
 {
       
       int middle;
@@ -265,13 +432,31 @@ void QUICKsort(int quick[], int left, int right)
       if(left<right)
       {
          middle=partition(quick,left,right);
-         QUICKsort(quick,left,middle);
-         QUICKsort(quick,middle+1,right);
+         qkSort(quick,left,middle);
+         qkSort(quick,middle+1,right);
       }
       return;   
-      cout << "THE END" << endl;
+      
 }
-
+//////////////////////////////////////////////////////////////////////////////////
+///FUNCTION:    partition
+///DESCRIPTION:    Description of purpose of function
+///INPUT:
+///
+///Parameters: Name and description of each input parameter
+///
+///File: Brief description of data read from file
+///
+///OUTPUT:   
+///
+///Return Val: Description of data returned by a function
+///
+///Parameters: Name and description of the output parameters
+///
+///File:    Brief description of data written to file
+///
+///CALLS TO:  List of programmer-written functions called (names only)
+///////////////////////////////////////////////////////////////////////////////////
 int partition(int qslist[], int left, int right)
 {
     int x=qslist[left];
@@ -303,6 +488,25 @@ int partition(int qslist[], int left, int right)
     return j;
     
 }
+//////////////////////////////////////////////////////////////////////////////////
+///FUNCTION:    mergeGET
+///DESCRIPTION:    Description of purpose of function
+///INPUT:
+///
+///Parameters: Name and description of each input parameter
+///
+///File: Brief description of data read from file
+///
+///OUTPUT:   
+///
+///Return Val: Description of data returned by a function
+///
+///Parameters: Name and description of the output parameters
+///
+///File:    Brief description of data written to file
+///
+///CALLS TO:  List of programmer-written functions called (names only)
+///////////////////////////////////////////////////////////////////////////////////
 int mergeGET(int numbers[]){
  static int temp[RAND_INT] = {0};
  int left = 0;
@@ -310,6 +514,25 @@ int mergeGET(int numbers[]){
  mergesort(numbers,temp,left,right);
  return *numbers;
 }
+//////////////////////////////////////////////////////////////////////////////////
+///FUNCTION:    mergesort
+///DESCRIPTION:    Description of purpose of function
+///INPUT:
+///
+///Parameters: Name and description of each input parameter
+///
+///File: Brief description of data read from file
+///
+///OUTPUT:   
+///
+///Return Val: Description of data returned by a function
+///
+///Parameters: Name and description of the output parameters
+///
+///File:    Brief description of data written to file
+///
+///CALLS TO:  List of programmer-written functions called (names only)
+///////////////////////////////////////////////////////////////////////////////////
 int mergesort(int numbers[], int temp[], int left, int right)
 
 {
@@ -327,6 +550,25 @@ int mergesort(int numbers[], int temp[], int left, int right)
   }
   return *temp;
 }
+//////////////////////////////////////////////////////////////////////////////////
+///FUNCTION:    merge
+///DESCRIPTION:    Description of purpose of function
+///INPUT:
+///
+///Parameters: Name and description of each input parameter
+///
+///File: Brief description of data read from file
+///
+///OUTPUT:   
+///
+///Return Val: Description of data returned by a function
+///
+///Parameters: Name and description of the output parameters
+///
+///File:    Brief description of data written to file
+///
+///CALLS TO:  List of programmer-written functions called (names only)
+///////////////////////////////////////////////////////////////////////////////////
 void merge(int numbers[], int temp[], int left, int mid, int right)
 
 {
@@ -411,12 +653,25 @@ void merge(int numbers[], int temp[], int left, int mid, int right)
   }
 
 }
-
-// verifySorting()
-//  verifies the sorts ran correctly
-// Returns:
-//
-// Implemented by:
+//////////////////////////////////////////////////////////////////////////////////
+///FUNCTION:    verifySorting
+///DESCRIPTION:    Description of purpose of function
+///INPUT:
+///
+///Parameters: Name and description of each input parameter
+///
+///File: Brief description of data read from file
+///
+///OUTPUT:   
+///
+///Return Val: Description of data returned by a function
+///
+///Parameters: Name and description of the output parameters
+///
+///File:    Brief description of data written to file
+///
+///CALLS TO:  List of programmer-written functions called (names only)
+///////////////////////////////////////////////////////////////////////////////////
 bool verifySorting(int verify_one[],int verify_two[]){
 	bool theSame = false;
 	for(int a = 0; a < RAND_INT; a++){
@@ -431,13 +686,26 @@ bool verifySorting(int verify_one[],int verify_two[]){
 	return theSame;
 
 }
-// displayResults()
-//
-
-// Returns:
-//
-// Implemented by:
-void displayResults(bool doArraysMatch,double& timeONE,double& timeTWO)
+//////////////////////////////////////////////////////////////////////////////////
+///FUNCTION:    displayResults
+///DESCRIPTION:    Description of purpose of function
+///INPUT:
+///
+///Parameters: Name and description of each input parameter
+///
+///File: Brief description of data read from file
+///
+///OUTPUT:   
+///
+///Return Val: Description of data returned by a function
+///
+///Parameters: Name and description of the output parameters
+///
+///File:    Brief description of data written to file
+///
+///CALLS TO:  List of programmer-written functions called (names only)
+///////////////////////////////////////////////////////////////////////////////////
+void displayResults(bool doArraysMatch,double& timeOne,double& timeTwo)
 {
     if(doArraysMatch){
 		cout << "sorts validated." << endl;
@@ -447,7 +715,25 @@ void displayResults(bool doArraysMatch,double& timeONE,double& timeTWO)
 	}
 
 }
-
+//////////////////////////////////////////////////////////////////////////////////
+///FUNCTION:    menuErrorCheck
+///DESCRIPTION:    Description of purpose of function
+///INPUT:
+///
+///Parameters: Name and description of each input parameter
+///
+///File: Brief description of data read from file
+///
+///OUTPUT:   
+///
+///Return Val: Description of data returned by a function
+///
+///Parameters: Name and description of the output parameters
+///
+///File:    Brief description of data written to file
+///
+///CALLS TO:  List of programmer-written functions called (names only)
+///////////////////////////////////////////////////////////////////////////////////
 bool menuErrorCheck(string inChoice)
 {    bool check = false;
      switch(inChoice[0]){
@@ -493,4 +779,3 @@ switch(inChoice[1]){
       return check;
 
 }
-
