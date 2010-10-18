@@ -115,7 +115,7 @@ void pickSorts(string& choice){
 ///FUNCTION:    runSorts
 ///DESCRIPTION:    Description of purpose of function
 ///INPUT:
-///Parameters: *randNumOne,*randNumTwo (two identitcal arrays of random numbers)
+///Parameters: *randNumOne,*randNumTwo (two matching arrays of random numbers)
 ///            double totalTimeOne,totalTimeTwo(double which maintain a total of each sorts clock time until
 ///            user selected choices completes)
 ///            string choice[0] and choice[1] contain users selected char for selecting sortPOINTER_ARRAY
@@ -205,22 +205,13 @@ void runSorts(string choice, int *randNumOne,int *randNumTwo,double timeOne,doub
 }
 //////////////////////////////////////////////////////////////////////////////////
 ///FUNCTION:    randMAKE
-///DESCRIPTION:    Description of purpose of function
+///DESCRIPTION: simple function uses rand to return random int
 ///INPUT:
-///
-///Parameters: Name and description of each input parameter
-///
-///File: Brief description of data read from file
-///
+///Parameters: calls rand()
 ///OUTPUT:   
-///
-///Return Val: Description of data returned by a function
-///
-///Parameters: Name and description of the output parameters
-///
-///File:    Brief description of data written to file
-///
-///CALLS TO:  List of programmer-written functions called (names only)
+///Return Val: random int 
+///Parameters: returns int make
+///CALLS TO:  n/a
 ///////////////////////////////////////////////////////////////////////////////////
 int randMAKE(){
   int make = 0;
@@ -229,22 +220,12 @@ int randMAKE(){
 }
 //////////////////////////////////////////////////////////////////////////////////
 ///FUNCTION:    createArrays
-///DESCRIPTION:    Description of purpose of function
+///DESCRIPTION: inserts random int into arrays
 ///INPUT:
-///
-///Parameters: Name and description of each input parameter
-///
-///File: Brief description of data read from file
-///
+///Parameters: random int make
 ///OUTPUT:   
-///
-///Return Val: Description of data returned by a function
-///
-///Parameters: Name and description of the output parameters
-///
-///File:    Brief description of data written to file
-///
-///CALLS TO:  List of programmer-written functions called (names only)
+///Return Val: int *arrayOne and *arrayTwo filled with random int 
+///CALLS TO:  randMAKE
 ///////////////////////////////////////////////////////////////////////////////////
 void createArrays(int *arrayOne,int *arrayTwo){
   srand(time(NULL));
@@ -255,22 +236,12 @@ void createArrays(int *arrayOne,int *arrayTwo){
 }
 //////////////////////////////////////////////////////////////////////////////////
 ///FUNCTION:   clockStart
-///DESCRIPTION:    Description of purpose of function
+///DESCRIPTION:  returns clock time
 ///INPUT:
-///
-///Parameters: Name and description of each input parameter
-///
-///File: Brief description of data read from file
-///
+///Parameters: clock() start time
 ///OUTPUT:   
-///
-///Return Val: Description of data returned by a function
-///
-///Parameters: Name and description of the output parameters
-///
-///File:    Brief description of data written to file
-///
-///CALLS TO:  List of programmer-written functions called (names only)
+///Return Val: double& start with clock time 
+///CALLS TO: n/a
 ///////////////////////////////////////////////////////////////////////////////////
 double clockStart(double& start){
    start = clock();
@@ -278,22 +249,11 @@ double clockStart(double& start){
 }
 //////////////////////////////////////////////////////////////////////////////////
 ///FUNCTION:   clockStop
-///DESCRIPTION:    Description of purpose of function
-///INPUT:
-///
-///Parameters: Name and description of each input parameter
-///
-///File: Brief description of data read from file
-///
+///DESCRIPTION: displays time required to run sort 
+///Parameters: clock() stop time
 ///OUTPUT:   
-///
-///Return Val: Description of data returned by a function
-///
-///Parameters: Name and description of the output parameters
-///
-///File:    Brief description of data written to file
-///
-///CALLS TO:  List of programmer-written functions called (names only)
+///Return Val: clock stop time minus start time giving total time of sort run
+///CALLS TO: n/a
 ///////////////////////////////////////////////////////////////////////////////////
 double clockStop(double& start){
   double stop = clock();
@@ -304,22 +264,13 @@ double clockStop(double& start){
 }
 //////////////////////////////////////////////////////////////////////////////////
 ///FUNCTION:    bubbleSort
-///DESCRIPTION:    Description of purpose of function
+///DESCRIPTION: Common Bubble Sort function
 ///INPUT:
-///
-///Parameters: Name and description of each input parameter
-///
-///File: Brief description of data read from file
-///
+///Parameters:  one array of random int: bubble[]
 ///OUTPUT:   
-///
-///Return Val: Description of data returned by a function
-///
-///Parameters: Name and description of the output parameters
-///
-///File:    Brief description of data written to file
-///
-///CALLS TO:  List of programmer-written functions called (names only)
+///Return Val:  sorted array: bubble[]
+///Parameters:  bubble[]
+///CALLS TO: n/a
 ///////////////////////////////////////////////////////////////////////////////////
 int bubbleSort(int bubble[])
 {   bool swap = true;
@@ -346,22 +297,13 @@ int bubbleSort(int bubble[])
 }
 //////////////////////////////////////////////////////////////////////////////////
 ///FUNCTION:    insertionSort
-///DESCRIPTION:    Description of purpose of function
+///DESCRIPTION: Common Insertion Sort function
 ///INPUT:
-///
-///Parameters: Name and description of each input parameter
-///
-///File: Brief description of data read from file
-///
+///Parameters:  one array of random int: insert[]
 ///OUTPUT:   
-///
-///Return Val: Description of data returned by a function
-///
-///Parameters: Name and description of the output parameters
-///
-///File:    Brief description of data written to file
-///
-///CALLS TO:  List of programmer-written functions called (names only)
+///Return Val:  sorted array: insert[]
+///Parameters:  insert[]
+///CALLS TO: n/a
 ///////////////////////////////////////////////////////////////////////////////////
 int insertionSort(int insert[])
 { int i = 0;
@@ -381,22 +323,13 @@ int insertionSort(int insert[])
 }
 //////////////////////////////////////////////////////////////////////////////////
 ///FUNCTION:    quickSort
-///DESCRIPTION:    Description of purpose of function
+///DESCRIPTION: retrieves random array and calls qkSort to sort array
 ///INPUT:
-///
-///Parameters: Name and description of each input parameter
-///
-///File: Brief description of data read from file
-///
+///Parameters: quick[]: random array
 ///OUTPUT:   
-///
-///Return Val: Description of data returned by a function
-///
-///Parameters: Name and description of the output parameters
-///
-///File:    Brief description of data written to file
-///
-///CALLS TO:  List of programmer-written functions called (names only)
+///Return Val: quick[]: sorted array
+///Parameters: int quick[]
+///CALLS TO:  qkSort
 ///////////////////////////////////////////////////////////////////////////////////
 int quickSort(int quick[])
 {
@@ -405,22 +338,13 @@ int quickSort(int quick[])
 }
 //////////////////////////////////////////////////////////////////////////////////
 ///FUNCTION:    qkSort
-///DESCRIPTION:    Description of purpose of function
+///DESCRIPTION: recursivly runs arrays through functions until sort complete
 ///INPUT:
-///
-///Parameters: Name and description of each input parameter
-///
-///File: Brief description of data read from file
-///
+///Parameters: quick[], int left, int right
 ///OUTPUT:   
-///
-///Return Val: Description of data returned by a function
-///
-///Parameters: Name and description of the output parameters
-///
-///File:    Brief description of data written to file
-///
-///CALLS TO:  List of programmer-written functions called (names only)
+///Return Val: returns fully sorted array
+///Parameters: quick[] completely sorted
+///CALLS TO:  partition and calls itself for recurs qkSort
 ///////////////////////////////////////////////////////////////////////////////////
 void qkSort(int quick[], int left, int right)
 {
@@ -438,22 +362,13 @@ void qkSort(int quick[], int left, int right)
 }
 //////////////////////////////////////////////////////////////////////////////////
 ///FUNCTION:    partition
-///DESCRIPTION:    Description of purpose of function
+///DESCRIPTION: enters sorted indexes into array in proper place
 ///INPUT:
-///
-///Parameters: Name and description of each input parameter
-///
-///File: Brief description of data read from file
-///
+///Parameters: qslist[], int left, int right
 ///OUTPUT:   
-///
-///Return Val: Description of data returned by a function
-///
-///Parameters: Name and description of the output parameters
-///
-///File:    Brief description of data written to file
-///
-///CALLS TO:  List of programmer-written functions called (names only)
+///Return Val: qslist[] indexes moved and int j of current index
+///Parameters: qslist[], int j
+///CALLS TO:  n/a
 ///////////////////////////////////////////////////////////////////////////////////
 int partition(int qslist[], int left, int right)
 {
@@ -488,22 +403,13 @@ int partition(int qslist[], int left, int right)
 }
 //////////////////////////////////////////////////////////////////////////////////
 ///FUNCTION:    mergeGET
-///DESCRIPTION:    Description of purpose of function
+///DESCRIPTION: allows merge sort function to be called as function pointer
 ///INPUT:
-///
-///Parameters: Name and description of each input parameter
-///
-///File: Brief description of data read from file
-///
+///Parameters: numbers[] random array
 ///OUTPUT:   
-///
-///Return Val: Description of data returned by a function
-///
-///Parameters: Name and description of the output parameters
-///
-///File:    Brief description of data written to file
-///
-///CALLS TO:  List of programmer-written functions called (names only)
+///Return Val: numbers[] sorted array
+///Parameters: *numbers
+///CALLS TO:  mergesort
 ///////////////////////////////////////////////////////////////////////////////////
 int mergeGET(int numbers[]){
  static int temp[RAND_INT] = {0};
@@ -514,22 +420,16 @@ int mergeGET(int numbers[]){
 }
 //////////////////////////////////////////////////////////////////////////////////
 ///FUNCTION:    mergesort
-///DESCRIPTION:    Description of purpose of function
+///DESCRIPTION: sorts int 
 ///INPUT:
 ///
-///Parameters: Name and description of each input parameter
-///
-///File: Brief description of data read from file
-///
+///Parameters: numbers[] random array,temp[] = NULL, right = top of array.
+///            numbers[] is continually updated for sorting after each merge until
+///            sort is complete.    
 ///OUTPUT:   
-///
-///Return Val: Description of data returned by a function
-///
-///Parameters: Name and description of the output parameters
-///
-///File:    Brief description of data written to file
-///
-///CALLS TO:  List of programmer-written functions called (names only)
+///Return Val: fully sorted numbers[]
+///Parameters: numbers[]
+///CALLS TO:  merge and recursivly calls itself mergesort
 ///////////////////////////////////////////////////////////////////////////////////
 int mergesort(int numbers[], int temp[], int left, int right)
 
@@ -550,22 +450,16 @@ int mergesort(int numbers[], int temp[], int left, int right)
 }
 //////////////////////////////////////////////////////////////////////////////////
 ///FUNCTION:    merge
-///DESCRIPTION:    Description of purpose of function
+///DESCRIPTION: merges int in index in accordance with their value
 ///INPUT:
-///
-///Parameters: Name and description of each input parameter
-///
-///File: Brief description of data read from file
-///
+///Parameters: numbers[], int left, mid, right
+///            left,mid,and right are used to determine placing
+///            of int in index
 ///OUTPUT:   
-///
-///Return Val: Description of data returned by a function
-///
-///Parameters: Name and description of the output parameters
-///
-///File:    Brief description of data written to file
-///
-///CALLS TO:  List of programmer-written functions called (names only)
+///Return Val: moved int in index for sorting numbers[]
+///Parameters: int is moved within array in accordance with its value and
+///            then array is returned for furthur sorting until sort is complete
+///CALLS TO: n/a
 ///////////////////////////////////////////////////////////////////////////////////
 void merge(int numbers[], int temp[], int left, int mid, int right)
 
@@ -653,22 +547,13 @@ void merge(int numbers[], int temp[], int left, int mid, int right)
 }
 //////////////////////////////////////////////////////////////////////////////////
 ///FUNCTION:    verifySorting
-///DESCRIPTION:    Description of purpose of function
+///DESCRIPTION: simple function that loops through index in arrays and compairs them to each other
 ///INPUT:
-///
-///Parameters: Name and description of each input parameter
-///
-///File: Brief description of data read from file
-///
+///Parameters: two arrays fully sorted: verify_one[] and verify_two[]
 ///OUTPUT:   
-///
-///Return Val: Description of data returned by a function
-///
-///Parameters: Name and description of the output parameters
-///
-///File:    Brief description of data written to file
-///
-///CALLS TO:  List of programmer-written functions called (names only)
+///Return Val: bool theSame = false or true
+///Parameters: returns true or false if arrays match
+///CALLS TO:  n/a
 ///////////////////////////////////////////////////////////////////////////////////
 bool verifySorting(int verify_one[],int verify_two[]){
 	bool theSame = false;
@@ -678,8 +563,6 @@ bool verifySorting(int verify_one[],int verify_two[]){
 			theSame = true;
 			
 		}
-	        //cout << "ARRAY ONE: " << verify_one[a] << endl;//make sure array is making it this far
-	        //cout << "ARRAY TWO: " << verify_two[a] << endl;//make sure array is making it this far
 	}
 	return theSame;
 
