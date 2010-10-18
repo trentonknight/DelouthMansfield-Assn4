@@ -31,7 +31,7 @@ void merge(int numbers[], int temp[], int left, int mid, int right);
 int mergesort(int numbers[], int temp[], int left, int right);
 //end functions called by pointer
 bool verifySorting(int verify_one[],int verify_two[]);
-void displayResults(bool doArraysMatch,double& timeOne,double& timeTwo);
+void displayResults(bool doArraysMatch);
 bool menuErrorCheck(string inChoice);
 
 const int RAND_INT = 100000;//for rand array
@@ -74,7 +74,7 @@ int main()
   count++;
   runSorts(choice,randNumOne,randNumTwo,timeOne,timeTwo,count,totalTimeOne,totalTimeTwo,sortNameOne,sortNameTwo);
   doArraysMatch = verifySorting(randNumOne,randNumTwo);
-  displayResults(doArraysMatch,timeOne,timeTwo);
+  displayResults(doArraysMatch);
   sorts--;
   }
   cout << "\nSORTING RESULTS" << endl;
@@ -569,24 +569,13 @@ bool verifySorting(int verify_one[],int verify_two[]){
 }
 //////////////////////////////////////////////////////////////////////////////////
 ///FUNCTION:    displayResults
-///DESCRIPTION:    Description of purpose of function
+///DESCRIPTION: displays if sorts were indeed valid
 ///INPUT:
-///
-///Parameters: Name and description of each input parameter
-///
-///File: Brief description of data read from file
-///
+///Parameters: bool doArraysMatch
 ///OUTPUT:   
-///
-///Return Val: Description of data returned by a function
-///
-///Parameters: Name and description of the output parameters
-///
-///File:    Brief description of data written to file
-///
-///CALLS TO:  List of programmer-written functions called (names only)
+///Parameters: displays if sorts were valid to user
 ///////////////////////////////////////////////////////////////////////////////////
-void displayResults(bool doArraysMatch,double& timeOne,double& timeTwo)
+void displayResults(bool doArraysMatch)
 {
     if(doArraysMatch){
 		cout << "sorts validated." << endl;
@@ -598,22 +587,12 @@ void displayResults(bool doArraysMatch,double& timeOne,double& timeTwo)
 }
 //////////////////////////////////////////////////////////////////////////////////
 ///FUNCTION:    menuErrorCheck
-///DESCRIPTION:    Description of purpose of function
+///DESCRIPTION: verifies user input for mistakes
 ///INPUT:
-///
-///Parameters: Name and description of each input parameter
-///
-///File: Brief description of data read from file
-///
+///Parameters: string inChoice[0] and inChoice[1]
 ///OUTPUT:   
-///
-///Return Val: Description of data returned by a function
-///
-///Parameters: Name and description of the output parameters
-///
-///File:    Brief description of data written to file
-///
-///CALLS TO:  List of programmer-written functions called (names only)
+///Return Val: true of false if user submitted valid choices
+///Parameters: bool check
 ///////////////////////////////////////////////////////////////////////////////////
 bool menuErrorCheck(string inChoice)
 {    bool check = false;
