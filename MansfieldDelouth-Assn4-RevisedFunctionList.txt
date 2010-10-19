@@ -1,0 +1,189 @@
+#include <iostream>
+#include <iomanip>
+#include <string>
+#include <ctime>
+using namespace std;
+
+void pickSorts(string& choice,int *randNUM_ONE,int *randNUM_TWO,double timeONE,double timeTWO,bool doArraysMatch);
+void runSorts(string choice,int *randNUM_ONE,int *randNUM_TWO,double timeONE,double timeTWO,int& count,double& totalTime_ONE,double& totalTime_TWO
+,string& sortNameOne,string& sortNameTwo);
+void createARRAYS(int *arrayONE,int *arrayTWO);
+double clockSTART(double& start);
+double clockSTOP(double& start);
+//All sort functions to call by pointer to functions
+int bubbleSort(int bubble[]);
+int insertionSort(int insert[]);
+void quickSort(int quick[],int& left,int& right);
+void merge(int numbers[], int temp[], int left, int mid, int right);
+//end functions called by pointer
+bool verifySorting(int verify_one[],int verify_two[]);
+void displayResults(bool doArraysMatch,double& timeONE,double& timeTWO);
+bool menuErrorCheck(string inChoice);
+
+const int RAND_INT = 100000;//for rand array
+const int ARRAY_FUNC = 4;//for selection of sort functions
+typedef int (*funcPtrType)(int[RAND_INT]);//function pointer
+const funcPtrType sortPOINTER_ARRAY[ARRAY_FUNC] = {&bubbleSort,
+                                          &insertionSort,
+                                          &mergeSort,
+						   &quickSort};
+
+// main()
+// Main program logic. Handles getting user input
+// returns:
+//   0 - No error, program exited normally
+// Calls:
+// Implemented by: Jason Mansfield
+int main()
+
+{
+  
+  createARRAYS();
+  pickSorts(); 
+  
+  runSorts();
+  doArraysMatch = verifySorting();
+  displayResults();
+
+  return 0;
+  
+}
+
+// pickSorts()
+// Prompts the user to choose which sorts to perform from the list provided  
+// returns: User choice of sorts
+// Implemented by: Jason Mansfield
+void pickSorts()
+{
+
+
+}
+
+// runSorts()
+// function to take the user input choices and run them
+// params:"choice" from user input  
+// returns: Time Results of the chosen search
+// Implemented by: Jason Mansfield
+void runSorts(string choice)
+{ 
+ 
+}
+
+// randMAKE()
+// Creates an array of 100,000 random integers
+// returns: List of 100,000 random numbers including duplicates
+// Implemented by: Jason Mansfield
+int randMAKE()
+{
+  
+}
+
+// createARRAYS()
+// function to create the arrays that the random numbers
+// will be stored   
+// returns: Two identical arrays
+// Implemented by: Jason Mansfield
+void createARRAYS()
+{
+  
+}
+
+// clockSTART
+// starts system clock  
+// returns: sort start time
+// Implemented by: Jason Mansfield
+double clockSTART()
+{
+   
+}
+
+// clockSTART
+// stops system clock
+// returns: sort stop time
+// Implemented by: Jason Mansfield
+double clockSTOP()
+{
+  
+}
+
+// Bubblesort()
+// sort that compares every adjacent pair of elements in the list, 
+// swapping them if they are not in the correct order. 
+// returns:
+// sorted array
+// Implemented by: Natasha Delouth
+int bubbleSort(int bubble[])
+{   
+}
+
+
+// insertionSort()
+// function that sorts by inserts each element of the array into its proper 
+// position one at a time   
+// returns:
+//  sorted array
+// Implemented by: Jason Mansfield
+int insertionSort(int insert[])
+{ 
+    
+}
+
+
+// quickSort()
+// sort that partitions the list into two sections(left and right)
+// then partitions and sorts the small and large elements recursively.
+//   
+// returns:
+//  sorted array
+// Implemented by: NatashaDelouth
+void quickSort(int quick[],int& left,int& right)
+{ 
+ 
+}
+
+// mergesort()
+// sort that recursively splits the list to be sorted into two equal halves, 
+// and places them in separate arrays 
+// returns:
+//  sorted list
+// Implemented by: Jason Mansfield
+int mergesort(int numbers[], int temp[], int left, int right)
+
+{
+ 
+ 
+}
+
+
+// verifySorting()
+//  verifies the arrays are sorted
+// params:
+//   arrays
+// Implemented by: NatashaDelouth
+bool verifySorting(int verify_one[],int verify_two[])
+{
+
+}
+// displayResults()
+// displays whether the sorts are valid
+// returns:
+//  valid or not validated
+// Implemented by: NatashaDelouth
+void displayResults(bool doArraysMatch,double& timeONE,double& timeTWO)
+{
+     
+}
+// menuErrorCheck()
+// Verifies an user input is two letters and from the list
+// params: 
+//   user input characters
+// returns:
+//   true if user input is acceptable, false if it is
+// Implemented by: NatashaDelouth
+bool menuErrorCheck(string inChoice)
+{
+	
+	
+
+}
+
