@@ -51,6 +51,7 @@ const funcPtrType sortPOINTER_ARRAY[ARRAY_FUNC] = {&bubbleSort,&insertionSort,&m
 ///OUTPUT: return 0 if program runs without issue. 
 ///Parameters: Name and description of the output parameters
 ///CALLS TO:  createArrays,displayResults,pickSorts,runSorts,verifySorting
+///IMPLEMENTED BY: both NATASHA and JASON
 ///////////////////////////////////////////////////////////////////////////////////
 int main()
 
@@ -95,6 +96,7 @@ int main()
 ///OUTPUT:   
 ///Return Val: string choice[0] and choice[1] (with sorts selections)
 ///CALLS TO:  menuErrorCheck, pickSorts (if error function recurses)
+///IMPLEMENTED BY: NATASHA
 ///////////////////////////////////////////////////////////////////////////////////
 void pickSorts(string& choice){
   		
@@ -131,6 +133,7 @@ void pickSorts(string& choice){
 ///            
 ///CALLS TO:   clockStart, clockStop, function pointer funcPtr calls from all:
 ///            sortPOINTER_ARRAY[ARRAY_FUNC] = {&bubbleSort,&insertionSort,&mergeGET,&quickSort};
+///IMPLEMENTED BY: JASON
 ///////////////////////////////////////////////////////////////////////////////////
 void runSorts(string choice, int *randNumOne,int *randNumTwo,double timeOne,double timeTwo,int& count,double& totalTimeOne,double& totalTimeTwo
 ,string& sortNameOne,string& sortNameTwo){ 
@@ -212,6 +215,7 @@ void runSorts(string choice, int *randNumOne,int *randNumTwo,double timeOne,doub
 ///Return Val: random int 
 ///Parameters: returns int make
 ///CALLS TO:  n/a
+///IMPLEMENTED BY: JASON
 ///////////////////////////////////////////////////////////////////////////////////
 int randMAKE(){
   int make = 0;
@@ -226,6 +230,7 @@ int randMAKE(){
 ///OUTPUT:   
 ///Return Val: int *arrayOne and *arrayTwo filled with random int 
 ///CALLS TO:  randMAKE
+///IMPLEMENTED BY: NATASHA
 ///////////////////////////////////////////////////////////////////////////////////
 void createArrays(int *arrayOne,int *arrayTwo){
   srand(time(NULL));
@@ -242,6 +247,7 @@ void createArrays(int *arrayOne,int *arrayTwo){
 ///OUTPUT:   
 ///Return Val: double& start with clock time 
 ///CALLS TO: n/a
+///IMPLEMENTED BY: JASON
 ///////////////////////////////////////////////////////////////////////////////////
 double clockStart(double& start){
    start = clock();
@@ -254,6 +260,7 @@ double clockStart(double& start){
 ///OUTPUT:   
 ///Return Val: clock stop time minus start time giving total time of sort run
 ///CALLS TO: n/a
+///IMPLEMENTED BY: JASON
 ///////////////////////////////////////////////////////////////////////////////////
 double clockStop(double& start){
   double stop = clock();
@@ -271,6 +278,7 @@ double clockStop(double& start){
 ///Return Val:  sorted array: bubble[]
 ///Parameters:  bubble[]
 ///CALLS TO: n/a
+///IMPLEMENTED BY: NATASHA
 ///////////////////////////////////////////////////////////////////////////////////
 int bubbleSort(int bubble[])
 {   bool swap = true;
@@ -304,6 +312,7 @@ int bubbleSort(int bubble[])
 ///Return Val:  sorted array: insert[]
 ///Parameters:  insert[]
 ///CALLS TO: n/a
+///IMPLEMENTED BY: JASON
 ///////////////////////////////////////////////////////////////////////////////////
 int insertionSort(int insert[])
 { int i = 0;
@@ -330,6 +339,7 @@ int insertionSort(int insert[])
 ///Return Val: quick[]: sorted array
 ///Parameters: int quick[]
 ///CALLS TO:  qkSort
+///IMPLEMENTED BY: NATASHA
 ///////////////////////////////////////////////////////////////////////////////////
 int quickSort(int quick[])
 {
@@ -345,6 +355,7 @@ int quickSort(int quick[])
 ///Return Val: returns fully sorted array
 ///Parameters: quick[] completely sorted
 ///CALLS TO:  partition and calls itself for recurs qkSort
+///IMPLEMENTED BY: NATASHA
 ///////////////////////////////////////////////////////////////////////////////////
 void qkSort(int quick[], int left, int right)
 {
@@ -369,6 +380,7 @@ void qkSort(int quick[], int left, int right)
 ///Return Val: qslist[] indexes moved and int j of current index
 ///Parameters: qslist[], int j
 ///CALLS TO:  n/a
+///IMPLEMENTED BY: NATASHA
 ///////////////////////////////////////////////////////////////////////////////////
 int partition(int qslist[], int left, int right)
 {
@@ -410,6 +422,7 @@ int partition(int qslist[], int left, int right)
 ///Return Val: numbers[] sorted array
 ///Parameters: *numbers
 ///CALLS TO:  mergesort
+///IMPLEMENTED BY: JASON
 ///////////////////////////////////////////////////////////////////////////////////
 int mergeGET(int numbers[]){
  static int temp[RAND_INT] = {0};
@@ -430,6 +443,7 @@ int mergeGET(int numbers[]){
 ///Return Val: fully sorted numbers[]
 ///Parameters: numbers[]
 ///CALLS TO:  merge and recursivly calls itself mergesort
+///IMPLEMENTED BY: JASON
 ///////////////////////////////////////////////////////////////////////////////////
 int mergesort(int numbers[], int temp[], int left, int right)
 
@@ -460,6 +474,7 @@ int mergesort(int numbers[], int temp[], int left, int right)
 ///Parameters: int is moved within array in accordance with its value and
 ///            then array is returned for furthur sorting until sort is complete
 ///CALLS TO: n/a
+///IMPLEMENTED BY: JASON
 ///////////////////////////////////////////////////////////////////////////////////
 void merge(int numbers[], int temp[], int left, int mid, int right)
 
@@ -554,6 +569,7 @@ void merge(int numbers[], int temp[], int left, int mid, int right)
 ///Return Val: bool theSame = false or true
 ///Parameters: returns true or false if arrays match
 ///CALLS TO:  n/a
+///IMPLEMENTED BY: NATASHA
 ///////////////////////////////////////////////////////////////////////////////////
 bool verifySorting(int verify_one[],int verify_two[]){
 	bool theSame = false;
@@ -574,6 +590,7 @@ bool verifySorting(int verify_one[],int verify_two[]){
 ///Parameters: bool doArraysMatch
 ///OUTPUT:   
 ///Parameters: displays if sorts were valid to user
+///IMPLEMENTED BY: NATASHA
 ///////////////////////////////////////////////////////////////////////////////////
 void displayResults(bool doArraysMatch)
 {
@@ -593,6 +610,7 @@ void displayResults(bool doArraysMatch)
 ///OUTPUT:   
 ///Return Val: true of false if user submitted valid choices
 ///Parameters: bool check
+///IMPLEMENTED BY: JASON
 ///////////////////////////////////////////////////////////////////////////////////
 bool menuErrorCheck(string inChoice)
 {    bool check = false;
